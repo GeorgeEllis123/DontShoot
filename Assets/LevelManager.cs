@@ -1,12 +1,22 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
+    [SerializeField] private GameObject playerGun;
+
     private enum Phase { YourTurn, Pass, TheirTurn }
 
     private Phase currPhase = Phase.TheirTurn;
     private Phase prevPhase = Phase.Pass;
+
+    private int level;
+
+    public void Start()
+    {
+        ExecutePhase();
+    }
 
     public void ChangePhase()
     {
@@ -32,7 +42,26 @@ public class LevelManager : MonoBehaviour
                 currPhase = Phase.Pass;
                 break;
         }
-        Debug.Log("Current Phase" + currPhase.ToString());
+
+        ExecutePhase();
+    }
+
+    private void ExecutePhase()
+    {
+        switch (currPhase)
+        {
+            case Phase.TheirTurn:
+                Debug.Log("Play pattern sound");
+                break;
+            case Phase.Pass:
+                playerGun.SetActive(false);
+                Debug.Log("Pass the gun");
+                break;
+            case Phase.YourTurn:
+                playerGun.SetActive(true);
+                Debug.Log("Stay alive!!!");
+                break;
+        }
     }
 
     public void GameOver()

@@ -8,7 +8,7 @@ public class CircleShrinking : MonoBehaviour
 
     private float currentScale;
 
-    private void Start()
+    private void OnEnable()
     {
         ResetCircle();
     }
