@@ -6,7 +6,7 @@ public class PatternGenerator : MonoBehaviour
 
     void Start()
     {
-        GenerateChallenge();
+        //GenerateChallenge();
     }
 
     public bool[] GeneratePlay()
@@ -35,7 +35,12 @@ public class PatternGenerator : MonoBehaviour
         }
 
         Debug.Log("Play Pattern is: " + tempPattern[0] + ", " + tempPattern[1] + ", " + tempPattern[2]);
-        return tempPattern;
+
+        bool[] finalPattern = new bool[6];
+        tempPattern.CopyTo(finalPattern, 0);
+        tempPattern.CopyTo(finalPattern, 3);
+
+        return finalPattern;
     }
 
     public bool[] GenerateChallenge()
