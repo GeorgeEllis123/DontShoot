@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class PatternManager : MonoBehaviour
 {
+    private LevelManager levelManager;
+
     public bool[] currentPattern;
 
     private PatternGenerator pg;
@@ -16,8 +18,10 @@ public class PatternManager : MonoBehaviour
     private int bulletIndex = 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     void Start()
     {
+        levelManager = FindAnyObjectByType<LevelManager>();
         pg = gameObject.GetComponent<PatternGenerator>();
         AudioSource[] audiosources = gameObject.GetComponents<AudioSource>();
         bulletSound = audiosources[0];
@@ -80,17 +84,14 @@ public class PatternManager : MonoBehaviour
             Debug.Log("correct!");
         } else
         {
-            Debug.Log("incorrect...");
+            levelManager.GameOver();
         }
-        
+
+        bulletIndex++;
         if (bulletIndex >= currentPattern.Length)
         {
             bulletIndex = 0;
-            Debug.Log("Change scenes");
-        }
-        else
-        {
-            bulletIndex++;
+            levelManager.ChangePhase();
         }
         return correct;
     }
