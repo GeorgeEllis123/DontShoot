@@ -11,7 +11,9 @@ public class PatternManager : MonoBehaviour
     private AudioSource bulletSound;
     private AudioSource blankSound;
 
-    public float timeBetweenLoads = 1f;
+    public float timeBetweenLoads = 0.2f;
+
+    private int bulletIndex = 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -22,29 +24,34 @@ public class PatternManager : MonoBehaviour
         blankSound = audiosources[1];
 
         LoadBullets(1);
-        VerifyClick(0, true);
-        VerifyClick(1, true);
-        VerifyClick(2, true);
-        VerifyClick(3, true);
-        VerifyClick(4, true);
-        VerifyClick(5, true);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        //VerifyClick(0, true);
+        //VerifyClick(1, true);
+        //VerifyClick(2, true);
+        //VerifyClick(3, true);
+        //VerifyClick(4, true);
+        //VerifyClick(5, true);
     }
 
     private void LoadBullets(int level)
     {
-        if (level < 8)
+        if (level == 1)
+        {
+            currentPattern = new bool[6];
+            currentPattern[0] = false;
+            currentPattern[1] = false;
+            currentPattern[2] = false;
+            currentPattern[3] = false;
+            currentPattern[4] = false;
+            currentPattern[5] = true;
+        }
+        else if (level < 8)
         {
             currentPattern = pg.GeneratePlay();
         } else
         {
             currentPattern = pg.GenerateChallenge();
         }
+        /*
         for (int i = 0; i < currentPattern.Length; i++)
         {
             //if bullet
@@ -62,18 +69,30 @@ public class PatternManager : MonoBehaviour
                 Wait(timeBetweenLoads);
             }
         }
+        */
     }
 
-    public bool VerifyClick(int i, bool b)
+    public bool VerifyClick(bool b)
     {
-        if (currentPattern[i] == b)
+        bool correct = currentPattern[bulletIndex] == b;
+        if (correct)
         {
             Debug.Log("correct!");
         } else
         {
             Debug.Log("incorrect...");
         }
-        return currentPattern[i] == b;
+        
+        if (bulletIndex >= currentPattern.Length)
+        {
+            bulletIndex = 0;
+            Debug.Log("Change scenes");
+        }
+        else
+        {
+            bulletIndex++;
+        }
+        return correct;
     }
 
     IEnumerator Wait(float t)
