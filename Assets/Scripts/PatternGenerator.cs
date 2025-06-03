@@ -68,7 +68,7 @@ public class PatternGenerator : MonoBehaviour
             }
         }
 
-        Debug.Log("Play Pattern is: " + tempPattern[0] + ", " + tempPattern[1] + ", " + tempPattern[2] + ", " + tempPattern[3] + 
+        Debug.Log("Challenge Pattern is: " + tempPattern[0] + ", " + tempPattern[1] + ", " + tempPattern[2] + ", " + tempPattern[3] + 
             ", " + tempPattern[4] + ", " + tempPattern[5]);
         return tempPattern;
     }
