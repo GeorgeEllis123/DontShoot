@@ -9,7 +9,9 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private GameObject playerGun;
     [SerializeField] private GameObject animatedGun;
     [SerializeField] private GameObject table;
+    [SerializeField] private GameObject bangScreen;
     [SerializeField] private PatternManager patternManager;
+    [SerializeField] private AudioSource bangSFX;
 
     private enum Phase { YourTurn, Pass, TheirTurn }
 
@@ -17,6 +19,7 @@ public class LevelManager : MonoBehaviour
     private Phase prevPhase = Phase.Pass;
 
     private int level = 1;
+    private bool isGameover;
 
     public void Start()
     {
@@ -82,9 +85,21 @@ public class LevelManager : MonoBehaviour
         ChangePhase();
     }
 
+    IEnumerator ReloadSceneDelay()
+    {
+        yield return new WaitForSeconds(2f);
+        bangScreen.SetActive(false);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
     public void GameOver()
     {
-        Debug.Log("Game Over");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        if (!isGameover)
+        {
+            isGameover = true;
+            bangSFX.Play();
+            bangScreen.SetActive(true);
+            StartCoroutine(ReloadSceneDelay());
+        }
     }
 }
