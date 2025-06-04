@@ -2,10 +2,13 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static UnityEngine.Rendering.DebugUI;
 
 public class LevelManager : MonoBehaviour
 {
     [SerializeField] private GameObject playerGun;
+    [SerializeField] private GameObject animatedGun;
+    [SerializeField] private GameObject table;
     [SerializeField] private PatternManager patternManager;
 
     private enum Phase { YourTurn, Pass, TheirTurn }
@@ -53,26 +56,29 @@ public class LevelManager : MonoBehaviour
         switch (currPhase)
         {
             case Phase.TheirTurn:
+                table.SetActive(true);
+                animatedGun.SetActive(false);
                 patternManager.LoadBullets(level);
-                Debug.Log("Play pattern sound");
-                StartCoroutine(ChangePhaseAfterDelay());
                 break;
             case Phase.Pass:
+                table.SetActive(true);
+                animatedGun.SetActive(true);
+                animatedGun.GetComponent<GunMovement>().Toss(prevPhase == Phase.TheirTurn ? -1 : 1);
                 playerGun.SetActive(false);
-                Debug.Log("Pass the gun");
-                StartCoroutine(ChangePhaseAfterDelay());
+                StartCoroutine(PassGunDelay());
                 break;
             case Phase.YourTurn:
                 level++;
+                table.SetActive(false);
+                animatedGun.SetActive(false);
                 playerGun.SetActive(true);
-                Debug.Log("Stay alive!!!");
                 break;
         }
     }
 
-    IEnumerator ChangePhaseAfterDelay()
+    IEnumerator PassGunDelay()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1.2f);
         ChangePhase();
     }
 

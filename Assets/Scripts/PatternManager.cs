@@ -68,18 +68,14 @@ public class PatternManager : MonoBehaviour
                 yield return new WaitForSeconds(timeBetweenLoads);
             }
         }
+        levelManager.ChangePhase();
     }
 
     public bool VerifyClick(bool b)
     {
         bool correct = currentPattern[bulletIndex] == b;
-        if (correct)
-        {
-            Debug.Log("correct!");
-        } else
-        {
+        if (!correct)
             levelManager.GameOver();
-        }
 
         bulletIndex++;
         if (bulletIndex >= currentPattern.Length)
