@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -10,8 +11,8 @@ public class PatternManager : MonoBehaviour
     private PatternGenerator pg;
 
     //add two AudioSources to pattern manager object; first is bullet, second is blank
-    private AudioSource bulletSound;
-    private AudioSource blankSound;
+    public AudioClip bulletSound;
+    public AudioClip blankSound;
 
     public float timeBetweenLoads = 0.2f;
 
@@ -19,25 +20,16 @@ public class PatternManager : MonoBehaviour
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
-    void Start()
+    void Awake()
     {
         levelManager = FindAnyObjectByType<LevelManager>();
         pg = gameObject.GetComponent<PatternGenerator>();
         AudioSource[] audiosources = gameObject.GetComponents<AudioSource>();
-        bulletSound = audiosources[0];
-        blankSound = audiosources[1];
-
-        LoadBullets(1);
-        //VerifyClick(0, true);
-        //VerifyClick(1, true);
-        //VerifyClick(2, true);
-        //VerifyClick(3, true);
-        //VerifyClick(4, true);
-        //VerifyClick(5, true);
     }
 
-    private void LoadBullets(int level)
+    public void LoadBullets(int level)
     {
+        Debug.Log(level);
         if (level == 1)
         {
             currentPattern = new bool[6];
@@ -55,25 +47,27 @@ public class PatternManager : MonoBehaviour
         {
             currentPattern = pg.GenerateChallenge();
         }
-        /*
+
+        StartCoroutine(PlayPattern());
+    }
+
+    IEnumerator PlayPattern()
+    {
         for (int i = 0; i < currentPattern.Length; i++)
         {
             //if bullet
             if (currentPattern[i])
             {
-                bulletSound.Play();
-                Debug.Log("bullet sound");
-                Wait(timeBetweenLoads);
-            } 
+                AudioSource.PlayClipAtPoint(bulletSound, Vector3.zero);
+                yield return new WaitForSeconds(timeBetweenLoads);
+            }
             //if blank
             else
             {
-                blankSound.Play();
-                Debug.Log("blank sound");
-                Wait(timeBetweenLoads);
+                AudioSource.PlayClipAtPoint(blankSound, Vector3.zero);
+                yield return new WaitForSeconds(timeBetweenLoads);
             }
         }
-        */
     }
 
     public bool VerifyClick(bool b)
@@ -94,10 +88,5 @@ public class PatternManager : MonoBehaviour
             levelManager.ChangePhase();
         }
         return correct;
-    }
-
-    IEnumerator Wait(float t)
-    {
-        yield return new WaitForSeconds(t);
     }
 }

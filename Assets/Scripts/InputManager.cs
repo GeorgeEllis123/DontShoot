@@ -4,21 +4,21 @@ public class InputManager : MonoBehaviour
 {
     [SerializeField] private PatternManager pm;
     [SerializeField] private CircleShrinking cs;
-    [SerializeField] private AudioSource spinSFX;
-    [SerializeField] private AudioSource clickSFX;
+    [SerializeField] private AudioClip spinSFX;
+    [SerializeField] private AudioClip clickSFX;
 
     void Update()
     {
         if (Input.GetMouseButtonDown(1))
         {
             pm.VerifyClick(true);
-            spinSFX.Play();
+            AudioSource.PlayClipAtPoint(spinSFX, Vector3.zero);
             cs.ResetCircle();
         }
         if (Input.GetMouseButtonDown(0))
         {
             pm.VerifyClick(false);
-            clickSFX.Play();
+            AudioSource.PlayClipAtPoint(clickSFX, Vector3.zero);
             cs.ResetCircle();
         }
     }
