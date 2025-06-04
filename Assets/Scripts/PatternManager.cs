@@ -40,6 +40,26 @@ public class PatternManager : MonoBehaviour
             currentPattern[4] = false;
             currentPattern[5] = true;
         }
+        else if (level == 2)
+        {
+            currentPattern = new bool[6];
+            currentPattern[0] = true;
+            currentPattern[1] = true;
+            currentPattern[2] = true;
+            currentPattern[3] = true;
+            currentPattern[4] = true;
+            currentPattern[5] = false;
+        }
+        else if (level == 3)
+        {
+            currentPattern = new bool[6];
+            currentPattern[0] = false;
+            currentPattern[1] = true;
+            currentPattern[2] = false;
+            currentPattern[3] = true;
+            currentPattern[4] = false;
+            currentPattern[5] = true;
+        }
         else if (level < 8)
         {
             currentPattern = pg.GeneratePlay();
