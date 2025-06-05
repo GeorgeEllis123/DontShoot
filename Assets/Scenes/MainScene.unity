@@ -571,7 +571,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: -786823489363392170, guid: a20b8d76531e22c44862d91f4e673334, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1097,7 +1097,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 6
+  m_SortingOrder: 7
   m_Sprite: {fileID: -8449399843987483666, guid: f3b1665673a9b8d46b81af2abfb1d7a7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1184,7 +1184,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: -7823921236676118599, guid: 91024efc04eaa6b4b840c41877b32b72, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1346,7 +1346,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1678,6 +1678,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4677635295939617029, guid: 20a2958679fd6bb4d9e0775ff8019cfd, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5244747039216059367, guid: 20a2958679fd6bb4d9e0775ff8019cfd, type: 3}
       propertyPath: m_Name
       value: Table
@@ -1711,12 +1715,20 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 33888119448534237, guid: 73eda264813ccbf4785c21ebc4bed398, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2071333716246249603, guid: 73eda264813ccbf4785c21ebc4bed398, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2269720981554278458, guid: 73eda264813ccbf4785c21ebc4bed398, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3146193628120361408, guid: 73eda264813ccbf4785c21ebc4bed398, type: 3}
+      propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3679314796055651926, guid: 73eda264813ccbf4785c21ebc4bed398, type: 3}
@@ -1835,6 +1847,10 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 0.21176471
       objectReference: {fileID: 0}
+    - target: {fileID: 8602801093211067540, guid: 73eda264813ccbf4785c21ebc4bed398, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8640224659844483039, guid: 73eda264813ccbf4785c21ebc4bed398, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.0972
@@ -1850,6 +1866,10 @@ PrefabInstance:
     - target: {fileID: 9119256974554561748, guid: 73eda264813ccbf4785c21ebc4bed398, type: 3}
       propertyPath: m_Color.a
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9119256974554561748, guid: 73eda264813ccbf4785c21ebc4bed398, type: 3}
+      propertyPath: m_SortingOrder
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
