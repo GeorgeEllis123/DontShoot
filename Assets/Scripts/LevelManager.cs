@@ -11,6 +11,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private GameObject animatedWing;
     [SerializeField] private GameObject table;
     [SerializeField] private GameObject bangScreen;
+    [SerializeField] private TextManager textManager;
     [SerializeField] private PatternManager patternManager;
     [SerializeField] private AudioSource bangSFX;
 
@@ -24,6 +25,13 @@ public class LevelManager : MonoBehaviour
 
     public void Start()
     {
+        StartMonologue();
+    }
+
+    public void StartMonologue()
+    {
+        //implement intro monologue
+
         ExecutePhase();
     }
 
@@ -71,6 +79,10 @@ public class LevelManager : MonoBehaviour
                 animatedWing.SetActive(true);
                 animatedWing.GetComponent<Animator>().SetTrigger("Slide");
                 animatedGun.GetComponent<GunMovement>().Toss(prevPhase == Phase.TheirTurn ? -1 : 1);
+                if(prevPhase == Phase.YourTurn)
+                {
+                    textManager.PlayMessage(level - 2);
+                }
                 playerGun.SetActive(false);
                 StartCoroutine(PassGunDelay());
                 break;
