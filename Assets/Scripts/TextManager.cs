@@ -13,18 +13,11 @@ public class TextManager : MonoBehaviour
 
     public string[] messages = {
     "Hello there, old friend.",
-    "You may not remember me after all these years...",
-    "But our paths have crossed on busy city streets.",
-    "You watched as I starved...",
-    "But now it is my turn to watch as you die!",
-    "Well, it will be, soon enough.",
-    "First, I want to play a little game with you.",
+    "You and I are going to play a game.",
     "You are familiar with Russian Roulette, coo-rrect?",
-    "I am going to load a pattern of regular bullets and blanks.",
+    "I am going to load this gun with both regular bullets and blanks.",
     "You must decide when to skip and when to pull the trigger.",
-    "If you spin past a blank, I will shoot you myself, coo-py?",
-    "Oh, and do not even try to shoot me",
-    "we both know I am faster on the draw anyway. Coo-d luck!"};
+    "If you spin past a blank, I will shoot you myself, coo-py? Coo-d luck!"};
 
     void Start()
     {
