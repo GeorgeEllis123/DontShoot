@@ -21,6 +21,8 @@ public class GunMovement : MonoBehaviour
 
     private Animator anim;
 
+    private AudioSource audioSource; 
+
     private void Awake()
     {
         anim = GetComponent<Animator>();
@@ -28,6 +30,7 @@ public class GunMovement : MonoBehaviour
         //rb = GetComponent<Rigidbody2D>();
 
         originalScale = transform.localScale;
+        audioSource = GetComponent<AudioSource>();
         //smallScale = originalScale * smallScaleFactor;
     }
 
@@ -42,17 +45,19 @@ public class GunMovement : MonoBehaviour
             gameObject.transform.position = theirPos.position;
             smallScale = transform.localScale;
             anim.SetTrigger("Towards");
+            audioSource.Play();
 
             //transform.localScale = smallScale;
             //StartScaleCoroutine(smallScale, originalScale);
             //target = yourPos;
-            Invoke("CallPickUp", 2); 
+            Invoke("CallPickUp", 2f); 
         }
         else
         {
             gameObject.transform.position = yourPos.position;
             transform.localScale = originalScale;
             anim.SetTrigger("Away");
+            audioSource.Play();
 
             //transform.localScale = originalScale;
             //StartScaleCoroutine(originalScale, smallScale);
