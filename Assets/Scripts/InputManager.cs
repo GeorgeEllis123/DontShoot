@@ -6,12 +6,15 @@ public class InputManager : MonoBehaviour
     [SerializeField] private CircleShrinking cs;
     [SerializeField] private AudioClip spinSFX;
     [SerializeField] private AudioClip clickSFX;
+    [SerializeField] private BulletSpawner bs;
 
     void Update()
     {
         if (Input.GetMouseButtonDown(1))
         {
-            pm.VerifyClick(true);
+            bool correct = pm.VerifyClick(true);
+            if (correct)
+                bs.SpawnBullet();
             AudioSource.PlayClipAtPoint(spinSFX, Vector3.zero);
             cs.ResetCircle();
         }
