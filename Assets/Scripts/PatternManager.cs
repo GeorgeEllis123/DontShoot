@@ -14,7 +14,7 @@ public class PatternManager : MonoBehaviour
     public AudioClip bulletSound;
     public AudioClip blankSound;
 
-    public float timeBetweenLoads = 0.2f;
+    private float timeBetweenLoads;
 
     private int bulletIndex = 0;
 
@@ -32,6 +32,7 @@ public class PatternManager : MonoBehaviour
         Debug.Log(level);
         if (level == 1)
         {
+            timeBetweenLoads = 0.7f;
             currentPattern = new bool[6];
             currentPattern[0] = false;
             currentPattern[1] = false;
@@ -42,6 +43,7 @@ public class PatternManager : MonoBehaviour
         }
         else if (level == 2)
         {
+            timeBetweenLoads = 0.7f;
             currentPattern = new bool[6];
             currentPattern[0] = true;
             currentPattern[1] = true;
@@ -52,6 +54,7 @@ public class PatternManager : MonoBehaviour
         }
         else if (level == 3)
         {
+            timeBetweenLoads = 0.7f;
             currentPattern = new bool[6];
             currentPattern[0] = false;
             currentPattern[1] = true;
@@ -62,9 +65,11 @@ public class PatternManager : MonoBehaviour
         }
         else if (level < 8)
         {
+            timeBetweenLoads = 0.5f;
             currentPattern = pg.GeneratePlay();
         } else
         {
+            timeBetweenLoads = 0.3f;
             currentPattern = pg.GenerateChallenge();
         }
 

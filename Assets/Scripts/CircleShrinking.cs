@@ -6,16 +6,20 @@ public class CircleShrinking : MonoBehaviour
     [SerializeField] private float speed = 0.5f;
     [SerializeField] private float startingScale = 5f;
 
+    private int level = 0;
+
     private float currentScale;
 
     private void OnEnable()
     {
+        level++;
         ResetCircle();
     }
 
     void Update()
     {
-        currentScale -= speed * Time.deltaTime;
+        int levelScale = level / 4;
+        currentScale -= speed * Time.deltaTime * (levelScale + 1);
         gameObject.transform.localScale = new Vector3(currentScale, currentScale, 0);
     }
 

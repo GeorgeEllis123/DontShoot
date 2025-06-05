@@ -853,7 +853,6 @@ MonoBehaviour:
   currentPattern: 
   bulletSound: {fileID: 8300000, guid: 8565e86c3b391514088a9ffd1ad44e01, type: 3}
   blankSound: {fileID: 8300000, guid: cc4bb8e64c12c644f856a77d8fa60d0f, type: 3}
-  timeBetweenLoads: 0.5
 --- !u!114 &1143076278
 MonoBehaviour:
   m_ObjectHideFlags: 0
