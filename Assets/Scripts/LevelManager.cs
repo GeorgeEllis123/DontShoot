@@ -90,7 +90,7 @@ public class LevelManager : MonoBehaviour
                 break;
             case Phase.YourTurn:
                 level++;
-                table.SetActive(false);
+                //table.SetActive(false);
                 animatedGun.SetActive(false);
                 animatedWing.SetActive(false);
                 playerGun.SetActive(true);
