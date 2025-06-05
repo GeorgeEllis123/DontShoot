@@ -117,6 +117,11 @@ public class PatternManager : MonoBehaviour
         return correct;
     }
 
+    public void GetShot()
+    {
+        levelManager.GameOver();
+    }
+
     IEnumerator ChangePhaseWithDelay()
     {
         yield return new WaitForSeconds(0.3f);

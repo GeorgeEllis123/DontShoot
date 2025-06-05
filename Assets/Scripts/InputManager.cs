@@ -4,6 +4,7 @@ public class InputManager : MonoBehaviour
 {
     [SerializeField] private PatternManager pm;
     [SerializeField] private CircleShrinking cs;
+    [SerializeField] private GameObject tc;
     [SerializeField] private AudioClip spinSFX;
     [SerializeField] private AudioClip clickSFX;
     [SerializeField] private BulletSpawner bs;
@@ -13,19 +14,33 @@ public class InputManager : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(1))
         {
-            bool correct = pm.VerifyClick(true);
-            if (correct)
-                bs.SpawnBullet();
-            AudioSource.PlayClipAtPoint(spinSFX, Vector3.zero);
-            cs.ResetCircle();
+            if (cs.transform.localScale.x < tc.transform.localScale.x)
+            {
+                bool correct = pm.VerifyClick(true);
+                if (correct)
+                    bs.SpawnBullet();
+                AudioSource.PlayClipAtPoint(spinSFX, Vector3.zero);
+                cs.ResetCircle();
+            }
+            else
+            {
+                pm.GetShot();
+            }
         }
         if (Input.GetMouseButtonDown(0))
         {
-            bool correct = pm.VerifyClick(false);
-            if (correct)
-                smoke.Play();
-            AudioSource.PlayClipAtPoint(clickSFX, Vector3.zero);
-            cs.ResetCircle();
+            if(cs.transform.localScale.x < tc.transform.localScale.x)
+            {
+                bool correct = pm.VerifyClick(false);
+                if (correct)
+                    smoke.Play();
+                AudioSource.PlayClipAtPoint(clickSFX, Vector3.zero);
+                cs.ResetCircle();
+            }
+            else
+            {
+                pm.GetShot();
+            }
         }
     }
 }
