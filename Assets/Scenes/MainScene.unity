@@ -2112,26 +2112,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 33888119448534237, guid: 73eda264813ccbf4785c21ebc4bed398, type: 3}
-      propertyPath: m_SortingOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1733340095241007263, guid: 73eda264813ccbf4785c21ebc4bed398, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3146193628120361408, guid: 73eda264813ccbf4785c21ebc4bed398, type: 3}
-      propertyPath: m_SortingOrder
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 3679314796055651926, guid: 73eda264813ccbf4785c21ebc4bed398, type: 3}
       propertyPath: pm
       value: 
       objectReference: {fileID: 1143076277}
-    - target: {fileID: 3690664190452780471, guid: 73eda264813ccbf4785c21ebc4bed398, type: 3}
-      propertyPath: m_SortingOrder
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 4940926499201355722, guid: 73eda264813ccbf4785c21ebc4bed398, type: 3}
       propertyPath: m_Name
       value: Gun
@@ -2180,21 +2164,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7615534002519461469, guid: 73eda264813ccbf4785c21ebc4bed398, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7652661390997830702, guid: 73eda264813ccbf4785c21ebc4bed398, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8602801093211067540, guid: 73eda264813ccbf4785c21ebc4bed398, type: 3}
-      propertyPath: m_SortingOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 9119256974554561748, guid: 73eda264813ccbf4785c21ebc4bed398, type: 3}
-      propertyPath: m_SortingOrder
-      value: 8
+    - target: {fileID: 8107052387271914648, guid: 73eda264813ccbf4785c21ebc4bed398, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.48
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

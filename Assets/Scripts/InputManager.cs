@@ -7,6 +7,7 @@ public class InputManager : MonoBehaviour
     [SerializeField] private AudioClip spinSFX;
     [SerializeField] private AudioClip clickSFX;
     [SerializeField] private BulletSpawner bs;
+    [SerializeField] private ParticleSystem smoke;
 
     void Update()
     {
@@ -20,7 +21,9 @@ public class InputManager : MonoBehaviour
         }
         if (Input.GetMouseButtonDown(0))
         {
-            pm.VerifyClick(false);
+            bool correct = pm.VerifyClick(false);
+            if (correct)
+                smoke.Play();
             AudioSource.PlayClipAtPoint(clickSFX, Vector3.zero);
             cs.ResetCircle();
         }
