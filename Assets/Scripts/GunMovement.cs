@@ -32,7 +32,7 @@ public class GunMovement : MonoBehaviour
     }
 
     // -1 = thrown to player +1 = thrown from player
-    public void Toss(int direction) 
+    public void Toss(int direction)
     {
         //Transform target = null;
 
@@ -46,8 +46,9 @@ public class GunMovement : MonoBehaviour
             //transform.localScale = smallScale;
             //StartScaleCoroutine(smallScale, originalScale);
             //target = yourPos;
+            Invoke("CallPickUp", 2); 
         }
-        else 
+        else
         {
             gameObject.transform.position = yourPos.position;
             transform.localScale = originalScale;
@@ -93,4 +94,9 @@ public class GunMovement : MonoBehaviour
     //    transform.localScale = end;
     //    scaleCoroutine = null;
     //}
+
+    void CallPickUp()
+    {
+        anim.SetTrigger("Pickup");
+    }
 }

@@ -16,18 +16,18 @@ public class Menu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        startButton.onClick.AddListener(() => startWhenPressed());
-        quitButton.onClick.AddListener(() => startWhenPressed());
+        startButton.onClick.AddListener(() => StartWhenPressed());
+        quitButton.onClick.AddListener(() => QuitGame());
     }
 
-    void startWhenPressed()
+    void StartWhenPressed()
     {
         Debug.Log("Starting");
         SceneManager.LoadScene(1);
         gameObject.SetActive(false);
     }
 
-    void quitGame()
+    void QuitGame()
     {
         Debug.Log("You quit the game"); 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
