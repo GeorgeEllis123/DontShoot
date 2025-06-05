@@ -10,18 +10,27 @@ public class TextManager : MonoBehaviour
     public AudioSource pigeonAS;
     public AudioSource clickAS;
     public AudioSource spinAS;
+    public int monologueNum = 0;
 
-    public string[] messages = {
+    public string[] monologue =
+    {
     "Hello there, old friend.",
     "You and I are going to play a game.",
     "You are familiar with Russian Roulette, coo-rrect?",
     "I am going to load this gun with both regular bullets and blanks.",
     "You must decide when to skip and when to pull the trigger.",
-    "If you spin past a blank, I will shoot you myself, coo-py? Coo-d luck!"};
+    "If you spin past a blank, I will shoot you myself, coo-py? Coo-d luck!"
+    };
+
+    public string[] messages = 
+    {
+    
+    };
 
     void Start()
     {
         //PlayMessage(1);
+        monologueNum = 0;
     }
 
     //use this for custom messages
@@ -30,7 +39,19 @@ public class TextManager : MonoBehaviour
         StartCoroutine(Typewriter(textbox, fullText, speed));
     }
 
-    //use this for sending the preset dialogue
+    //use this for sending the monologue messages
+    public void PlayMonologue()
+    {
+        PrintText(monologue[monologueNum]);
+        monologueNum++;
+    }
+
+    public void DelayMonologue(float timer)
+    {
+        Invoke("PlayMonologue", timer);
+    }
+
+    //use this for sending the dialogue between rounds
     public void PlayMessage(int idx)
     {
         PrintText(messages[idx]);

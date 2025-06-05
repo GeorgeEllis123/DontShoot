@@ -18,8 +18,8 @@ public class CircleShrinking : MonoBehaviour
 
     void Update()
     {
-        int levelScale = level / 4;
-        currentScale -= speed * Time.deltaTime * (levelScale + 1);
+        int levelScale = level / 2;
+        currentScale -= speed * Time.deltaTime * ((float) levelScale * .25f + 1);
         gameObject.transform.localScale = new Vector3(currentScale, currentScale, 0);
     }
 
