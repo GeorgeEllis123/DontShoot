@@ -111,8 +111,8 @@ public class PatternManager : MonoBehaviour
         if (bulletIndex >= currentPattern.Length)
         {
             bulletIndex = 0;
-            barrelRotator.ResetRotation();
             levelManager.ChangePhase();
+            barrelRotator.ResetRotation();
         }
         return correct;
     }

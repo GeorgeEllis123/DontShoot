@@ -8,6 +8,7 @@ public class LevelManager : MonoBehaviour
 {
     [SerializeField] private GameObject playerGun;
     [SerializeField] private GameObject animatedGun;
+    [SerializeField] private GameObject animatedWing;
     [SerializeField] private GameObject table;
     [SerializeField] private GameObject bangScreen;
     [SerializeField] private PatternManager patternManager;
@@ -61,11 +62,14 @@ public class LevelManager : MonoBehaviour
             case Phase.TheirTurn:
                 table.SetActive(true);
                 animatedGun.SetActive(false);
+                animatedWing.SetActive(false);
                 patternManager.LoadBullets(level);
                 break;
             case Phase.Pass:
                 table.SetActive(true);
                 animatedGun.SetActive(true);
+                animatedWing.SetActive(true);
+                animatedWing.GetComponent<Animator>().SetTrigger("Slide");
                 animatedGun.GetComponent<GunMovement>().Toss(prevPhase == Phase.TheirTurn ? -1 : 1);
                 playerGun.SetActive(false);
                 StartCoroutine(PassGunDelay());
@@ -74,6 +78,7 @@ public class LevelManager : MonoBehaviour
                 level++;
                 table.SetActive(false);
                 animatedGun.SetActive(false);
+                animatedWing.SetActive(false);
                 playerGun.SetActive(true);
                 break;
         }
