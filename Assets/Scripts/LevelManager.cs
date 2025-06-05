@@ -31,8 +31,10 @@ public class LevelManager : MonoBehaviour
     public void StartMonologue()
     {
         //implement intro monologue
+        textManager.PlayMessage(0);
+        textManager.ClearTimer(5f);
 
-        ExecutePhase();
+        Invoke("ExecutePhase", 5);
     }
 
     public void ChangePhase()
@@ -81,7 +83,7 @@ public class LevelManager : MonoBehaviour
                 animatedGun.GetComponent<GunMovement>().Toss(prevPhase == Phase.TheirTurn ? -1 : 1);
                 if(prevPhase == Phase.YourTurn)
                 {
-                    textManager.PlayMessage(level - 2);
+                    textManager.PlayMessage(level - 1);
                 }
                 playerGun.SetActive(false);
                 StartCoroutine(PassGunDelay());

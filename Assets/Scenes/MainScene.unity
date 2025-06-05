@@ -881,7 +881,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -1955448553306655712, guid: c85da857a467f834590f2d7a53e22b02, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.85660374, g: 0.85660374, b: 0.85660374, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1817,6 +1817,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2872118692144801136, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 064aee0b8e9fb5344a1e2fe5d3dba78b, type: 3}
+    - target: {fileID: 2872118692144801136, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 064aee0b8e9fb5344a1e2fe5d3dba78b, type: 3}
     - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
       propertyPath: textbox
       value: 
@@ -1825,6 +1833,62 @@ PrefabInstance:
       propertyPath: pigeonAS
       value: 
       objectReference: {fileID: 1007113709}
+    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
+      propertyPath: messages.Array.size
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
+      propertyPath: 'messages.Array.data[0]'
+      value: Hello there, old friend.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
+      propertyPath: 'messages.Array.data[1]'
+      value: You may not remember me after all these years...
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
+      propertyPath: 'messages.Array.data[2]'
+      value: But our paths have crossed on busy city streets.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
+      propertyPath: 'messages.Array.data[3]'
+      value: You watched as I starved...
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
+      propertyPath: 'messages.Array.data[4]'
+      value: But now it is my turn to watch as you die!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
+      propertyPath: 'messages.Array.data[5]'
+      value: Well, it will be, soon enough.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
+      propertyPath: 'messages.Array.data[6]'
+      value: First, I want to play a little game with you.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
+      propertyPath: 'messages.Array.data[7]'
+      value: You are familiar with Russian Roulette, coo-rrect?
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
+      propertyPath: 'messages.Array.data[8]'
+      value: I am going to load a pattern of regular bullets and blanks.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
+      propertyPath: 'messages.Array.data[9]'
+      value: You must decide when to skip and when to pull the trigger.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
+      propertyPath: 'messages.Array.data[10]'
+      value: If you spin past a blank, I will shoot you myself, coo-py?
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
+      propertyPath: 'messages.Array.data[11]'
+      value: Oh, and do not even try to shoot me
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
+      propertyPath: 'messages.Array.data[12]'
+      value: we both know I am faster on the draw anyway. Coo-d luck!
+      objectReference: {fileID: 0}
     - target: {fileID: 5542977107363988724, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
       propertyPath: m_Name
       value: TextManager
