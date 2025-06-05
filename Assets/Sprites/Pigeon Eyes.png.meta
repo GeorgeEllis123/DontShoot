@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Pigeon Eyes_0: -5736126323315240575
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

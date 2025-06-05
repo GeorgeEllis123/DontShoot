@@ -14,6 +14,9 @@ public class PatternManager : MonoBehaviour
     public AudioClip bulletSound;
     public AudioClip blankSound;
 
+    // barrel animation
+    public BarrelAnimation barrelRotator;
+
     private float timeBetweenLoads;
 
     private int bulletIndex = 0;
@@ -103,9 +106,12 @@ public class PatternManager : MonoBehaviour
             levelManager.GameOver();
 
         bulletIndex++;
+        barrelRotator.RotateMinus60();
+
         if (bulletIndex >= currentPattern.Length)
         {
             bulletIndex = 0;
+            barrelRotator.ResetRotation();
             levelManager.ChangePhase();
         }
         return correct;
