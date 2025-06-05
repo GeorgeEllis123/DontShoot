@@ -16,9 +16,13 @@ public class CameraBob : MonoBehaviour
 
     private void Update()
     {
-        if (transform.localPosition.y - startY > bobAmount || transform.localPosition.y - startY < 0) 
+        if (transform.localPosition.y - startY > bobAmount && direction == 1) 
         {
-            direction *= -1;
+            direction = -1;
+        }
+        else if (transform.localPosition.y - startY < 0 && direction == -1)
+        {
+            direction = 1;
         }
         float newY = transform.localPosition.y + direction * Time.deltaTime * bobSpeed;
 
