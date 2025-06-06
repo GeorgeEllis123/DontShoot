@@ -20,10 +20,12 @@ public class GunMovement : MonoBehaviour
     //private Coroutine scaleCoroutine = null;
 
     private Animator anim;
+    private AudioSource audioSource; 
 
     private void Awake()
     {
         anim = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>(); 
 
         //rb = GetComponent<Rigidbody2D>();
 
@@ -42,17 +44,19 @@ public class GunMovement : MonoBehaviour
             gameObject.transform.position = theirPos.position;
             smallScale = transform.localScale;
             anim.SetTrigger("Towards");
+            audioSource.Play();
 
             //transform.localScale = smallScale;
             //StartScaleCoroutine(smallScale, originalScale);
             //target = yourPos;
-            Invoke("CallPickUp", 2); 
+            Invoke("CallPickUp", 1f);
         }
         else
         {
             gameObject.transform.position = yourPos.position;
             transform.localScale = originalScale;
             anim.SetTrigger("Away");
+            audioSource.Play(); 
 
             //transform.localScale = originalScale;
             //StartScaleCoroutine(originalScale, smallScale);
