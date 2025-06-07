@@ -28,22 +28,35 @@ public class LevelManager : MonoBehaviour
 
     public void StartMonologue()
     {
-        //implement intro monologue
-        textManager.DelayMonologue(0f);
-        textManager.ClearTimer(4f);
-        textManager.DelayMonologue(4f);
-        textManager.ClearTimer(9f);
-        textManager.DelayMonologue(9f);
-        textManager.ClearTimer(15f);
-        textManager.DelayMonologue(15f);
-        textManager.ClearTimer(23f);
-        textManager.DelayMonologue(23f);
-        textManager.ClearTimer(30f);
-        textManager.DelayMonologue(30f);
-        textManager.ClearTimer(38f);
+        textManager.OnSkipMonologueLine = () =>
+        {
+            CancelInvoke();
+            Invoke(nameof(PlayNextMonologueAfterSkip), 0.5f);
+        };
 
-        Invoke("ExecutePhase", 38);
+        PlayNextMonologue();
     }
+
+    private void PlayNextMonologue()
+    {
+        if (textManager.monologueNum < textManager.monologue.Length)
+        {
+            textManager.PlayMonologue();
+            float estimatedDuration = textManager.monologue[textManager.monologueNum - 1].Length * textManager.speed;
+            Invoke(nameof(PlayNextMonologue), estimatedDuration + 1f);
+        }
+        else
+        {
+            Invoke("ExecutePhase", 1f);
+        }
+    }
+
+    private void PlayNextMonologueAfterSkip()
+    {
+        PlayNextMonologue();
+    }
+
+
 
     public void ChangePhase()
     {
