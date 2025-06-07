@@ -1,12 +1,11 @@
 using UnityEngine;
 using TMPro;
-using System;
 using System.Collections;
 
 public class TextManager : MonoBehaviour
 {
     public TMP_Text textbox;
-    public float speed = .1f;
+    public float speed = 0.1f;
     public AudioSource pigeonAS;
     public AudioSource clickAS;
     public AudioSource spinAS;
@@ -14,23 +13,38 @@ public class TextManager : MonoBehaviour
 
     public string[] monologue =
     {
-    "Hello there, old friend.",
-    "You and I are going to play a game.",
-    "You are familiar with Russian Roulette, coo-rrect?",
-    "I am going to load this gun with both regular bullets and blanks.",
-    "You must decide when to skip and when to pull the trigger.",
-    "If you spin past a blank, I will shoot you myself, coo-py? Coo-d luck!"
+        "Hello there, old friend.",
+        "You and I are going to play a game.",
+        "You are familiar with Russian Roulette, coo-rrect?",
+        "I am going to load this gun with both regular bullets and blanks.",
+        "You must decide when to skip and when to pull the trigger.",
+        "If you spin past a blank, I will shoot you myself, coo-py? Coo-d luck!"
     };
 
-    public string[] messages = 
+    public string[] messages =
     {
-    
+
     };
+
+    private bool isTyping = false;
 
     void Start()
     {
         //PlayMessage(1);
         monologueNum = 0;
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (isTyping)
+            {
+                StopAllCoroutines(); 
+                textbox.text = monologue[monologueNum - 1]; 
+                isTyping = false;
+            }
+        }
     }
 
     //use this for custom messages
@@ -59,6 +73,7 @@ public class TextManager : MonoBehaviour
 
     IEnumerator Typewriter(TMP_Text textbox, string fullText, float speed)
     {
+        isTyping = true;
         string currentText = "";
         for (int i = 0; i < fullText.Length; i++)
         {
@@ -70,6 +85,7 @@ public class TextManager : MonoBehaviour
             }
             yield return new WaitForSeconds(speed);
         }
+        isTyping = false;
     }
 
     public void ClearText()

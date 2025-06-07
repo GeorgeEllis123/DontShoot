@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
@@ -32,7 +31,6 @@ public class PatternManager : MonoBehaviour
 
     public void LoadBullets(int level)
     {
-        Debug.Log(level);
         if (level == 1)
         {
             timeBetweenLoads = 0.7f;
@@ -66,6 +64,11 @@ public class PatternManager : MonoBehaviour
         //    currentPattern[4] = false;
         //    currentPattern[5] = true;
         //}
+        else if (level < 4)
+        {
+            timeBetweenLoads = 0.7f;
+            currentPattern = pg.GeneratePlay();
+        }
         else if (level < 8)
         {
             timeBetweenLoads = 0.5f;

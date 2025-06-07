@@ -12,7 +12,7 @@ public class InputManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.D))
         {
             if (cs.transform.localScale.x < tc.transform.localScale.x)
             {
@@ -27,7 +27,7 @@ public class InputManager : MonoBehaviour
                 pm.GetShot();
             }
         }
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.S))
         {
             if(cs.transform.localScale.x < tc.transform.localScale.x)
             {
