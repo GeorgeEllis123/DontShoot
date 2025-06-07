@@ -1161,8 +1161,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentPattern: 
-  bulletSound: {fileID: 8300000, guid: 8565e86c3b391514088a9ffd1ad44e01, type: 3}
-  blankSound: {fileID: 8300000, guid: cc4bb8e64c12c644f856a77d8fa60d0f, type: 3}
+  bulletSound: {fileID: 8300000, guid: 46a1cfec425c4e445976dd131fac2841, type: 3}
+  blankSound: {fileID: 8300000, guid: b06b1f7b396d86549b1ec327606446c2, type: 3}
   barrelRotator: {fileID: 158951537}
 --- !u!114 &1143076278
 MonoBehaviour:
@@ -2509,6 +2509,14 @@ PrefabInstance:
       propertyPath: tc
       value: 
       objectReference: {fileID: 2001756955}
+    - target: {fileID: 3679314796055651926, guid: 73eda264813ccbf4785c21ebc4bed398, type: 3}
+      propertyPath: spinSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: b06b1f7b396d86549b1ec327606446c2, type: 3}
+    - target: {fileID: 3679314796055651926, guid: 73eda264813ccbf4785c21ebc4bed398, type: 3}
+      propertyPath: clickSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 46a1cfec425c4e445976dd131fac2841, type: 3}
     - target: {fileID: 3690664190452780471, guid: 73eda264813ccbf4785c21ebc4bed398, type: 3}
       propertyPath: m_SortingOrder
       value: 9

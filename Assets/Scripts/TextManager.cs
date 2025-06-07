@@ -1,6 +1,5 @@
 using UnityEngine;
 using TMPro;
-using System;
 using System.Collections;
 
 public class TextManager : MonoBehaviour
