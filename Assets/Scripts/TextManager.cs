@@ -10,8 +10,6 @@ public class TextManager : MonoBehaviour
     public AudioSource clickAS;
     public AudioSource spinAS;
     public int monologueNum = 0;
-    public System.Action OnSkipMonologueLine;
-
 
     public string[] monologue =
     {
@@ -42,19 +40,12 @@ public class TextManager : MonoBehaviour
         {
             if (isTyping)
             {
-                StopAllCoroutines();
-                if (monologueNum > 0)
-                {
-                    textbox.text = monologue[monologueNum - 1];
-                }
+                StopAllCoroutines(); 
+                textbox.text = monologue[monologueNum - 1]; 
                 isTyping = false;
-
-                OnSkipMonologueLine?.Invoke();
             }
         }
     }
-
-
 
     //use this for custom messages
     public void PrintText(string fullText)
