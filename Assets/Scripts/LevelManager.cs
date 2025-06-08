@@ -28,21 +28,7 @@ public class LevelManager : MonoBehaviour
 
     public void StartMonologue()
     {
-        //implement intro monologue
-        textManager.DelayMonologue(0f);
-        textManager.ClearTimer(4f);
-        textManager.DelayMonologue(4f);
-        textManager.ClearTimer(9f);
-        textManager.DelayMonologue(9f);
-        textManager.ClearTimer(15f);
-        textManager.DelayMonologue(15f);
-        textManager.ClearTimer(23f);
-        textManager.DelayMonologue(23f);
-        textManager.ClearTimer(30f);
-        textManager.DelayMonologue(30f);
-        textManager.ClearTimer(38f);
-
-        Invoke("ExecutePhase", 38);
+        textManager.StartMonologue();
     }
 
     public void ChangePhase()
@@ -73,7 +59,7 @@ public class LevelManager : MonoBehaviour
         ExecutePhase();
     }
 
-    private void ExecutePhase()
+    public void ExecutePhase()
     {
         switch (currPhase)
         {

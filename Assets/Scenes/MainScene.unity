@@ -2197,6 +2197,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1007113709}
     - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
+      propertyPath: levelManager
+      value: 
+      objectReference: {fileID: 709983771}
+    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
       propertyPath: messages.Array.size
       value: 13
       objectReference: {fileID: 0}

@@ -4,13 +4,18 @@ using System.Collections;
 
 public class TextManager : MonoBehaviour
 {
+    [Header("Associations")]
     public TMP_Text textbox;
-    public float speed = 0.1f;
-    public AudioSource pigeonAS;
-    public AudioSource clickAS;
-    public AudioSource spinAS;
-    public int monologueNum = 0;
+    public LevelManager levelManager;
 
+    [Header("Timing")]
+    public float typeSpeed = 0.1f;
+    public float linePause = 2f;
+
+    [Header("Audio")]
+    public AudioSource pigeonAS;
+
+    [Header("Dialogue")]
     public string[] monologue =
     {
         "Hello there, old friend.",
@@ -26,66 +31,209 @@ public class TextManager : MonoBehaviour
 
     };
 
+    private bool isPlayingMonologue = false;
     private bool isTyping = false;
+    private bool isPausing = false;
+    private int currentMonologueIndex = 0;
+    private Coroutine monologueCoroutine;
+    private Coroutine typewriterCoroutine;
+    private Coroutine pauseCoroutine;
 
     void Start()
     {
-        //PlayMessage(1);
-        monologueNum = 0;
+        currentMonologueIndex = 0;
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (isTyping)
-            {
-                StopAllCoroutines(); 
-                textbox.text = monologue[monologueNum - 1]; 
-                isTyping = false;
-            }
+            HandleSpaceInput();
         }
     }
 
-    //use this for custom messages
-    public void PrintText(string fullText)
+    private void HandleSpaceInput()
     {
-        StartCoroutine(Typewriter(textbox, fullText, speed));
+        if (!isPlayingMonologue)
+        {
+            return;
+        }
+
+        if (isTyping)
+        {
+            SkipCurrentTyping();
+        }
+        else if (isPausing)
+        {
+            SkipPause();
+        }
     }
 
-    //use this for sending the monologue messages
-    public void PlayMonologue()
+    private void SkipCurrentTyping()
     {
-        PrintText(monologue[monologueNum]);
-        monologueNum++;
+        if(typewriterCoroutine != null)
+        {
+            StopCoroutine(typewriterCoroutine);
+        }
+
+        textbox.text = monologue[currentMonologueIndex];
+        isTyping = false;
+        StartPause();
     }
 
-    public void DelayMonologue(float timer)
+    private void SkipPause()
     {
-        Invoke("PlayMonologue", timer);
+        if(pauseCoroutine != null)
+        {
+            StopCoroutine(pauseCoroutine);
+        }
+        isPausing = false;
+
+        ContinueMonologue();
     }
 
-    //use this for sending the dialogue between rounds
-    public void PlayMessage(int idx)
+    public void StartMonologue()
     {
-        PrintText(messages[idx]);
+        if (isPlayingMonologue)
+        {
+            return;
+        }
+
+        currentMonologueIndex = 0;
+        isPlayingMonologue = true;
+        monologueCoroutine = StartCoroutine(PlayMonologueSequence());
     }
 
-    IEnumerator Typewriter(TMP_Text textbox, string fullText, float speed)
+    private IEnumerator PlayMonologueSequence()
+    {
+        while(currentMonologueIndex < monologue.Length && isPlayingMonologue)
+        {
+            textbox.text = "";
+
+            yield return StartCoroutine(TypeSentence(monologue[currentMonologueIndex]));
+
+            if(currentMonologueIndex < monologue.Length - 1)
+            {
+                yield return StartCoroutine(PauseBetweenSentences());
+            }
+
+            currentMonologueIndex++;
+        }
+
+        isPlayingMonologue = false;
+        OnMonologueComplete();
+    }
+
+    private IEnumerator TypeSentence(string sentence)
     {
         isTyping = true;
+        typewriterCoroutine = StartCoroutine(Typewriter(sentence));
+        yield return typewriterCoroutine;
+        isTyping = false;
+    }
+
+    private IEnumerator PauseBetweenSentences()
+    {
+        isPausing = true;
+        pauseCoroutine = StartCoroutine(WaitForSeconds(linePause));
+        yield return pauseCoroutine;
+        isPausing = false;
+    }
+
+    private IEnumerator WaitForSeconds(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+    }
+
+    private void StartPause()
+    {
+        if(currentMonologueIndex < monologue.Length - 1)
+        {
+            pauseCoroutine = StartCoroutine(PauseBetweenSentences());
+        }
+        else
+        {
+            isPlayingMonologue = false;
+            OnMonologueComplete();
+        }
+    }
+
+    private void ContinueMonologue()
+    {
+        currentMonologueIndex++;
+        if(currentMonologueIndex < monologue.Length)
+        {
+            StartCoroutine(TypeSentence(monologue[currentMonologueIndex]));
+        }
+        else
+        {
+            isPlayingMonologue = false;
+            OnMonologueComplete();
+        }
+    }
+
+    private IEnumerator Typewriter(string fullText)
+    {
         string currentText = "";
         for (int i = 0; i < fullText.Length; i++)
         {
             currentText += fullText[i];
             textbox.text = currentText;
-            if (pigeonAS)
+
+            if (pigeonAS && !pigeonAS.isPlaying)
             {
                 pigeonAS.Play();
             }
-            yield return new WaitForSeconds(speed);
+
+            yield return new WaitForSeconds(typeSpeed);
         }
+    }
+
+    private void OnMonologueComplete()
+    {
+        ClearText();
+        levelManager.ExecutePhase();
+    }
+
+    public void StopMonologue()
+    {
+        if(monologueCoroutine != null)
+        {
+            StopCoroutine(monologueCoroutine);
+        }
+        if(typewriterCoroutine != null)
+        {
+            StopCoroutine(typewriterCoroutine);
+        }
+        if(pauseCoroutine != null)
+        {
+            StopCoroutine(pauseCoroutine);
+        }
+
+        isPlayingMonologue = false;
         isTyping = false;
+        isPausing = false;
+    }
+
+
+
+
+    //Non monologue stuff
+
+
+    //use this for custom messages
+    public void PrintText(string fullText)
+    {
+        StartCoroutine(Typewriter(fullText));
+    }
+
+    //use this for sending the dialogue between rounds
+    public void PlayMessage(int idx)
+    {
+        if(idx < messages.Length)
+        {
+            PrintText(messages[idx]);
+        }
     }
 
     public void ClearText()
