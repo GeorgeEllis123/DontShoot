@@ -30,6 +30,10 @@ public class TextManager : MonoBehaviour
             {
                 PlayNextMonologueLine();
             }
+            else
+            {
+                ClearText();
+            }
         }
     }
 
@@ -47,11 +51,15 @@ public class TextManager : MonoBehaviour
 
     public void PlayMessage(int index)
     {
-        Invoke("ClearText", 2f);
         if (index-1 >= 0 && index-1 < levelLines.Length)
         {
             inMonologue = false;
+            Invoke("ClearText", (float) levelLines[index - 1].Length * characterDelay + 0.5f);
             PlayLine(levelLines[index-1]);
+        } else
+        {
+            Invoke("ClearText", (float) levelLines[index - 1].Length * characterDelay + 0.5f);
+            PlayLine(levelLines[levelLines.Length - 1]);
         }
     }
 
@@ -82,7 +90,7 @@ public class TextManager : MonoBehaviour
             textBox.text += c;
 
             charCount++;
-            if (charCount % 2 == 0 && pigeonSFX != null)
+            if (charCount % 3 == 0 && pigeonSFX != null)
                 pigeonSFX.Play();
 
             yield return new WaitForSeconds(characterDelay);
