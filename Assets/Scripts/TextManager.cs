@@ -23,12 +23,6 @@ public class TextManager : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log("Target Ready:");
-        Debug.Log(inputManager.TargetReady());
-        Debug.Log("Get Level:");
-        Debug.Log(levelManager.GetLevel());
-
-
         if(inputManager.TargetReady() && levelManager.GetLevel() == 2)
         {
             if (!patternManager.GetNextBullet())
