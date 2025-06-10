@@ -44,25 +44,28 @@ public class LevelManager : MonoBehaviour
             case Phase.TheirTurn:
                 prevPhase = Phase.TheirTurn;
                 currPhase = Phase.Pass;
+                ExecutePhase();
                 break;
             case Phase.Pass:
                 if (prevPhase == Phase.TheirTurn)
                 {
                     currPhase = Phase.YourTurn;
+                    ExecutePhase();
                 }
                 else
                 {
                     currPhase = Phase.TheirTurn;
+                    StartCoroutine(WaitUntilNoDialogue());
                 }
                 prevPhase = Phase.Pass;
                 break;
             case Phase.YourTurn:
                 prevPhase = Phase.YourTurn;
                 currPhase = Phase.Pass;
+                ExecutePhase();
                 break;
         }
-
-        ExecutePhase();
+        
     }
 
     public void ExecutePhase()
@@ -101,6 +104,12 @@ public class LevelManager : MonoBehaviour
                 playerGun.SetActive(true);
                 break;
         }
+    }
+
+    IEnumerator WaitUntilNoDialogue()
+    {
+        yield return new WaitUntil(() => textManager.isTyping == false);
+        ExecutePhase();
     }
 
     IEnumerator PassGunDelay()

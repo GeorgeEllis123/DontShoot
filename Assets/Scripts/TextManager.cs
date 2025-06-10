@@ -17,7 +17,7 @@ public class TextManager : MonoBehaviour
     [SerializeField] private PatternManager patternManager;
 
     private Coroutine typewriterCoroutine;
-    private bool isTyping;
+    public bool isTyping;
     private bool isSkipping;
     private bool inMonologue;
     private int currentLine;
