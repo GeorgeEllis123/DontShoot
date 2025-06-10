@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class Menu : MonoBehaviour
 {
-    [SerializeField] private Button startButton;
-    [SerializeField] private Button quitButton;
+    //[SerializeField] private Button startButton;
+    //[SerializeField] private Button quitButton;
 
     void Start()
     {
@@ -16,8 +16,8 @@ public class Menu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        startButton.onClick.AddListener(() => StartWhenPressed());
-        quitButton.onClick.AddListener(() => QuitGame());
+        //startButton.onClick.AddListener(() => StartWhenPressed());
+        //quitButton.onClick.AddListener(() => QuitGame());
     }
 
     void StartWhenPressed()
@@ -27,9 +27,10 @@ public class Menu : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    void QuitGame()
+    //cannibalized this script, this method is the only important part now
+    public void QuitGame()
     {
-        Debug.Log("You quit the game"); 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Application.Quit();
+        Debug.Log("You quit the game");
     }
 }
