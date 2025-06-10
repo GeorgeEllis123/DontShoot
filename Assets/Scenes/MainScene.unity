@@ -2386,7 +2386,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
       propertyPath: 'monologueLines.Array.data[4]'
-      value: You must decide when to skip and when to pull the trigger.
+      value: You must decide when to skip (D) and when to pull the trigger (S).
       objectReference: {fileID: 0}
     - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
       propertyPath: 'monologueLines.Array.data[5]'
