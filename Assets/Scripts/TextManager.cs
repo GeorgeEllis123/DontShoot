@@ -6,11 +6,14 @@ using System;
 public class TextManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI textBox;
+    [SerializeField] private TextMeshProUGUI buttonPrompt;
     [SerializeField] private AudioSource pigeonSFX;
     [SerializeField] private float characterDelay = 0.04f;
     [SerializeField] private string[] monologueLines;
     [SerializeField] private string[] levelLines;
     [SerializeField] private LevelManager levelManager;
+    [SerializeField] private InputManager inputManager;
+    [SerializeField] private PatternManager patternManager;
 
     private Coroutine typewriterCoroutine;
     private bool isTyping;
@@ -20,6 +23,28 @@ public class TextManager : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log("Target Ready:");
+        Debug.Log(inputManager.TargetReady());
+        Debug.Log("Get Level:");
+        Debug.Log(levelManager.GetLevel());
+
+
+        if(inputManager.TargetReady() && levelManager.GetLevel() == 2)
+        {
+            if (!patternManager.GetNextBullet())
+            {
+                buttonPrompt.text = "Left Click / S!";
+            }
+            else
+            {
+                buttonPrompt.text = "Right Click / D!";
+            }
+        }
+        else
+        {
+            buttonPrompt.text = "";
+        }
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             if (isTyping)

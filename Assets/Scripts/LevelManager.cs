@@ -115,4 +115,9 @@ public class LevelManager : MonoBehaviour
             StartCoroutine(ReloadSceneDelay());
         }
     }
+
+    public int GetLevel()
+    {
+        return level;
+    }
 }

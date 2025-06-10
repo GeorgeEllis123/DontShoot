@@ -125,6 +125,11 @@ public class PatternManager : MonoBehaviour
         levelManager.GameOver();
     }
 
+    public bool GetNextBullet()
+    {
+        return currentPattern[bulletIndex];
+    }
+
     IEnumerator ChangePhaseWithDelay()
     {
         yield return new WaitForSeconds(0.3f);
