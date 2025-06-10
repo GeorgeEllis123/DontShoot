@@ -9,7 +9,7 @@ public class BulletSpawner : MonoBehaviour
 
     public void SpawnBullet()
     {
-        GameObject newbullet = Instantiate(bullet, this.transform);
+        GameObject newbullet = Instantiate(bullet, transform.position, Quaternion.identity);
         Rigidbody2D bulletRB = newbullet.GetComponent<Rigidbody2D>();
 
         float angle = Random.Range(30, 60) * Mathf.Deg2Rad;
