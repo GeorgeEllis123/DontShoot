@@ -5,11 +5,22 @@ public class InputManager : MonoBehaviour
     [SerializeField] private PatternManager pm;
     [SerializeField] private CircleShrinking cs;
     [SerializeField] private GameObject tc;
-    [SerializeField] private AudioClip spinSFX;
-    [SerializeField] private AudioClip clickSFX;
+    //[SerializeField] private AudioClip spinSFX;
+    //[SerializeField] private AudioClip clickSFX;
     [SerializeField] private BulletSpawner bs;
     [SerializeField] private ParticleSystem smoke;
     private bool targetReady = false;
+
+    AudioSource[] audiosources;
+    AudioSource spinSFX;
+    AudioSource clickSFX;
+
+    private void Start()
+    {
+        audiosources = GetComponents<AudioSource>();
+        spinSFX = audiosources[0];
+        clickSFX = audiosources[1];
+    }
 
     void Update()
     {
@@ -29,7 +40,7 @@ public class InputManager : MonoBehaviour
                 bool correct = pm.VerifyClick(true);
                 if (correct)
                     bs.SpawnBullet();
-                AudioSource.PlayClipAtPoint(spinSFX, Vector3.zero);
+                spinSFX.Play();
                 cs.ResetCircle();
             }
             else
@@ -44,7 +55,7 @@ public class InputManager : MonoBehaviour
                 bool correct = pm.VerifyClick(false);
                 if (correct)
                     smoke.Play();
-                AudioSource.PlayClipAtPoint(clickSFX, Vector3.zero);
+                clickSFX.Play();
                 cs.ResetCircle();
             }
             else
