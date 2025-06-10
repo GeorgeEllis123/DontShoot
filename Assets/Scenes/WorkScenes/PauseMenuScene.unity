@@ -119,6 +119,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &635683296 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4600907794861770300, guid: db82393ae9be79d4ca5388e55a2ca08b, type: 3}
+  m_PrefabInstance: {fileID: 115495992516149802}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f2c728a4b72ea94fa1019ce62fdfee2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &941975097 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4788870869938661450, guid: db82393ae9be79d4ca5388e55a2ca08b, type: 3}
@@ -590,6 +601,34 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2593427159772410575, guid: db82393ae9be79d4ca5388e55a2ca08b, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2593427159772410575, guid: db82393ae9be79d4ca5388e55a2ca08b, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2593427159772410575, guid: db82393ae9be79d4ca5388e55a2ca08b, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 635683296}
+    - target: {fileID: 2593427159772410575, guid: db82393ae9be79d4ca5388e55a2ca08b, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2593427159772410575, guid: db82393ae9be79d4ca5388e55a2ca08b, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AdjustSFXVolume
+      objectReference: {fileID: 0}
+    - target: {fileID: 2593427159772410575, guid: db82393ae9be79d4ca5388e55a2ca08b, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: VolumeControls, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2593427159772410575, guid: db82393ae9be79d4ca5388e55a2ca08b, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2804908606828984819, guid: db82393ae9be79d4ca5388e55a2ca08b, type: 3}
       propertyPath: m_Name
       value: PauseMenu
@@ -625,6 +664,34 @@ PrefabInstance:
     - target: {fileID: 5266765844955538208, guid: db82393ae9be79d4ca5388e55a2ca08b, type: 3}
       propertyPath: m_AnchorMin.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5327225876509944648, guid: db82393ae9be79d4ca5388e55a2ca08b, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5327225876509944648, guid: db82393ae9be79d4ca5388e55a2ca08b, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5327225876509944648, guid: db82393ae9be79d4ca5388e55a2ca08b, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 635683296}
+    - target: {fileID: 5327225876509944648, guid: db82393ae9be79d4ca5388e55a2ca08b, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5327225876509944648, guid: db82393ae9be79d4ca5388e55a2ca08b, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AdjustBackgroundVolume
+      objectReference: {fileID: 0}
+    - target: {fileID: 5327225876509944648, guid: db82393ae9be79d4ca5388e55a2ca08b, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: VolumeControls, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5327225876509944648, guid: db82393ae9be79d4ca5388e55a2ca08b, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5584204488563369701, guid: db82393ae9be79d4ca5388e55a2ca08b, type: 3}
       propertyPath: m_fontStyle
