@@ -678,6 +678,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   startingScale: 7
+  sweetSpot: {fileID: 6320024283461937634}
+  highlightColor: {r: 0.2550423, g: 0.0061409646, b: 0.4339623, a: 0.75686276}
 --- !u!1 &7652661390997830702
 GameObject:
   m_ObjectHideFlags: 0
