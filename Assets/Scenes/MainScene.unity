@@ -145,7 +145,7 @@ AudioSource:
   m_GameObject: {fileID: 122399818}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 56034a83a5d95a44f9d301e9cf0a62cc, type: 2}
   m_audioClip: {fileID: 8300000, guid: cd698664cd335824887dd50049453377, type: 3}
   m_Resource: {fileID: 8300000, guid: cd698664cd335824887dd50049453377, type: 3}
   m_PlayOnAwake: 1
@@ -259,6 +259,142 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83da8b10deba35e4fa95e0522922114d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &499427129
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 499427130}
+  - component: {fileID: 499427132}
+  - component: {fileID: 499427131}
+  m_Layer: 5
+  m_Name: SkipReminder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &499427130
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 499427129}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1760953019}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 10}
+  m_SizeDelta: {x: 900, y: 50}
+  m_Pivot: {x: 0.5, y: 0}
+--- !u!114 &499427131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 499427129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: press [space] to skip
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 9d758322e5f3b51449255dedc056d163, type: 2}
+  m_sharedMaterial: {fileID: 888202216296912490, guid: 9d758322e5f3b51449255dedc056d163, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 1728053247
+  m_fontColor: {r: 1, g: 1, b: 1, a: 0.4}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 18
+  m_fontSizeBase: 18
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 2
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 1024
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 119.675964, y: 0, z: 124.036804, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &499427132
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 499427129}
+  m_CullTransparentMesh: 1
 --- !u!1 &559224384
 GameObject:
   m_ObjectHideFlags: 0
@@ -537,7 +673,7 @@ AudioSource:
   m_GameObject: {fileID: 709983770}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: b566e50f29d20c94d96d0c13f9dce5fb, type: 2}
   m_audioClip: {fileID: 8300000, guid: c344fa69638534ebea9d14ffd3c93c11, type: 3}
   m_Resource: {fileID: 8300000, guid: c344fa69638534ebea9d14ffd3c93c11, type: 3}
   m_PlayOnAwake: 0
@@ -840,7 +976,7 @@ AudioSource:
   m_GameObject: {fileID: 729691407}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: b566e50f29d20c94d96d0c13f9dce5fb, type: 2}
   m_audioClip: {fileID: 8300000, guid: 0ada2c46ca5d8e940a1279a774693d3c, type: 3}
   m_Resource: {fileID: 8300000, guid: 0ada2c46ca5d8e940a1279a774693d3c, type: 3}
   m_PlayOnAwake: 1
@@ -1153,11 +1289,6 @@ GameObject:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4280434751251027204, guid: 20a2958679fd6bb4d9e0775ff8019cfd, type: 3}
   m_PrefabInstance: {fileID: 8189647953507739882}
-  m_PrefabAsset: {fileID: 0}
---- !u!82 &1007113709 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 2872118692144801136, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
-  m_PrefabInstance: {fileID: 2132797178}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1007113710 stripped
 MonoBehaviour:
@@ -2066,6 +2197,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 499427130}
   - {fileID: 1703050151}
   - {fileID: 1852021195}
   - {fileID: 1031931980}
@@ -2425,38 +2557,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2872118692144801136, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
-      propertyPath: m_Resource
-      value: 
-      objectReference: {fileID: 8300000, guid: 064aee0b8e9fb5344a1e2fe5d3dba78b, type: 3}
-    - target: {fileID: 2872118692144801136, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 064aee0b8e9fb5344a1e2fe5d3dba78b, type: 3}
     - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
       propertyPath: textBox
       value: 
       objectReference: {fileID: 1852021196}
     - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
-      propertyPath: textbox
-      value: 
-      objectReference: {fileID: 1852021196}
-    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
-      propertyPath: pigeonAS
-      value: 
-      objectReference: {fileID: 1007113709}
-    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
-      propertyPath: pigeonSFX
-      value: 
-      objectReference: {fileID: 1007113709}
-    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
       propertyPath: buttonPrompt
       value: 
       objectReference: {fileID: 1031931981}
-    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
-      propertyPath: dialogueText
-      value: 
-      objectReference: {fileID: 1852021196}
     - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
       propertyPath: inputManager
       value: 
@@ -2466,197 +2574,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 709983771}
     - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
-      propertyPath: characterDelay
-      value: 0.04
-      objectReference: {fileID: 0}
+      propertyPath: skipReminder
+      value: 
+      objectReference: {fileID: 499427131}
     - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
       propertyPath: patternManager
       value: 
       objectReference: {fileID: 1143076277}
-    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
-      propertyPath: messages.Array.size
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
-      propertyPath: levelLines.Array.size
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
-      propertyPath: 'messages.Array.data[0]'
-      value: Hello there, old friend.
-      objectReference: {fileID: 0}
-    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
-      propertyPath: 'messages.Array.data[1]'
-      value: You may not remember me after all these years...
-      objectReference: {fileID: 0}
-    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
-      propertyPath: 'messages.Array.data[2]'
-      value: But our paths have crossed on busy city streets.
-      objectReference: {fileID: 0}
-    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
-      propertyPath: 'messages.Array.data[3]'
-      value: You watched as I starved...
-      objectReference: {fileID: 0}
-    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
-      propertyPath: 'messages.Array.data[4]'
-      value: But now it is my turn to watch as you die!
-      objectReference: {fileID: 0}
-    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
-      propertyPath: 'messages.Array.data[5]'
-      value: Well, it will be, soon enough.
-      objectReference: {fileID: 0}
-    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
-      propertyPath: 'messages.Array.data[6]'
-      value: First, I want to play a little game with you.
-      objectReference: {fileID: 0}
-    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
-      propertyPath: 'messages.Array.data[7]'
-      value: You are familiar with Russian Roulette, coo-rrect?
-      objectReference: {fileID: 0}
-    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
-      propertyPath: 'messages.Array.data[8]'
-      value: I am going to load a pattern of regular bullets and blanks.
-      objectReference: {fileID: 0}
-    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
-      propertyPath: 'messages.Array.data[9]'
-      value: You must decide when to skip and when to pull the trigger.
-      objectReference: {fileID: 0}
-    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
-      propertyPath: 'messages.Array.data[10]'
-      value: If you spin past a blank, I will shoot you myself, coo-py?
-      objectReference: {fileID: 0}
-    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
-      propertyPath: 'messages.Array.data[11]'
-      value: Oh, and do not even try to shoot me
-      objectReference: {fileID: 0}
-    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
-      propertyPath: 'messages.Array.data[12]'
-      value: we both know I am faster on the draw anyway. Coo-d luck!
-      objectReference: {fileID: 0}
-    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
-      propertyPath: 'levelLines.Array.data[0]'
-      value: Congratulations! You're alive! What? You didn't expect to be let off
-        that easy, did you?
-      objectReference: {fileID: 0}
-    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
-      propertyPath: 'levelLines.Array.data[1]'
-      value: No... you will be playing this game for the rest of your sorry life.
-      objectReference: {fileID: 0}
-    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
-      propertyPath: 'levelLines.Array.data[2]'
-      value: "Too bad there\u2019s no way to tell which bullets are real, right?
-        You just have to get lucky."
-      objectReference: {fileID: 0}
-    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
-      propertyPath: 'levelLines.Array.data[3]'
-      value: "Oh, and just so you know, do not even try to shoot me\u2014we both
-        know I am faster on the draw anyway."
-      objectReference: {fileID: 0}
-    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
-      propertyPath: 'levelLines.Array.data[4]'
-      value: "You don\u2019t seem to remember me after all these years, but I can
-        assure you our paths have crossed on busy city streets. "
-      objectReference: {fileID: 0}
-    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
-      propertyPath: 'levelLines.Array.data[5]'
-      value: 'You watched as I starved... but now it is my turn to watch as you die! '
-      objectReference: {fileID: 0}
-    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
-      propertyPath: 'levelLines.Array.data[6]'
-      value: I bet you never expected to see me again, especially not with your life
-        in my hands.
-      objectReference: {fileID: 0}
-    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
-      propertyPath: 'levelLines.Array.data[7]'
-      value: "I could have mercy on you, but I won\u2019t."
-      objectReference: {fileID: 0}
-    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
-      propertyPath: 'levelLines.Array.data[8]'
-      value: After all, why should I when you humans abandoned us loyal pigeons all
-        those years ago?
-      objectReference: {fileID: 0}
-    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
-      propertyPath: 'levelLines.Array.data[9]'
-      value: We traveled across oceans for you, just for you to laugh at us as we
-        beg for breadcrumbs.
-      objectReference: {fileID: 0}
-    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
-      propertyPath: levelMessages.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
-      propertyPath: 'levelLines.Array.data[10]'
-      value: "You must be very lucky, surviving this long\u2026"
-      objectReference: {fileID: 0}
-    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
-      propertyPath: 'levelLines.Array.data[11]'
-      value: "It\u2019s almost like you have a way of knowing which bullets are real\u2026"
-      objectReference: {fileID: 0}
-    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
-      propertyPath: 'levelLines.Array.data[12]'
-      value: "But that\u2019s obviously impossible! You can\u2019t see how I load
-        them."
-      objectReference: {fileID: 0}
-    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
-      propertyPath: 'levelLines.Array.data[13]'
-      value: "Either way, it\u2019s getting difficult to keep up, right?"
-      objectReference: {fileID: 0}
-    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
-      propertyPath: 'levelLines.Array.data[14]'
-      value: I can see you struggling.
-      objectReference: {fileID: 0}
-    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
-      propertyPath: 'levelLines.Array.data[15]'
-      value: Just die already!
-      objectReference: {fileID: 0}
-    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
-      propertyPath: 'levelLines.Array.data[16]'
-      value: "This game isn\u2019t fun anymore."
-      objectReference: {fileID: 0}
-    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
-      propertyPath: monologueLines.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
-      propertyPath: 'levelMessages.Array.data[0]'
-      value: test1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
-      propertyPath: 'levelMessages.Array.data[1]'
-      value: test2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
-      propertyPath: 'monologueLines.Array.data[0]'
-      value: Hello there, old friend.
-      objectReference: {fileID: 0}
-    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
-      propertyPath: 'monologueLines.Array.data[1]'
-      value: We are going to play a little game.
-      objectReference: {fileID: 0}
-    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
-      propertyPath: 'monologueLines.Array.data[2]'
-      value: You are familiar with Russian Roulette, coo-rrect?
-      objectReference: {fileID: 0}
-    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
-      propertyPath: 'monologueLines.Array.data[3]'
-      value: I am going to fill this gun with bullets and blanks.
-      objectReference: {fileID: 0}
-    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
-      propertyPath: 'monologueLines.Array.data[4]'
-      value: You must decide when to skip (D) and when to pull the trigger (S).
-      objectReference: {fileID: 0}
-    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
-      propertyPath: 'monologueLines.Array.data[5]'
-      value: If you spin past a blank I will shoot you myself, coo-py? Coo-d luck.
-      objectReference: {fileID: 0}
-    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
-      propertyPath: 'monologueLines.Array.data[6]'
-      value: If you spin past a blank I will shoot you myself, coo-py? Coo-d luck.
-      objectReference: {fileID: 0}
-    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
-      propertyPath: 'monologueLines.Array.data[7]'
-      value: You must decide when to skip and when to pull the trigger.
-      objectReference: {fileID: 0}
     - target: {fileID: 5542977107363988724, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
       propertyPath: m_Name
       value: TextManager
