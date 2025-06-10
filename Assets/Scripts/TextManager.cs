@@ -1,248 +1,115 @@
+using System.Collections;
 using UnityEngine;
 using TMPro;
-using System.Collections;
+using System;
 
 public class TextManager : MonoBehaviour
 {
-    [Header("Associations")]
-    public TMP_Text textbox;
-    public LevelManager levelManager;
+    [SerializeField] private TextMeshProUGUI textBox;
+    [SerializeField] private AudioSource pigeonSFX;
+    [SerializeField] private float characterDelay = 0.04f;
+    [SerializeField] private string[] monologueLines;
+    [SerializeField] private string[] levelLines;
+    [SerializeField] private LevelManager levelManager;
 
-    [Header("Timing")]
-    public float typeSpeed = 0.1f;
-    public float linePause = 2f;
-
-    [Header("Audio")]
-    public AudioSource pigeonAS;
-
-    [Header("Dialogue")]
-    public string[] monologue =
-    {
-        "Hello there, old friend.",
-        "You and I are going to play a game.",
-        "You are familiar with Russian Roulette, coo-rrect?",
-        "I am going to load this gun with both regular bullets and blanks.",
-        "You must decide when to skip and when to pull the trigger.",
-        "If you spin past a blank, I will shoot you myself, coo-py? Coo-d luck!"
-    };
-
-    public string[] messages =
-    {
-
-    };
-
-    private bool isPlayingMonologue = false;
-    private bool isTyping = false;
-    private bool isPausing = false;
-    private int currentMonologueIndex = 0;
-    private Coroutine monologueCoroutine;
     private Coroutine typewriterCoroutine;
-    private Coroutine pauseCoroutine;
+    private bool isTyping;
+    private bool isSkipping;
+    private bool inMonologue;
+    private int currentLine;
 
-    void Start()
-    {
-        currentMonologueIndex = 0;
-    }
-
-    void Update()
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            HandleSpaceInput();
+            if (isTyping)
+            {
+                isSkipping = true;
+            }
+            else if (inMonologue)
+            {
+                PlayNextMonologueLine();
+            }
         }
-    }
-
-    private void HandleSpaceInput()
-    {
-        if (!isPlayingMonologue)
-        {
-            return;
-        }
-
-        if (isTyping)
-        {
-            SkipCurrentTyping();
-        }
-        else if (isPausing)
-        {
-            SkipPause();
-        }
-    }
-
-    private void SkipCurrentTyping()
-    {
-        if(typewriterCoroutine != null)
-        {
-            StopCoroutine(typewriterCoroutine);
-        }
-
-        textbox.text = monologue[currentMonologueIndex];
-        isTyping = false;
-        StartPause();
-    }
-
-    private void SkipPause()
-    {
-        if(pauseCoroutine != null)
-        {
-            StopCoroutine(pauseCoroutine);
-        }
-        isPausing = false;
-
-        ContinueMonologue();
     }
 
     public void StartMonologue()
     {
-        if (isPlayingMonologue)
-        {
-            return;
-        }
-
-        currentMonologueIndex = 0;
-        isPlayingMonologue = true;
-        monologueCoroutine = StartCoroutine(PlayMonologueSequence());
+        inMonologue = true;
+        currentLine = 0;
+        PlayLine(monologueLines[currentLine]);
     }
 
-    private IEnumerator PlayMonologueSequence()
+    private void ClearText()
     {
-        while(currentMonologueIndex < monologue.Length && isPlayingMonologue)
-        {
-            textbox.text = "";
-
-            yield return StartCoroutine(TypeSentence(monologue[currentMonologueIndex]));
-
-            if(currentMonologueIndex < monologue.Length - 1)
-            {
-                yield return StartCoroutine(PauseBetweenSentences());
-            }
-
-            currentMonologueIndex++;
-        }
-
-        isPlayingMonologue = false;
-        OnMonologueComplete();
+        textBox.text = "";
     }
 
-    private IEnumerator TypeSentence(string sentence)
+    public void PlayMessage(int index)
+    {
+        Invoke("ClearText", 2f);
+        if (index-1 >= 0 && index-1 < levelLines.Length)
+        {
+            inMonologue = false;
+            PlayLine(levelLines[index-1]);
+        }
+    }
+
+    private void PlayLine(string line)
+    {
+        if (typewriterCoroutine != null)
+            StopCoroutine(typewriterCoroutine);
+
+        typewriterCoroutine = StartCoroutine(TypeLine(line));
+    }
+
+    private IEnumerator TypeLine(string line)
     {
         isTyping = true;
-        typewriterCoroutine = StartCoroutine(Typewriter(sentence));
-        yield return typewriterCoroutine;
-        isTyping = false;
-    }
+        isSkipping = false;
+        textBox.text = "";
 
-    private IEnumerator PauseBetweenSentences()
-    {
-        isPausing = true;
-        pauseCoroutine = StartCoroutine(WaitForSeconds(linePause));
-        yield return pauseCoroutine;
-        isPausing = false;
-    }
+        int charCount = 0;
 
-    private IEnumerator WaitForSeconds(float seconds)
-    {
-        yield return new WaitForSeconds(seconds);
-    }
-
-    private void StartPause()
-    {
-        if(currentMonologueIndex < monologue.Length - 1)
+        foreach (char c in line)
         {
-            pauseCoroutine = StartCoroutine(PauseBetweenSentences());
-        }
-        else
-        {
-            isPlayingMonologue = false;
-            OnMonologueComplete();
-        }
-    }
-
-    private void ContinueMonologue()
-    {
-        currentMonologueIndex++;
-        if(currentMonologueIndex < monologue.Length)
-        {
-            StartCoroutine(TypeSentence(monologue[currentMonologueIndex]));
-        }
-        else
-        {
-            isPlayingMonologue = false;
-            OnMonologueComplete();
-        }
-    }
-
-    private IEnumerator Typewriter(string fullText)
-    {
-        string currentText = "";
-        for (int i = 0; i < fullText.Length; i++)
-        {
-            currentText += fullText[i];
-            textbox.text = currentText;
-
-            if (pigeonAS && !pigeonAS.isPlaying)
+            if (isSkipping)
             {
-                pigeonAS.Play();
+                textBox.text = line;
+                break;
             }
 
-            yield return new WaitForSeconds(typeSpeed);
-        }
-    }
+            textBox.text += c;
 
-    private void OnMonologueComplete()
-    {
-        ClearText();
-        levelManager.ExecutePhase();
-    }
+            charCount++;
+            if (charCount % 2 == 0 && pigeonSFX != null)
+                pigeonSFX.Play();
 
-    public void StopMonologue()
-    {
-        if(monologueCoroutine != null)
-        {
-            StopCoroutine(monologueCoroutine);
-        }
-        if(typewriterCoroutine != null)
-        {
-            StopCoroutine(typewriterCoroutine);
-        }
-        if(pauseCoroutine != null)
-        {
-            StopCoroutine(pauseCoroutine);
+            yield return new WaitForSeconds(characterDelay);
         }
 
-        isPlayingMonologue = false;
         isTyping = false;
-        isPausing = false;
-    }
+        isSkipping = false;
 
-
-
-
-    //Non monologue stuff
-
-
-    //use this for custom messages
-    public void PrintText(string fullText)
-    {
-        StartCoroutine(Typewriter(fullText));
-    }
-
-    //use this for sending the dialogue between rounds
-    public void PlayMessage(int idx)
-    {
-        if(idx < messages.Length)
+        if (inMonologue)
         {
-            PrintText(messages[idx]);
+            yield return new WaitForSeconds(1f);
         }
     }
 
-    public void ClearText()
+    private void PlayNextMonologueLine()
     {
-        textbox.text = "";
-    }
+        currentLine++;
 
-    public void ClearTimer(float timer)
-    {
-        Invoke("ClearText", timer);
+        if (currentLine < monologueLines.Length)
+        {
+            PlayLine(monologueLines[currentLine]);
+        }
+        else
+        {
+            inMonologue = false;
+            textBox.text = "";
+            levelManager.ExecutePhase();
+        }
     }
 }

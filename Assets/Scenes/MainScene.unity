@@ -2189,6 +2189,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 064aee0b8e9fb5344a1e2fe5d3dba78b, type: 3}
     - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
+      propertyPath: textBox
+      value: 
+      objectReference: {fileID: 1852021196}
+    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
       propertyPath: textbox
       value: 
       objectReference: {fileID: 1852021196}
@@ -2197,12 +2201,28 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1007113709}
     - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
+      propertyPath: pigeonSFX
+      value: 
+      objectReference: {fileID: 1007113709}
+    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
+      propertyPath: dialogueText
+      value: 
+      objectReference: {fileID: 1852021196}
+    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
       propertyPath: levelManager
       value: 
       objectReference: {fileID: 709983771}
     - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
+      propertyPath: characterDelay
+      value: 0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
       propertyPath: messages.Array.size
       value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
+      propertyPath: levelLines.Array.size
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
       propertyPath: 'messages.Array.data[0]'
@@ -2255,6 +2275,62 @@ PrefabInstance:
     - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
       propertyPath: 'messages.Array.data[12]'
       value: we both know I am faster on the draw anyway. Coo-d luck!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
+      propertyPath: 'levelLines.Array.data[0]'
+      value: test1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
+      propertyPath: 'levelLines.Array.data[1]'
+      value: test2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
+      propertyPath: levelMessages.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
+      propertyPath: monologueLines.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
+      propertyPath: 'levelMessages.Array.data[0]'
+      value: test1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
+      propertyPath: 'levelMessages.Array.data[1]'
+      value: test2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
+      propertyPath: 'monologueLines.Array.data[0]'
+      value: Hello there, old friend.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
+      propertyPath: 'monologueLines.Array.data[1]'
+      value: We are going to play a little game.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
+      propertyPath: 'monologueLines.Array.data[2]'
+      value: You are familiar with Russian Roulette, coo-rrect?
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
+      propertyPath: 'monologueLines.Array.data[3]'
+      value: I am going to fill this gun with bullets and blanks.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
+      propertyPath: 'monologueLines.Array.data[4]'
+      value: You must decide when to skip and when to pull the trigger.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
+      propertyPath: 'monologueLines.Array.data[5]'
+      value: If you spin past a blank I will shoot you myself, coo-py? Coo-d luck.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
+      propertyPath: 'monologueLines.Array.data[6]'
+      value: If you spin past a blank I will shoot you myself, coo-py? Coo-d luck.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
+      propertyPath: 'monologueLines.Array.data[7]'
+      value: You must decide when to skip and when to pull the trigger.
       objectReference: {fileID: 0}
     - target: {fileID: 5542977107363988724, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
       propertyPath: m_Name
