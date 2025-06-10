@@ -45,9 +45,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3d86f662376e7d40b82ba8b65165b63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textbox: {fileID: 0}
-  speed: 0.1
-  myAS: {fileID: 2872118692144801136}
+  textBox: {fileID: 0}
+  buttonPrompt: {fileID: 0}
+  skipReminder: {fileID: 0}
+  pigeonSFX: {fileID: 2872118692144801136}
+  characterDelay: 0.04
+  monologueLines:
+  - Hello there, old friend.
+  - We are going to play a little game.
+  - You are familiar with Russian Roulette, coo-rrect?
+  - I am going to fill this gun with bullets and blanks.
+  - You must decide when to skip (D) and when to pull the trigger (S).
+  - If you spin past a blank I will shoot you myself, coo-py? Coo-d luck.
+  levelLines:
+  - Congratulations! You're alive! What? You didn't expect to be let off that easy,
+    did you?
+  - No... you will be playing this game for the rest of your sorry life.
+  - "Too bad there\u2019s no way to tell which bullets are real, right? You just
+    have to get lucky."
+  - "Oh, and just so you know, do not even try to shoot me\u2014we both know I am
+    faster on the draw anyway."
+  - "You don\u2019t seem to remember me after all these years, but I can assure you
+    our paths have crossed on busy city streets. "
+  - 'You watched as I starved... but now it is my turn to watch as you die! '
+  - I bet you never expected to see me again, especially not with your life in my
+    hands.
+  - "I could have mercy on you, but I won\u2019t."
+  - After all, why should I when you humans abandoned us loyal pigeons all those
+    years ago?
+  - We traveled across oceans for you, just for you to laugh at us as we beg for
+    breadcrumbs.
+  - "You must be very lucky, surviving this long\u2026"
+  - "It\u2019s almost like you have a way of knowing which bullets are real\u2026"
+  - "But that\u2019s obviously impossible! You can\u2019t see how I load them."
+  - "Either way, it\u2019s getting difficult to keep up, right?"
+  - I can see you struggling.
+  - Just die already!
+  - "This game isn\u2019t fun anymore."
+  levelManager: {fileID: 0}
+  inputManager: {fileID: 0}
+  patternManager: {fileID: 0}
 --- !u!82 &2872118692144801136
 AudioSource:
   m_ObjectHideFlags: 0
@@ -57,9 +94,9 @@ AudioSource:
   m_GameObject: {fileID: 5542977107363988724}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c906f4305aca15a43909862ab1b30a71, type: 3}
-  m_Resource: {fileID: 8300000, guid: c906f4305aca15a43909862ab1b30a71, type: 3}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: b566e50f29d20c94d96d0c13f9dce5fb, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 064aee0b8e9fb5344a1e2fe5d3dba78b, type: 3}
+  m_Resource: {fileID: 8300000, guid: 064aee0b8e9fb5344a1e2fe5d3dba78b, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

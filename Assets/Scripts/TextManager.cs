@@ -7,7 +7,7 @@ public class TextManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI textBox;
     [SerializeField] private TextMeshProUGUI buttonPrompt;
-    [SerializeField] private TextMeshProUGUI skipreminder;
+    [SerializeField] private TextMeshProUGUI skipReminder;
     [SerializeField] private AudioSource pigeonSFX;
     [SerializeField] private float characterDelay = 0.04f;
     [SerializeField] private string[] monologueLines;
@@ -48,6 +48,7 @@ public class TextManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            skipReminder.gameObject.SetActive(false); 
             if (isTyping)
             {
                 isSkipping = true;
@@ -61,9 +62,11 @@ public class TextManager : MonoBehaviour
 
     public void StartMonologue()
     {
+        skipReminder.gameObject.SetActive(true); 
         inMonologue = true;
         currentLine = 0;
         PlayLine(monologueLines[currentLine]);
+    
     }
 
     private void ClearText()
