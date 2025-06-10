@@ -30,10 +30,6 @@ public class TextManager : MonoBehaviour
             {
                 PlayNextMonologueLine();
             }
-            else
-            {
-                ClearText();
-            }
         }
     }
 
@@ -54,11 +50,11 @@ public class TextManager : MonoBehaviour
         if (index-1 >= 0 && index-1 < levelLines.Length)
         {
             inMonologue = false;
-            Invoke("ClearText", (float) levelLines[index - 1].Length * characterDelay + 0.5f);
+            Invoke("ClearText", levelLines[index - 1].Length * characterDelay + 0.5f);
             PlayLine(levelLines[index-1]);
         } else
         {
-            Invoke("ClearText", (float) levelLines[index - 1].Length * characterDelay + 0.5f);
+            Invoke("ClearText", levelLines[index - 1].Length * characterDelay + 0.5f);
             PlayLine(levelLines[levelLines.Length - 1]);
         }
     }
@@ -90,8 +86,11 @@ public class TextManager : MonoBehaviour
             textBox.text += c;
 
             charCount++;
-            if (charCount % 3 == 0 && pigeonSFX != null)
+            if (!pigeonSFX.isPlaying)
+            {
+                pigeonSFX.pitch = UnityEngine.Random.Range(0.8f, 1.2f);
                 pigeonSFX.Play();
+            }
 
             yield return new WaitForSeconds(characterDelay);
         }
