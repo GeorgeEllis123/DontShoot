@@ -12,7 +12,7 @@ public class BarrelBehavior : MonoBehaviour
     {
         if (other.gameObject.CompareTag("TimingCircle"))
         {
-            levelManager.GameOver();
+            levelManager.GameOver(true);
         }
     }
 }

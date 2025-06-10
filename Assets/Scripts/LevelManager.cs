@@ -9,6 +9,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private GameObject animatedWing;
     [SerializeField] private GameObject table;
     [SerializeField] private GameObject bangScreen;
+    [SerializeField] private GameObject toolTip;
     [SerializeField] private TextManager textManager;
     [SerializeField] private PatternManager patternManager;
     [SerializeField] private AudioSource bangSFX;
@@ -19,7 +20,7 @@ public class LevelManager : MonoBehaviour
     private Phase prevPhase = Phase.Pass;
 
     private int level = 1;
-    private bool isGameover;
+    public bool isGameover;
 
     public void Start()
     {
@@ -33,7 +34,12 @@ public class LevelManager : MonoBehaviour
 
     public void ChangePhase()
     {
-        switch(currPhase)
+        if (isGameover)
+        {
+            return;
+        }
+
+        switch (currPhase)
         {
             case Phase.TheirTurn:
                 prevPhase = Phase.TheirTurn;
@@ -61,6 +67,11 @@ public class LevelManager : MonoBehaviour
 
     public void ExecutePhase()
     {
+        if (isGameover)
+        {
+            return;
+        }
+
         switch (currPhase)
         {
             case Phase.TheirTurn:
@@ -101,18 +112,33 @@ public class LevelManager : MonoBehaviour
     IEnumerator ReloadSceneDelay()
     {
         yield return new WaitForSeconds(2f);
-        bangScreen.SetActive(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    public void GameOver()
+    IEnumerator ExtraLongReloadSceneDelay()
+    {
+        yield return new WaitForSeconds(5f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void GameOver(bool badTiming)
     {
         if (!isGameover)
         {
             isGameover = true;
             bangSFX.Play();
             bangScreen.SetActive(true);
-            StartCoroutine(ReloadSceneDelay());
+            playerGun.SetActive(false);
+            if (badTiming && level == 2)
+            {
+
+                toolTip.SetActive(true);
+                StartCoroutine(ExtraLongReloadSceneDelay());
+            }
+            else
+            {
+                StartCoroutine(ReloadSceneDelay());
+            }
         }
     }
 

@@ -34,7 +34,7 @@ public class InputManager : MonoBehaviour
             }
             else
             {
-                pm.GetShot();
+                pm.GetShot(true);
             }
         }
         if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.S))
@@ -49,7 +49,7 @@ public class InputManager : MonoBehaviour
             }
             else
             {
-                pm.GetShot();
+                pm.GetShot(true);
             }
         }
     }

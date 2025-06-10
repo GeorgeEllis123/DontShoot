@@ -106,7 +106,7 @@ public class PatternManager : MonoBehaviour
     {
         bool correct = currentPattern[bulletIndex] == b;
         if (!correct)
-            levelManager.GameOver();
+            levelManager.GameOver(false);
 
         bulletIndex++;
         barrelRotator.RotateMinus60();
@@ -120,9 +120,9 @@ public class PatternManager : MonoBehaviour
         return correct;
     }
 
-    public void GetShot()
+    public void GetShot(bool badTiming)
     {
-        levelManager.GameOver();
+        levelManager.GameOver(badTiming);
     }
 
     public bool GetNextBullet()
