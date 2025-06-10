@@ -10,8 +10,8 @@ public class PatternManager : MonoBehaviour
     private PatternGenerator pg;
 
     //add two AudioSources to pattern manager object; first is bullet, second is blank
-    public AudioClip bulletSound;
-    public AudioClip blankSound;
+    //public AudioClip bulletSound;
+    //public AudioClip blankSound;
 
     // barrel animation
     public BarrelAnimation barrelRotator;
@@ -20,13 +20,19 @@ public class PatternManager : MonoBehaviour
 
     private int bulletIndex = 0;
 
+    AudioSource[] audiosources;
+    AudioSource bulletSound;
+    AudioSource blankSound;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     void Awake()
     {
         levelManager = FindAnyObjectByType<LevelManager>();
         pg = gameObject.GetComponent<PatternGenerator>();
-        AudioSource[] audiosources = gameObject.GetComponents<AudioSource>();
+        audiosources = gameObject.GetComponents<AudioSource>();
+        bulletSound = audiosources[0];
+        blankSound = audiosources[1];
     }
 
     public void LoadBullets(int level)
@@ -89,13 +95,13 @@ public class PatternManager : MonoBehaviour
             //if bullet
             if (currentPattern[i])
             {
-                AudioSource.PlayClipAtPoint(bulletSound, Vector3.zero);
+                bulletSound.Play();
                 yield return new WaitForSeconds(timeBetweenLoads);
             }
             //if blank
             else
             {
-                AudioSource.PlayClipAtPoint(blankSound, Vector3.zero);
+                blankSound.Play();
                 yield return new WaitForSeconds(timeBetweenLoads);
             }
         }
