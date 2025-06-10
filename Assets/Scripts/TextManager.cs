@@ -7,6 +7,7 @@ public class TextManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI textBox;
     [SerializeField] private TextMeshProUGUI buttonPrompt;
+    [SerializeField] private TextMeshProUGUI skipreminder;
     [SerializeField] private AudioSource pigeonSFX;
     [SerializeField] private float characterDelay = 0.04f;
     [SerializeField] private string[] monologueLines;
