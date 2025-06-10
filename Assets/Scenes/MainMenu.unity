@@ -145,7 +145,7 @@ AudioSource:
   m_GameObject: {fileID: 135116296}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 56034a83a5d95a44f9d301e9cf0a62cc, type: 2}
   m_audioClip: {fileID: 8300000, guid: 9ff1d49d4aa360741a9e03223ccf669e, type: 3}
   m_Resource: {fileID: 8300000, guid: 9ff1d49d4aa360741a9e03223ccf669e, type: 3}
   m_PlayOnAwake: 1
@@ -351,8 +351,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -369,13 +369,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -601,7 +601,7 @@ AudioSource:
   m_GameObject: {fileID: 1029867733}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 56034a83a5d95a44f9d301e9cf0a62cc, type: 2}
   m_audioClip: {fileID: 8300000, guid: ea5cbdc498760c64bac0070e7398a791, type: 3}
   m_Resource: {fileID: 8300000, guid: ea5cbdc498760c64bac0070e7398a791, type: 3}
   m_PlayOnAwake: 1
@@ -1176,7 +1176,7 @@ AudioSource:
   m_GameObject: {fileID: 1707369975}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: b566e50f29d20c94d96d0c13f9dce5fb, type: 2}
   m_audioClip: {fileID: 8300000, guid: 07eaaacec9b8cf64aa277cc207cefd1a, type: 3}
   m_Resource: {fileID: 8300000, guid: 07eaaacec9b8cf64aa277cc207cefd1a, type: 3}
   m_PlayOnAwake: 0
@@ -1557,8 +1557,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1575,13 +1575,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
