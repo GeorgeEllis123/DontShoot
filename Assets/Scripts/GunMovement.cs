@@ -48,7 +48,7 @@ public class GunMovement : MonoBehaviour
             //transform.localScale = smallScale;
             //StartScaleCoroutine(smallScale, originalScale);
             //target = yourPos;
-            Invoke("CallPickUp", 1f);
+            // Invoke("CallPickUp", 1f);
         }
         else
         {
