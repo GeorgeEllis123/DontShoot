@@ -2051,6 +2051,18 @@ MonoBehaviour:
   easyPatterns:
   - pattern: 010101000000
   - pattern: 000000010101
+  - pattern: 010000010000
+  - pattern: 000001000001
+  - pattern: 000101000101
+  - pattern: 010100010100
+  - pattern: 000100010001
+  - pattern: 010001000100
+  - pattern: 000000000101
+  - pattern: 010100000000
+  - pattern: 010000000001
+  - pattern: 000101010100
+  - pattern: 010101010000
+  - pattern: 000001010101
 --- !u!4 &1143076279
 Transform:
   m_ObjectHideFlags: 0
