@@ -3651,6 +3651,57 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1143076277}
     - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
+      propertyPath: levelLines.Array.size
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
+      propertyPath: 'levelLines.Array.data[3]'
+      value: "Oh, and just so you know, do not even try to shoot me\u2014we both
+        know I am faster on the draw anyway."
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
+      propertyPath: 'levelLines.Array.data[4]'
+      value: Who am I? Even though you don't recognize me, I can assure you our paths
+        have crossed on busy city streets.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
+      propertyPath: 'levelLines.Array.data[7]'
+      value: 'Have mercy? Hah! No, I don''t think I will. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
+      propertyPath: 'levelLines.Array.data[10]'
+      value: 'You didn''t know that? No one remembers us carrier pigeons anymore... '
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
+      propertyPath: 'levelLines.Array.data[11]'
+      value: "Anyway, you must be very lucky, surviving this long\u2026 "
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
+      propertyPath: 'levelLines.Array.data[12]'
+      value: "It\u2019s almost like you have a way of knowing which bullets are real\u2026"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
+      propertyPath: 'levelLines.Array.data[13]'
+      value: "But that\u2019s obviously impossible! You can\u2019t see how I load
+        them."
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
+      propertyPath: 'levelLines.Array.data[14]'
+      value: 'You''ve stopped asking questions, is it getting difficult to keep up? '
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
+      propertyPath: 'levelLines.Array.data[15]'
+      value: I can see you struggling.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
+      propertyPath: 'levelLines.Array.data[16]'
+      value: "This game isn\u2019t fun anymore."
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
+      propertyPath: 'levelLines.Array.data[17]'
+      value: Just die already!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
       propertyPath: 'monologueLines.Array.data[4]'
       value: You must decide when to skip [D] and when to pull the trigger [S].
       objectReference: {fileID: 0}
