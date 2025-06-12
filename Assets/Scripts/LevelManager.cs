@@ -81,6 +81,11 @@ public class LevelManager : MonoBehaviour
         {
             return;
         }
+        
+        if (prevPhase == Phase.YourTurn)
+        {
+            playerGun.GetComponent<Animator>().SetTrigger("PutDown");
+        }
 
         switch (currPhase)
         {
@@ -96,7 +101,7 @@ public class LevelManager : MonoBehaviour
                 animatedWing.SetActive(true);
                 animatedWing.GetComponent<Animator>().SetTrigger("Slide");
                 animatedGun.GetComponent<GunMovement>().Toss(prevPhase == Phase.TheirTurn ? -1 : 1);
-                if(prevPhase == Phase.YourTurn)
+                if (prevPhase == Phase.YourTurn)
                 {
                     textManager.PlayMessage(level - 1);
                 }

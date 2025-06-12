@@ -23,7 +23,7 @@ public class PickUp : MonoBehaviour
 
     private void OnDisable()
     {
-        anim.SetTrigger("PutDown"); 
+        // anim.SetTrigger("PutDown"); 
         // return to below screen
         gunLogic.SetActive(false);
     }
