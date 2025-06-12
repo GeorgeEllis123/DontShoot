@@ -2051,6 +2051,18 @@ MonoBehaviour:
   easyPatterns:
   - pattern: 010101000000
   - pattern: 000000010101
+  - pattern: 010000010000
+  - pattern: 000001000001
+  - pattern: 000101000101
+  - pattern: 010100010100
+  - pattern: 000100010001
+  - pattern: 010001000100
+  - pattern: 000000000101
+  - pattern: 010100000000
+  - pattern: 010000000001
+  - pattern: 000101010100
+  - pattern: 010101010000
+  - pattern: 000001010101
 --- !u!4 &1143076279
 Transform:
   m_ObjectHideFlags: 0
@@ -3457,7 +3469,7 @@ PrefabInstance:
       objectReference: {fileID: 1143076277}
     - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
       propertyPath: levelLines.Array.size
-      value: 18
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
       propertyPath: 'levelLines.Array.data[3]'
@@ -3471,39 +3483,78 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
       propertyPath: 'levelLines.Array.data[7]'
+      value: You humans think you know what to expect from us pigeons, but you're
+        wrong!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
+      propertyPath: 'levelLines.Array.data[8]'
       value: 'Have mercy? Hah! No, I don''t think I will. '
       objectReference: {fileID: 0}
     - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
+      propertyPath: 'levelLines.Array.data[9]'
+      value: After all, why should I when you humans abandoned us loyal pigeons all
+        those years ago?
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
       propertyPath: 'levelLines.Array.data[10]'
-      value: 'You didn''t know that? No one remembers us carrier pigeons anymore... '
+      value: For you, we crossed mountains, oceans, gunfire... Just for you to laugh
+        at us as we beg for breadcrumbs.
       objectReference: {fileID: 0}
     - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
       propertyPath: 'levelLines.Array.data[11]'
-      value: "Anyway, you must be very lucky, surviving this long\u2026 "
+      value: 'For humans, it was just a service, but for us? It was our lives. '
       objectReference: {fileID: 0}
     - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
       propertyPath: 'levelLines.Array.data[12]'
-      value: "It\u2019s almost like you have a way of knowing which bullets are real\u2026"
+      value: 'You didn''t know that? No one remembers us carrier pigeons anymore... '
       objectReference: {fileID: 0}
     - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
       propertyPath: 'levelLines.Array.data[13]'
+      value: 'But I remember. We all do. Every pigeon dreams of being cherished and
+        respected as we once were. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
+      propertyPath: 'levelLines.Array.data[14]'
+      value: 'Performing our sacred duty as heralds, instead of being scum on the
+        streets. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
+      propertyPath: 'levelLines.Array.data[15]'
+      value: 'You replaced us like we were nothing, and then treat us like even less...
+        And now you ask for mercy? '
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
+      propertyPath: 'levelLines.Array.data[16]'
+      value: "Anyway, you must be very lucky, surviving this long\u2026 "
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
+      propertyPath: 'levelLines.Array.data[17]'
+      value: "It\u2019s almost like you have a way of knowing which bullets are real\u2026"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
+      propertyPath: 'levelLines.Array.data[18]'
       value: "But that\u2019s obviously impossible! You can\u2019t see how I load
         them."
       objectReference: {fileID: 0}
     - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
-      propertyPath: 'levelLines.Array.data[14]'
+      propertyPath: 'levelLines.Array.data[19]'
       value: 'You''ve stopped asking questions, is it getting difficult to keep up? '
       objectReference: {fileID: 0}
     - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
-      propertyPath: 'levelLines.Array.data[15]'
-      value: I can see you struggling.
+      propertyPath: 'levelLines.Array.data[20]'
+      value: 'Maybe us pigeons are predictable, but you humans are no better. '
       objectReference: {fileID: 0}
     - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
-      propertyPath: 'levelLines.Array.data[16]'
+      propertyPath: 'levelLines.Array.data[21]'
+      value: 'I can see you struggling. Maybe we can be replaced, but obsolescence
+        comes for everyone. Soon, you won''t move fast enough. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
+      propertyPath: 'levelLines.Array.data[22]'
       value: "This game isn\u2019t fun anymore."
       objectReference: {fileID: 0}
     - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
-      propertyPath: 'levelLines.Array.data[17]'
+      propertyPath: 'levelLines.Array.data[23]'
       value: Just die already!
       objectReference: {fileID: 0}
     - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
