@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -10,9 +11,12 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private GameObject table;
     [SerializeField] private GameObject bangScreen;
     [SerializeField] private GameObject toolTip;
+    [SerializeField] private Animator bagAnimation;
     [SerializeField] private TextManager textManager;
     [SerializeField] private PatternManager patternManager;
     [SerializeField] private AudioSource bangSFX;
+    [SerializeField] private AudioSource bagSFX;
+
 
     private enum Phase { YourTurn, Pass, TheirTurn }
 
@@ -24,11 +28,14 @@ public class LevelManager : MonoBehaviour
 
     public void Start()
     {
-        StartMonologue();
+        bagAnimation.SetTrigger("BagOff");
+        bagSFX.Play();
+        StartCoroutine(StartMonologue());
     }
 
-    public void StartMonologue()
+    public IEnumerator StartMonologue()
     {
+        yield return new WaitForSeconds(1f);
         textManager.StartMonologue();
     }
 
