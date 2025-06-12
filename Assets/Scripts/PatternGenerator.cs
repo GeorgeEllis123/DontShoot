@@ -1,13 +1,27 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PatternGenerator : MonoBehaviour
 {
+    [System.Serializable]
+    public class EasyPattern
+    {
+        public bool[] pattern = new bool[6];
+    }
 
+    [SerializeField] private List<EasyPattern> easyPatterns; 
     void Start()
     {
         //GenerateChallenge();
     }
 
+    public bool[] GenerateEasy()
+    {
+        int patternSize = easyPatterns.Count;
+        int randomIndex = Random.Range(0, patternSize);
+
+        return easyPatterns[randomIndex].pattern;
+    }
     public bool[] GeneratePlay()
     {
         bool[] tempPattern = new bool[3];

@@ -2044,6 +2044,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49916b9fbb07d41eeaaf6a5627b19e11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  easyPatterns:
+  - pattern: 010101000000
+  - pattern: 000000010101
 --- !u!4 &1143076279
 Transform:
   m_ObjectHideFlags: 0
