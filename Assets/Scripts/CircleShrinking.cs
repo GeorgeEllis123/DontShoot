@@ -38,6 +38,7 @@ public class CircleShrinking : MonoBehaviour
         sRenderer.color = originalColor;
     }
 
+    /*
     void changeCircleColor()
     {
         if (currentScale <= sweetSpotScale)
@@ -49,4 +50,5 @@ public class CircleShrinking : MonoBehaviour
             sRenderer.color = originalColor;
         }
     }
+    */
 }

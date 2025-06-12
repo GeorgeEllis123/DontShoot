@@ -97,9 +97,4 @@ public class GunMovement : MonoBehaviour
     //    transform.localScale = end;
     //    scaleCoroutine = null;
     //}
-
-    void CallPickUp()
-    {
-        anim.SetTrigger("Pickup");
-    }
 }
