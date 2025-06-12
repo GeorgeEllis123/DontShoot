@@ -13,20 +13,16 @@ public class PlayCutScene : MonoBehaviour
     {
         buttons.SetActive(false);
         StartCoroutine(Kidnap());
-        Debug.Log("test1");
     }
 
     IEnumerator Kidnap()
     {
-        Debug.Log("test2");
         yield return new WaitForSeconds(3f);
-        Debug.Log("test3");
         walkingSFX.Stop();
         bagSFX.Play();
         yield return new WaitForSeconds(0.1f);
         black.SetActive(true);
         yield return new WaitForSeconds(1f);
-        Debug.Log("test4");
         SceneManager.LoadScene(1);
     }
 }
