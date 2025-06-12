@@ -24,7 +24,7 @@ public class InputManager : MonoBehaviour
 
     void Update()
     {
-        if (cs.transform.localScale.x < tc.transform.localScale.x)
+        if (cs.transform.localScale.x < 7f)//tc.transform.localScale.x)
         {
             targetReady = true;
         }
@@ -32,40 +32,40 @@ public class InputManager : MonoBehaviour
         {
             targetReady = false;
         }
-        if (cs.transform.localScale.x <= 0)
+        if (cs.transform.localScale.x < tc.transform.localScale.x)
         {
             pm.GetShot(true);
         }
 
         if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.D))
         {
-            if (cs.transform.localScale.x < tc.transform.localScale.x)
-            {
+            //if (cs.transform.localScale.x < tc.transform.localScale.x)
+            //{
                 bool correct = pm.VerifyClick(true);
                 if (correct)
                     bs.SpawnBullet();
                 spinSFX.Play();
                 cs.ResetCircle();
-            }
-            else
-            {
-                pm.GetShot(true);
-            }
+            //}
+            //else
+            //{
+            //    pm.GetShot(true);
+            //}
         }
         if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.S))
         {
-            if(cs.transform.localScale.x < tc.transform.localScale.x)
-            {
+            //if(cs.transform.localScale.x < tc.transform.localScale.x)
+            //{
                 bool correct = pm.VerifyClick(false);
                 if (correct)
                     smoke.Play();
                 clickSFX.Play();
                 cs.ResetCircle();
-            }
-            else
-            {
-                pm.GetShot(true);
-            }
+            //}
+            //else
+            //{
+            //    pm.GetShot(true);
+            //}
         }
     }
 

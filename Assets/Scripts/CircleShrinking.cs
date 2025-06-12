@@ -28,7 +28,7 @@ public class CircleShrinking : MonoBehaviour
         int levelScale = level / 2;
         currentScale -= speed * Time.deltaTime * ((float)levelScale * .25f + 1);
         gameObject.transform.localScale = new Vector3(currentScale, currentScale, 0);
-        changeCircleColor(); 
+        //changeCircleColor(); 
     }
 
     public void ResetCircle()
