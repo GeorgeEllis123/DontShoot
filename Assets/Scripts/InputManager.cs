@@ -32,6 +32,10 @@ public class InputManager : MonoBehaviour
         {
             targetReady = false;
         }
+        if (cs.transform.localScale.x <= 0)
+        {
+            pm.GetShot(true);
+        }
 
         if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.D))
         {
