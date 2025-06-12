@@ -51,7 +51,7 @@ public class PatternManager : MonoBehaviour
         else if (level < 4)
         {
             timeBetweenLoads = 0.7f;
-            currentPattern = pg.GeneratePlay();
+            currentPattern = pg.GenerateEasy();
         }
         else if (level < 8)
         {
