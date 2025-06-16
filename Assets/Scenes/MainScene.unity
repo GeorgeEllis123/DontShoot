@@ -592,6 +592,7 @@ GameObject:
   - component: {fileID: 559224386}
   - component: {fileID: 559224385}
   - component: {fileID: 559224388}
+  - component: {fileID: 559224389}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -717,6 +718,20 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!114 &559224389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 559224384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6a979e4e74fe1c488a9935ff2f18e6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bobSpeed: 0.1
+  bobAmount: 0.1
 --- !u!1 &680417251
 GameObject:
   m_ObjectHideFlags: 0
@@ -3472,6 +3487,11 @@ PrefabInstance:
       value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
+      propertyPath: 'levelLines.Array.data[0]'
+      value: Congratulations! You're alive! What? You didn't expect to be let off
+        that easy, did you?
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
       propertyPath: 'levelLines.Array.data[3]'
       value: "Oh, and just so you know, do not even try to shoot me\u2014we both
         know I am faster on the draw anyway."
@@ -3559,7 +3579,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4483208733362259552, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
       propertyPath: 'monologueLines.Array.data[4]'
-      value: You must decide when to skip [D] and when to pull the trigger [S].
+      value: You must decide when to skip [D] and when to pull the trigger [A].
       objectReference: {fileID: 0}
     - target: {fileID: 5542977107363988724, guid: d3f5123c801f1de45a13895529f218e6, type: 3}
       propertyPath: m_Name

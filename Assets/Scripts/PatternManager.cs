@@ -48,12 +48,12 @@ public class PatternManager : MonoBehaviour
             currentPattern[4] = false;
             currentPattern[5] = true;
         }
-        else if (level < 4)
+        else if (level < 5)
         {
             timeBetweenLoads = 0.7f;
             currentPattern = pg.GenerateEasy();
         }
-        else if (level < 8)
+        else if (level < 9)
         {
             timeBetweenLoads = 0.5f;
             currentPattern = pg.GeneratePlay();

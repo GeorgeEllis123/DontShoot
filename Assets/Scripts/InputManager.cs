@@ -52,7 +52,7 @@ public class InputManager : MonoBehaviour
             //    pm.GetShot(true);
             //}
         }
-        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.S))
+        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.A))
         {
             //if(cs.transform.localScale.x < tc.transform.localScale.x)
             //{

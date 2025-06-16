@@ -24,6 +24,7 @@ public class TextManager : MonoBehaviour
 
     private void Update()
     {
+        /*
         if(inputManager.TargetReady() && levelManager.GetLevel() == 2)
         {
             if (!patternManager.GetNextBullet())
@@ -39,6 +40,7 @@ public class TextManager : MonoBehaviour
         {
             buttonPrompt.text = "";
         }
+        */
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -73,11 +75,11 @@ public class TextManager : MonoBehaviour
         if (index-1 >= 0 && index-1 < levelLines.Length)
         {
             inMonologue = false;
-            Invoke("ClearText", levelLines[index - 1].Length * characterDelay + 0.5f);
+            Invoke("ClearText", levelLines[index - 1].Length * characterDelay + 1f);
             PlayLine(levelLines[index-1]);
         } else
         {
-            Invoke("ClearText", levelLines[index - 1].Length * characterDelay + 0.5f);
+            Invoke("ClearText", levelLines[index - 1].Length * characterDelay + 1f);
             PlayLine(levelLines[levelLines.Length - 1]);
         }
     }
