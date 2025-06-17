@@ -3251,9 +3251,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'make sure you wait to click until the circles overlap
-
-'
+  m_text: take your shot before the circle reaches the barrel
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9d758322e5f3b51449255dedc056d163, type: 2}
   m_sharedMaterial: {fileID: 888202216296912490, guid: 9d758322e5f3b51449255dedc056d163, type: 2}
