@@ -6,6 +6,7 @@ public class NewLevelManager : MonoBehaviour
 {
     [SerializeField] private int section = 0;
     [SerializeField] private int levelsInSection = 1;
+    [SerializeField] private int[] patternLotPerLevel;
 
     [Header("References")]
     [SerializeField] private GameObject playerGun;
@@ -15,6 +16,10 @@ public class NewLevelManager : MonoBehaviour
     [SerializeField] private NewPatternManager patternManager;
     [SerializeField] private BagBehavior bag;
     [SerializeField] private GameObject timingCircle;
+    [SerializeField] private GameObject bangScreen;
+    [SerializeField] private GameObject toolTip;
+
+    private bool isGameover = false;
 
     void Start()
     {
@@ -57,9 +62,10 @@ public class NewLevelManager : MonoBehaviour
             // Hide Gun
             animatedGun.SetActive(false);
             animatedWing.SetActive(false);
+            yield return new WaitForSeconds(0.2f);
 
             // Play Sound
-            patternManager.LoadBullets(1);
+            patternManager.LoadBullets(patternLotPerLevel[i]);
             yield return new WaitUntil(() => patternManager.GetPlaySoundDone());
             yield return new WaitForSeconds(0.25f);
 
@@ -104,12 +110,39 @@ public class NewLevelManager : MonoBehaviour
 
     public void GameOver(bool hadBadTiming)
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        if (!isGameover)
+        {
+            isGameover = true;
+            bangScreen.SetActive(true);
+            playerGun.SetActive(false);
+            if (hadBadTiming && section == 0)
+            {
+
+                toolTip.SetActive(true);
+                StartCoroutine(ExtraLongReloadSceneDelay());
+            }
+            else
+            {
+                StartCoroutine(ReloadSceneDelay());
+            }
+        }
     }
 
     private void NextLevel()
     {
         Debug.Log("next level!");
+    }
+
+    private IEnumerator ReloadSceneDelay()
+    {
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    private IEnumerator ExtraLongReloadSceneDelay()
+    {
+        yield return new WaitForSeconds(5f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
 }
