@@ -1,12 +1,14 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class NewLevelManager : MonoBehaviour
 {
-    [SerializeField] private int section = 0;
-    [SerializeField] private int levelsInSection = 1;
+    [SerializeField] private int day = 0;
+    [SerializeField] private int levelsInDay = 1;
     [SerializeField] private int[] patternLotPerLevel;
+    [SerializeField] private bool dayHasMonologueFirst = false;
 
     [Header("References")]
     [SerializeField] private GameObject playerGun;
@@ -34,17 +36,17 @@ public class NewLevelManager : MonoBehaviour
 
         
         //// Level Stuff ////
-        for (int i = 0; i < levelsInSection; i++)
+        for (int i = 0; i < levelsInDay; i++)
         {
             // Play Dialogue
             textManager.gameObject.SetActive(true);
-            if (section == 0 && i == 0)
+            if (dayHasMonologueFirst && i == 0)
             {
                 textManager.StartMonologue();
             }
             else
             {
-                if (section == 0)
+                if (dayHasMonologueFirst)
                 {
                     // -1 to account for the monologue
                     textManager.PlayMessage(i - 1);
@@ -105,7 +107,9 @@ public class NewLevelManager : MonoBehaviour
 
         }
 
-        NextLevel();
+        // Put bag back on and load next level
+        yield return new WaitForSeconds(0.5f);
+        StartCoroutine("NextLevel");
     }
 
     public void GameOver(bool hadBadTiming)
@@ -115,7 +119,7 @@ public class NewLevelManager : MonoBehaviour
             isGameover = true;
             bangScreen.SetActive(true);
             playerGun.SetActive(false);
-            if (hadBadTiming && section == 0)
+            if (hadBadTiming && day == 1)
             {
 
                 toolTip.SetActive(true);
@@ -128,9 +132,19 @@ public class NewLevelManager : MonoBehaviour
         }
     }
 
-    private void NextLevel()
+    private IEnumerator NextLevel()
     {
-        Debug.Log("next level!");
+        bag.PutOn();
+        yield return new WaitForSeconds(1f);
+        if (SceneManager.GetActiveScene().buildIndex >= SceneManager.loadedSceneCount + 1)
+        {
+            Debug.Log("No scene after this one... Reloading this scene :)");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+        else
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
     }
 
     private IEnumerator ReloadSceneDelay()

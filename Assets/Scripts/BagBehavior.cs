@@ -16,4 +16,10 @@ public class BagBehavior : MonoBehaviour
         animator.SetTrigger("BagOff");
         sfx.Play();
     }
+
+    public void PutOn()
+    {
+        animator.SetTrigger("BagOn");
+        sfx.Play();
+    }
 }

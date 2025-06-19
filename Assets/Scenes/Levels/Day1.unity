@@ -1673,9 +1673,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d826d7e2a4227d24383f33ec926b81c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  section: 0
-  levelsInSection: 4
+  day: 1
+  levelsInDay: 4
   patternLotPerLevel: 01000000020000000200000002000000
+  dayHasMonologueFirst: 1
   playerGun: {fileID: 4527195864439802455}
   animatedGun: {fileID: 729691407}
   animatedWing: {fileID: 1577940200}
