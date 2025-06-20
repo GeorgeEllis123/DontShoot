@@ -972,13 +972,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lot1:
-  - pattern: 000000000001
+  - pattern: 000000000000
   lot2:
-  - pattern: 000000000101
+  - pattern: 010101010101
+  lot3:
+  - pattern: 000000000001
   - pattern: 010000000000
-  - pattern: 010100000000
   - pattern: 000000000100
-  lot3: []
+  - pattern: 000100000000
+  - pattern: 0000000100
 --- !u!114 &606090646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1132,13 +1134,12 @@ MonoBehaviour:
   - You are familiar with Russian Roulette, coo-rrect?
   - I am going to fill this gun with bullets and blanks.
   - You must decide when to skip [D] and when to pull the trigger [A].
-  - If you spin past a blank I will shoot you myself, coo-py? Coo-d luck.
+  - If you spin past a blank I will shoot you myself, coo-py?
+  - To make sure you understand the rules, this one will be completely empty.
   levelLines:
-  - Congratulations! You're alive! What? You didn't expect to be let off that easy,
-    did you?
-  - No... you will be playing this game for the rest of your sorry life.
-  - "Too bad there\u2019s no way to tell which bullets are real, right? You just
-    have to get lucky."
+  - Coo-d... Now this will be completely full.
+  - Now let's throw just one bullet in here to spice things up. Too bad you can't
+    tell where I put it.
 --- !u!4 &769621927
 Transform:
   m_ObjectHideFlags: 0
@@ -1674,8 +1675,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   day: 1
-  levelsInDay: 4
-  patternLotPerLevel: 01000000020000000200000002000000
+  levelsInDay: 3
+  patternLotPerLevel: 010000000200000003000000
   dayHasMonologueFirst: 1
   playerGun: {fileID: 4527195864439802455}
   animatedGun: {fileID: 729691407}
