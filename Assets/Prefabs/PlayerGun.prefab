@@ -10,9 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7019932730891837209}
   - component: {fileID: 3107235829915422319}
-  - component: {fileID: 8957764592674114859}
   m_Layer: 0
-  m_Name: '#TimingCircle#'
+  m_Name: CircleSprite
   m_TagString: TimingCircle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,11 +26,11 @@ Transform:
   m_GameObject: {fileID: 225576361628140417}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.010000002, y: 0.5, z: 0}
-  m_LocalScale: {x: 4.5449734, y: 4.5449734, z: 4.5449734}
+  m_LocalPosition: {x: -0.0020000003, y: 0.004000002, z: 0}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 6699283736944942995}
+  m_Father: {fileID: 6896150894668496031}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3107235829915422319
 SpriteRenderer:
@@ -88,22 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8957764592674114859
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 225576361628140417}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80ea1782ad1af43469bee8630f5a3750, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 3
-  startingScale: 7
-  sweetSpot: {fileID: 3042219895216903494}
-  highlightColor: {r: 0.9960785, g: 0.9568628, b: 0.48235297, a: 0.21176471}
 --- !u!1 &1407783431109514580
 GameObject:
   m_ObjectHideFlags: 0
@@ -191,6 +174,55 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1594968691463017357
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6896150894668496031}
+  - component: {fileID: 6524386187160940504}
+  m_Layer: 0
+  m_Name: '#TimingCircle#'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6896150894668496031
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1594968691463017357}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.48, z: 0}
+  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 7019932730891837209}
+  m_Father: {fileID: 6699283736944942995}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6524386187160940504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1594968691463017357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80ea1782ad1af43469bee8630f5a3750, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+  startingScale: 7
+  sweetSpot: {fileID: 3042219895216903494}
+  highlightColor: {r: 0.9960785, g: 0.9568628, b: 0.48235297, a: 0.21176471}
 --- !u!1 &2475912715262718179
 GameObject:
   m_ObjectHideFlags: 0
@@ -5334,7 +5366,7 @@ MonoBehaviour:
   timingRequired: 1
   timingCircleScale: 5
   pm: {fileID: 0}
-  circleShrinking: {fileID: 8957764592674114859}
+  circleShrinking: {fileID: 6524386187160940504}
   sweetSpot: {fileID: 3042219895216903494}
   barrel: {fileID: 5620923567207621021}
   bs: {fileID: 110809894886904698}
@@ -5697,9 +5729,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 7019932730891837209}
   - {fileID: 6859368463565758108}
   - {fileID: 8091178683731900998}
   - {fileID: 7205760961595903303}
+  - {fileID: 6896150894668496031}
   m_Father: {fileID: 7123426074460773103}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -17,7 +17,7 @@ public class CircleShrinking : MonoBehaviour
     private void OnEnable()
     {
         level++;
-        sRenderer = gameObject.GetComponent<SpriteRenderer>();
+        sRenderer = gameObject.GetComponentInChildren<SpriteRenderer>();
         originalColor = sRenderer.color;
         ResetCircle();
         sweetSpotScale = sweetSpot.transform.localScale.x;
