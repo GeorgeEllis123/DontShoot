@@ -980,7 +980,6 @@ MonoBehaviour:
   - pattern: 010000000000
   - pattern: 000000000100
   - pattern: 000100000000
-  - pattern: 0000000100
 --- !u!114 &606090646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1143,6 +1142,7 @@ MonoBehaviour:
   - ...
   - ...
   - ...
+  lastLine: Gonna take you to the next room...
 --- !u!4 &769621927
 Transform:
   m_ObjectHideFlags: 0
@@ -2618,6 +2618,10 @@ PrefabInstance:
       propertyPath: pm
       value: 
       objectReference: {fileID: 606090646}
+    - target: {fileID: 5816637683609981981, guid: 2a48f8ed48bd006428c8fc2d8df74b87, type: 3}
+      propertyPath: timingRequired
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7123426074460773103, guid: 2a48f8ed48bd006428c8fc2d8df74b87, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

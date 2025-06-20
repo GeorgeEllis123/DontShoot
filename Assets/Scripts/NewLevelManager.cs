@@ -107,6 +107,10 @@ public class NewLevelManager : MonoBehaviour
 
         }
 
+        // Play last line
+        textManager.PlayLastLine();
+        yield return new WaitUntil(() => textManager.GetDone());
+
         // Put bag back on and load next level
         yield return new WaitForSeconds(0.5f);
         StartCoroutine("NextLevel");
@@ -136,7 +140,7 @@ public class NewLevelManager : MonoBehaviour
     {
         bag.PutOn();
         yield return new WaitForSeconds(1f);
-        if (SceneManager.GetActiveScene().buildIndex >= SceneManager.loadedSceneCount + 1)
+        if (SceneManager.GetActiveScene().buildIndex >= SceneManager.sceneCountInBuildSettings - 1)
         {
             Debug.Log("No scene after this one... Reloading this scene :)");
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

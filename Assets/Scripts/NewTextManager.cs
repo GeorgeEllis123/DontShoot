@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using TMPro;
+using System;
 
 public class NewTextManager : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class NewTextManager : MonoBehaviour
     [SerializeField] private float characterDelay = 0.04f;
     [SerializeField] private string[] monologueLines;
     [SerializeField] private string[] levelLines;
+    [SerializeField] private string lastLine;
 
     private Coroutine typewriterCoroutine;
     private bool isTyping;
@@ -61,6 +63,12 @@ public class NewTextManager : MonoBehaviour
     {
         inMonologue = false;
         PlayLine(levelLines[index]);
+    }
+
+    public void PlayLastLine()
+    {
+        inMonologue = false;
+        PlayLine(lastLine);
     }
 
     private void PlayLine(string line)
