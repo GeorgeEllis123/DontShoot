@@ -1,14 +1,16 @@
-using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class NewLevelManager : MonoBehaviour
 {
+    [Header("General Level Details")]
     [SerializeField] private int day = 0;
     [SerializeField] private int levelsInDay = 1;
-    [SerializeField] private int[] patternLotPerLevel;
+    [SerializeField] private int[] patternLotPerLevel; // see NewPatternManager for what patterns are in each lot
     [SerializeField] private bool dayHasMonologueFirst = false;
+    [SerializeField] private bool audioDistractionWhilePlaying = false;
+    [SerializeField] private bool audioDistractionWhileListening = false;
 
     [Header("References")]
     [SerializeField] private GameObject playerGun;
@@ -16,6 +18,7 @@ public class NewLevelManager : MonoBehaviour
     [SerializeField] private GameObject animatedWing;
     [SerializeField] private NewTextManager textManager;
     [SerializeField] private NewPatternManager patternManager;
+    [SerializeField] private AudioDistractionManager audioDistractionManager;
     [SerializeField] private BagBehavior bag;
     [SerializeField] private GameObject timingCircle;
     [SerializeField] private GameObject bangScreen;
@@ -68,6 +71,8 @@ public class NewLevelManager : MonoBehaviour
 
             // Play Sound
             patternManager.LoadBullets(patternLotPerLevel[i]);
+            if (audioDistractionWhileListening)
+                audioDistractionManager.PlayRandomSoundWithDelay(Random.Range(1f, 3f));
             yield return new WaitUntil(() => patternManager.GetPlaySoundDone());
             yield return new WaitForSeconds(0.25f);
 
@@ -82,6 +87,8 @@ public class NewLevelManager : MonoBehaviour
             animatedGun.SetActive(false);
             animatedWing.SetActive(false);
             playerGun.SetActive(true);
+            if (audioDistractionWhilePlaying)
+                audioDistractionManager.PlayRandomSoundWithDelay(Random.Range(1f, 3f));
 
             // Wait till Player Done Playing
             yield return new WaitUntil(() => patternManager.GetPlayPatternDone());
@@ -121,6 +128,8 @@ public class NewLevelManager : MonoBehaviour
         if (!isGameover)
         {
             isGameover = true;
+            if (audioDistractionManager != null)
+                audioDistractionManager.gameObject.SetActive(false);
             bangScreen.SetActive(true);
             playerGun.SetActive(false);
             if (hadBadTiming && day == 1)
