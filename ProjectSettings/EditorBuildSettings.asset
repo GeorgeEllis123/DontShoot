@@ -9,11 +9,38 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 703eef542ce474810923a984a9269e7c
   - enabled: 1
-    path: Assets/Scenes/Levels/Day1.unity
+    path: Assets/Scenes/Levels/Day1 - Learn.unity
     guid: 91303770ce621544baa735de9d82ae19
   - enabled: 1
-    path: Assets/Scenes/Levels/Day2.unity
+    path: Assets/Scenes/Levels/Day2 - Play (Harder Patterns).unity
     guid: 025234c6192d0a14d9f5d90c218196d1
+  - enabled: 1
+    path: Assets/Scenes/Levels/Day3 - Challenge (Faster).unity
+    guid: c05c64fb5c20a3a42bb917a7ef3d60e3
+  - enabled: 1
+    path: Assets/Scenes/Levels/Day4 - Timing Circle Learn.unity
+    guid: 5d4eac3d273bf59408fbf2b99b1587f6
+  - enabled: 1
+    path: Assets/Scenes/Levels/Day5 - Timing Circle Play.unity
+    guid: 99efab1691bb1ab4ab7e76a169f316b2
+  - enabled: 1
+    path: Assets/Scenes/Levels/Day6 - Timing Circle Challenge.unity
+    guid: 6f99e025c069707458ba65e28328a4f3
+  - enabled: 1
+    path: Assets/Scenes/Levels/Day7 - Play Some Visual Distractions.unity
+    guid: a655caeed9237ff44aa5c075ae1ff961
+  - enabled: 1
+    path: Assets/Scenes/Levels/Day8 - Challenge With Visual Distractions.unity
+    guid: 5486657dc88170043bbe57a0afac9df2
+  - enabled: 1
+    path: Assets/Scenes/Levels/Day9 - Play With Audio Distractions.unity
+    guid: 444577c9dd817bd45adb7d20d0c7647d
+  - enabled: 1
+    path: Assets/Scenes/Levels/Day10 - Challenge With Audio Distractions.unity
+    guid: b597787022dd58142ac8596372aedced
+  - enabled: 1
+    path: Assets/Scenes/Levels/Day11 - Crazy!!!.unity
+    guid: 92ce259e301e6cf42bf7f9d7d5a2643c
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

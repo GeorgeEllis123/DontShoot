@@ -972,15 +972,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lot1:
-  - pattern: 000000000000
-  lot2:
-  - pattern: 010101010101
-  lot3:
-  - pattern: 000000000001
-  - pattern: 010000000000
-  - pattern: 000000000100
-  - pattern: 000100000000
-  - pattern: 0000000100
+  - pattern: 000000010101
+  - pattern: 010101000000
+  - pattern: 000100010001
+  - pattern: 010001000100
+  - pattern: 010000000001
+  - pattern: 010101010100
+  lot2: []
+  lot3: []
 --- !u!114 &606090646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1128,18 +1127,14 @@ MonoBehaviour:
   skipReminder: {fileID: 499427131}
   pigeonSFX: {fileID: 769621928}
   characterDelay: 0.04
-  monologueLines:
-  - Hello there, old friend.
-  - We are going to play a little game.
-  - You are familiar with Russian Roulette, coo-rrect?
-  - I am going to fill this gun with bullets and blanks.
-  - You must decide when to skip [D] and when to pull the trigger [A].
-  - If you spin past a blank I will shoot you myself, coo-py?
-  - To make sure you understand the rules, this one will be completely empty.
+  monologueLines: []
   levelLines:
-  - Coo-d... Now this will be completely full.
-  - Now let's throw just one bullet in here to spice things up. Too bad you can't
-    tell where I put it.
+  - First line today...
+  - Second line today....
+  - Another line here!!!!
+  - Another line here!!!!
+  - Another line here!!!!
+  - Another line here!!!!
 --- !u!4 &769621927
 Transform:
   m_ObjectHideFlags: 0
@@ -1674,10 +1669,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d826d7e2a4227d24383f33ec926b81c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  day: 1
+  day: 2
   levelsInDay: 3
-  patternLotPerLevel: 010000000200000003000000
-  dayHasMonologueFirst: 1
+  patternLotPerLevel: 010000000100000001000000
+  dayHasMonologueFirst: 0
   playerGun: {fileID: 4527195864439802455}
   animatedGun: {fileID: 729691407}
   animatedWing: {fileID: 1577940200}
