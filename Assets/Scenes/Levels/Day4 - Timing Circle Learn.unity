@@ -1127,7 +1127,9 @@ MonoBehaviour:
   skipReminder: {fileID: 499427131}
   pigeonSFX: {fileID: 769621928}
   characterDelay: 0.04
-  monologueLines: []
+  monologueLines:
+  - Explain timing circle
+  - some more
   levelLines:
   - First line today...
   - Second line today....
@@ -1670,12 +1672,15 @@ MonoBehaviour:
   day: 4
   levelsInDay: 3
   patternLotPerLevel: 010000000100000001000000
-  dayHasMonologueFirst: 0
+  dayHasMonologueFirst: 1
+  audioDistractionWhilePlaying: 0
+  audioDistractionWhileListening: 0
   playerGun: {fileID: 4527195864439802455}
   animatedGun: {fileID: 729691407}
   animatedWing: {fileID: 1577940200}
   textManager: {fileID: 769621926}
   patternManager: {fileID: 606090646}
+  audioDistractionManager: {fileID: 0}
   bag: {fileID: 393919562}
   timingCircle: {fileID: 1435989731877817280}
   bangScreen: {fileID: 1703050150}

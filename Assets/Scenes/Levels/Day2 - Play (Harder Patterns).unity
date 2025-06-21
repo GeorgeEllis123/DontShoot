@@ -978,8 +978,17 @@ MonoBehaviour:
   - pattern: 010001000100
   - pattern: 010000000001
   - pattern: 010101010100
-  lot2: []
-  lot3: []
+  lot2:
+  - pattern: 010100010100
+  - pattern: 010100000101
+  - pattern: 000001010000
+  - pattern: 000001000001
+  lot3:
+  - pattern: 010001000000
+  - pattern: 000100010000
+  - pattern: 000000010001
+  - pattern: 000100000001
+  - pattern: 010000000100
 --- !u!114 &606090646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1127,15 +1136,22 @@ MonoBehaviour:
   skipReminder: {fileID: 499427131}
   pigeonSFX: {fileID: 769621928}
   characterDelay: 0.04
-  monologueLines: []
+  monologueLines:
+  - "Welcome back! I do hope you\u2019re excited to play some more\u2026"
+  - Who knows how many of these will be bullets or blanks?
+  - "Well, I obviously know, but you don\u2019t! Otherwise, what would be the fun
+    in that?"
   levelLines:
-  - First line today...
-  - Second line today....
-  - Another line here!!!!
-  - Another line here!!!!
-  - Another line here!!!!
-  - Another line here!!!!
-  lastLine: 
+  - "Oh, and just so you know, do not even try to shoot me\u2014we both know I am
+    faster on the draw anyway."
+  - "How do I know that? Your hands aren\u2019t even tied and all I have are wings\u2026
+    and yet you\u2019ve so obediently sat there and listened to what I\u2019ve said.
+    You\u2019re terrified!"
+  - Maybe you used to be more powerful than me, but that moment has passed.
+  - 'Who am I? Even though you don''t recognize me, I can assure you our paths have
+    crossed on busy city streets. '
+  - You watched as I starved... but now it is my turn to watch as you die!
+  lastLine: "Or\u2026 it would be my turn if you hadn\u2019t gotten so lucky so far."
 --- !u!4 &769621927
 Transform:
   m_ObjectHideFlags: 0
@@ -1671,10 +1687,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   day: 2
-  levelsInDay: 3
-  patternLotPerLevel: 010000000100000001000000
-  dayHasMonologueFirst: 0
+  levelsInDay: 6
+  patternLotPerLevel: 010000000100000001000000020000000200000003000000
+  dayHasMonologueFirst: 1
   audioDistractionWhilePlaying: 0
+  audioDistractionWhileListening: 0
   playerGun: {fileID: 4527195864439802455}
   animatedGun: {fileID: 729691407}
   animatedWing: {fileID: 1577940200}

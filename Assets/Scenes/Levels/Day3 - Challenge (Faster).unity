@@ -972,12 +972,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lot1:
-  - pattern: 000000010101
-  - pattern: 010101000000
-  - pattern: 000100010001
-  - pattern: 010001000100
-  - pattern: 010000000001
-  - pattern: 010101010100
+  - pattern: 010001010001
+  - pattern: 010100000001
+  - pattern: 000001000101
+  - pattern: 010000000101
+  - pattern: 000100000100
+  - pattern: 010001000101
+  - pattern: 010101000001
+  - pattern: 010000010101
+  - pattern: 000100010100
+  - pattern: 010100010000
+  - pattern: 000100010000
+  - pattern: 000001000100
   lot2: []
   lot3: []
 --- !u!114 &606090646
@@ -1129,13 +1135,13 @@ MonoBehaviour:
   characterDelay: 0.04
   monologueLines: []
   levelLines:
-  - First line today...
-  - Second line today....
-  - Another line here!!!!
-  - Another line here!!!!
-  - Another line here!!!!
-  - Another line here!!!!
-  lastLine: 
+  - I bet you never expected to see me again, especially not with your life in my
+    hands.
+  - Well, obviously you expected to see me again after just now! I meant before we
+    grabbed you.
+  - "You humans think you know what to expect from us pigeons, but you're wrong!
+    You\u2019ve always been wrong."
+  lastLine: 'Have mercy? Hah! No, I don''t think I will. '
 --- !u!4 &769621927
 Transform:
   m_ObjectHideFlags: 0
@@ -1675,6 +1681,7 @@ MonoBehaviour:
   patternLotPerLevel: 010000000100000001000000
   dayHasMonologueFirst: 0
   audioDistractionWhilePlaying: 0
+  audioDistractionWhileListening: 0
   playerGun: {fileID: 4527195864439802455}
   animatedGun: {fileID: 729691407}
   animatedWing: {fileID: 1577940200}
