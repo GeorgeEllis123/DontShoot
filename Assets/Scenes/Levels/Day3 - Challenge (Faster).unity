@@ -998,7 +998,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fc15c4e26983734ca88eeba3c977afd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetweenLoads: 0.7
+  timeBetweenLoads: 0.5
   barrelRotator: {fileID: 8587676728509166592}
 --- !u!4 &606090647
 Transform:
@@ -2623,6 +2623,10 @@ PrefabInstance:
     - target: {fileID: 5816637683609981981, guid: 2a48f8ed48bd006428c8fc2d8df74b87, type: 3}
       propertyPath: timingRequired
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6524386187160940504, guid: 2a48f8ed48bd006428c8fc2d8df74b87, type: 3}
+      propertyPath: speed
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7123426074460773103, guid: 2a48f8ed48bd006428c8fc2d8df74b87, type: 3}
       propertyPath: m_LocalPosition.x

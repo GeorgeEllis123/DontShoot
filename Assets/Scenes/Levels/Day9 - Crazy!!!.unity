@@ -978,8 +978,10 @@ MonoBehaviour:
   - pattern: 010001000100
   - pattern: 010000000001
   - pattern: 010101010100
-  lot2: []
-  lot3: []
+  lot2:
+  - pattern: 000000000000
+  lot3:
+  - pattern: 000000000000
 --- !u!114 &606090646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1127,15 +1129,21 @@ MonoBehaviour:
   skipReminder: {fileID: 499427131}
   pigeonSFX: {fileID: 769621928}
   characterDelay: 0.04
-  monologueLines: []
+  monologueLines:
+  - 
   levelLines:
-  - First line today...
-  - Second line today....
-  - Another line here!!!!
-  - Another line here!!!!
-  - Another line here!!!!
-  - Another line here!!!!
-  lastLine: 
+  - You die today!
+  - I can see you struggling.
+  - Maybe we can be replaced...
+  - But obsolescence comes for everyone
+  - Soon, you won't move fast enough.
+  - ...
+  - Why won't you die!
+  - ...
+  - Just die already!
+  - ...
+  - ...
+  lastLine: "This game isn\u2019t fun anymore."
 --- !u!4 &769621927
 Transform:
   m_ObjectHideFlags: 0
@@ -1416,7 +1424,7 @@ Transform:
   - {fileID: 1052734995}
   - {fileID: 769621927}
   - {fileID: 606090647}
-  - {fileID: 1474723180}
+  - {fileID: 1379135858}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &921071858
@@ -1672,17 +1680,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   day: 9
-  levelsInDay: 3
-  patternLotPerLevel: 010000000100000001000000
+  levelsInDay: 11
+  patternLotPerLevel: 0100000002000000030000000100000001000000020000000200000003000000030000000100000003000000
   dayHasMonologueFirst: 0
   audioDistractionWhilePlaying: 1
-  audioDistractionWhileListening: 1
+  audioDistractionWhileListening: 0
   playerGun: {fileID: 4527195864439802455}
   animatedGun: {fileID: 729691407}
   animatedWing: {fileID: 1577940200}
   textManager: {fileID: 769621926}
   patternManager: {fileID: 606090646}
-  audioDistractionManager: {fileID: 1474723182}
+  audioDistractionManager: {fileID: 1379135860}
   bag: {fileID: 393919562}
   timingCircle: {fileID: 1435989731877817280}
   bangScreen: {fileID: 1703050150}
@@ -1847,7 +1855,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db82393ae9be79d4ca5388e55a2ca08b, type: 3}
---- !u!1 &1474723179
+--- !u!1 &1379135857
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1855,9 +1863,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1474723180}
-  - component: {fileID: 1474723182}
-  - component: {fileID: 1474723181}
+  - component: {fileID: 1379135858}
+  - component: {fileID: 1379135860}
+  - component: {fileID: 1379135859}
   m_Layer: 0
   m_Name: AudioDistractionManager
   m_TagString: Untagged
@@ -1865,13 +1873,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1474723180
+--- !u!4 &1379135858
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1474723179}
+  m_GameObject: {fileID: 1379135857}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -1880,13 +1888,13 @@ Transform:
   m_Children: []
   m_Father: {fileID: 916533995}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &1474723181
+--- !u!82 &1379135859
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1474723179}
+  m_GameObject: {fileID: 1379135857}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
@@ -1977,13 +1985,13 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1474723182
+--- !u!114 &1379135860
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1474723179}
+  m_GameObject: {fileID: 1379135857}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 29103507869c3484cacad5720caeefc9, type: 3}
@@ -1991,7 +1999,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - {fileID: 8300000, guid: c344fa69638534ebea9d14ffd3c93c11, type: 3}
-  - {fileID: 8300000, guid: 064aee0b8e9fb5344a1e2fe5d3dba78b, type: 3}
 --- !u!1 &1577940200 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4582014071621733029, guid: 10b584a6d9d882c48824163e0de1cc8a, type: 3}

@@ -147,15 +147,19 @@ public class NewLevelManager : MonoBehaviour
 
     private IEnumerator NextLevel()
     {
-        bag.PutOn();
-        yield return new WaitForSeconds(1f);
+        
         if (SceneManager.GetActiveScene().buildIndex >= SceneManager.sceneCountInBuildSettings - 1)
         {
-            Debug.Log("No scene after this one... Reloading this scene :)");
+            bangScreen.SetActive(true);
+            playerGun.SetActive(false);
+            Debug.Log("GG");
+            yield return new WaitForSeconds(2f);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
         else
         {
+            bag.PutOn();
+            yield return new WaitForSeconds(1f);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }

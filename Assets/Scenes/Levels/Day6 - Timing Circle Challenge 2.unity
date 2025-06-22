@@ -992,7 +992,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fc15c4e26983734ca88eeba3c977afd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetweenLoads: 0.7
+  timeBetweenLoads: 0.5
   barrelRotator: {fileID: 8587676728509166592}
 --- !u!4 &606090647
 Transform:
@@ -1129,12 +1129,11 @@ MonoBehaviour:
   characterDelay: 0.04
   monologueLines: []
   levelLines:
-  - First line today...
-  - Second line today....
-  - Another line here!!!!
-  - Another line here!!!!
-  - Another line here!!!!
-  - Another line here!!!!
+  - "Anyway, you must be very lucky, surviving this long\u2026"
+  - "It\u2019s almost like you have a way of knowing which bullets are real\u2026"
+  - "But that\u2019s obviously impossible!"
+  - "You can\u2019t see how I load them."
+  lastLine: I will figure you out.
 --- !u!4 &769621927
 Transform:
   m_ObjectHideFlags: 0
@@ -1669,15 +1668,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d826d7e2a4227d24383f33ec926b81c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  day: 8
-  levelsInDay: 3
-  patternLotPerLevel: 010000000100000001000000
+  day: 6
+  levelsInDay: 4
+  patternLotPerLevel: 01000000010000000100000001000000
   dayHasMonologueFirst: 0
+  audioDistractionWhilePlaying: 0
+  audioDistractionWhileListening: 0
   playerGun: {fileID: 4527195864439802455}
   animatedGun: {fileID: 729691407}
   animatedWing: {fileID: 1577940200}
   textManager: {fileID: 769621926}
   patternManager: {fileID: 606090646}
+  audioDistractionManager: {fileID: 0}
   bag: {fileID: 393919562}
   timingCircle: {fileID: 1435989731877817280}
   bangScreen: {fileID: 1703050150}
@@ -2610,6 +2612,14 @@ PrefabInstance:
       propertyPath: pm
       value: 
       objectReference: {fileID: 606090646}
+    - target: {fileID: 5816637683609981981, guid: 2a48f8ed48bd006428c8fc2d8df74b87, type: 3}
+      propertyPath: timingCircleScale
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6524386187160940504, guid: 2a48f8ed48bd006428c8fc2d8df74b87, type: 3}
+      propertyPath: speed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7123426074460773103, guid: 2a48f8ed48bd006428c8fc2d8df74b87, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
