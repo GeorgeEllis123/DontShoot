@@ -978,7 +978,16 @@ MonoBehaviour:
   - pattern: 010001000100
   - pattern: 010000000001
   - pattern: 010101010100
-  lot2: []
+  - pattern: 000000000001
+  lot2:
+  - pattern: 010100010100
+  - pattern: 000101000101
+  - pattern: 010000010000
+  - pattern: 000001000001
+  - pattern: 010100000101
+  - pattern: 010100010001
+  - pattern: 000000010001
+  - pattern: 010100000001
   lot3: []
 --- !u!114 &606090646
 MonoBehaviour:
@@ -1127,14 +1136,19 @@ MonoBehaviour:
   skipReminder: {fileID: 499427131}
   pigeonSFX: {fileID: 769621928}
   characterDelay: 0.04
-  monologueLines: []
+  monologueLines:
+  - "Actually, I think you\u2019ve had more than enough."
+  - Starting now, you better not be too hasty when you pull the trigger...
+  - Because time is running short.
+  - After all, why should I have mercy when you humans abandoned us loyal pigeons
+    all those years ago?
   levelLines:
-  - First line today...
-  - Second line today....
-  - Another line here!!!!
-  - Another line here!!!!
-  - Another line here!!!!
-  - Another line here!!!!
+  - "You know\u2026 for you humans, we crossed mountains, oceans, gunfire..."
+  - Just for you to laugh at us as we beg for breadcrumbs.
+  - For humans, it was just a service, but for us?
+  - It was our lives.
+  - You didn't know that? No one remembers us carrier pigeons anymore...
+  lastLine: But I remember. We all do.
 --- !u!4 &769621927
 Transform:
   m_ObjectHideFlags: 0
@@ -1669,15 +1683,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d826d7e2a4227d24383f33ec926b81c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  day: 6
-  levelsInDay: 3
-  patternLotPerLevel: 010000000100000001000000
-  dayHasMonologueFirst: 0
+  day: 4
+  levelsInDay: 6
+  patternLotPerLevel: 010000000100000001000000010000000200000002000000
+  dayHasMonologueFirst: 1
+  audioDistractionWhilePlaying: 0
+  audioDistractionWhileListening: 0
   playerGun: {fileID: 4527195864439802455}
   animatedGun: {fileID: 729691407}
   animatedWing: {fileID: 1577940200}
   textManager: {fileID: 769621926}
   patternManager: {fileID: 606090646}
+  audioDistractionManager: {fileID: 0}
   bag: {fileID: 393919562}
   timingCircle: {fileID: 1435989731877817280}
   bangScreen: {fileID: 1703050150}
@@ -2605,6 +2622,14 @@ PrefabInstance:
     - target: {fileID: 3040511077224875448, guid: 2a48f8ed48bd006428c8fc2d8df74b87, type: 3}
       propertyPath: m_Name
       value: PlayerGun
+      objectReference: {fileID: 0}
+    - target: {fileID: 3040511077224875448, guid: 2a48f8ed48bd006428c8fc2d8df74b87, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5811239827371363159, guid: 2a48f8ed48bd006428c8fc2d8df74b87, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5816637683609981981, guid: 2a48f8ed48bd006428c8fc2d8df74b87, type: 3}
       propertyPath: pm

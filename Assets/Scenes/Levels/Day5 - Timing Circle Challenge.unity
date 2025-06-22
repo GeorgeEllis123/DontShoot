@@ -1127,14 +1127,14 @@ MonoBehaviour:
   skipReminder: {fileID: 499427131}
   pigeonSFX: {fileID: 769621928}
   characterDelay: 0.04
-  monologueLines: []
+  monologueLines:
+  - Every pigeon dreams of being cherished and respected as we once were.
+  - Performing our sacred duty as heralds, instead of being scum on the streets.
   levelLines:
-  - First line today...
-  - Second line today....
-  - Another line here!!!!
-  - Another line here!!!!
-  - Another line here!!!!
-  - Another line here!!!!
+  - You replaced us like we were nothing
+  - And then treat us like even less...
+  - And now you ask for mercy?
+  lastLine: "Don\u2019t make me laugh\u2026"
 --- !u!4 &769621927
 Transform:
   m_ObjectHideFlags: 0
@@ -1672,12 +1672,15 @@ MonoBehaviour:
   day: 5
   levelsInDay: 3
   patternLotPerLevel: 010000000100000001000000
-  dayHasMonologueFirst: 0
+  dayHasMonologueFirst: 1
+  audioDistractionWhilePlaying: 0
+  audioDistractionWhileListening: 0
   playerGun: {fileID: 4527195864439802455}
   animatedGun: {fileID: 729691407}
   animatedWing: {fileID: 1577940200}
   textManager: {fileID: 769621926}
   patternManager: {fileID: 606090646}
+  audioDistractionManager: {fileID: 0}
   bag: {fileID: 393919562}
   timingCircle: {fileID: 1435989731877817280}
   bangScreen: {fileID: 1703050150}
