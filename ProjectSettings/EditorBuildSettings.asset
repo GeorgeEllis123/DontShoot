@@ -24,7 +24,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/Day5 - Timing Circle Challenge.unity
     guid: 99efab1691bb1ab4ab7e76a169f316b2
   - enabled: 1
-    path: Assets/Scenes/Levels/Day6 - Timing Circle Challenge 2.unity
+    path: Assets/Scenes/Levels/Day6 - Timing Circle Challenge Fast.unity
     guid: a655caeed9237ff44aa5c075ae1ff961
   - enabled: 1
     path: Assets/Scenes/Levels/Day7 - Visual Distractions.unity

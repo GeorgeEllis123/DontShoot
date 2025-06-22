@@ -972,12 +972,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lot1:
-  - pattern: 000000010101
-  - pattern: 010101000000
-  - pattern: 000100010001
-  - pattern: 010001000100
-  - pattern: 010000000001
+  - pattern: 010100010100
+  - pattern: 010001010001
+  - pattern: 010100000101
+  - pattern: 010000010101
+  - pattern: 000001010000
   - pattern: 010101010100
+  - pattern: 000101000000
+  - pattern: 000000010100
+  - pattern: 010100000001
   lot2: []
   lot3: []
 --- !u!114 &606090646
@@ -1671,7 +1674,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   day: 5
   levelsInDay: 3
-  patternLotPerLevel: 010000000100000001000000
+  patternLotPerLevel: 010000000000000000000000
   dayHasMonologueFirst: 1
   audioDistractionWhilePlaying: 0
   audioDistractionWhileListening: 0

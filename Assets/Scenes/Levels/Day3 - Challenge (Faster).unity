@@ -1678,7 +1678,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   day: 3
   levelsInDay: 3
-  patternLotPerLevel: 010000000100000001000000
+  patternLotPerLevel: 010000000100000000000000
   dayHasMonologueFirst: 0
   audioDistractionWhilePlaying: 0
   audioDistractionWhileListening: 0
@@ -2626,7 +2626,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6524386187160940504, guid: 2a48f8ed48bd006428c8fc2d8df74b87, type: 3}
       propertyPath: speed
-      value: 4
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 7123426074460773103, guid: 2a48f8ed48bd006428c8fc2d8df74b87, type: 3}
       propertyPath: m_LocalPosition.x

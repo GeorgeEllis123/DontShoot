@@ -978,6 +978,13 @@ MonoBehaviour:
   - pattern: 010001000100
   - pattern: 010000000001
   - pattern: 010101010100
+  - pattern: 000001010000
+  - pattern: 010100000101
+  - pattern: 000101010100
+  - pattern: 000000000101
+  - pattern: 010100000000
+  - pattern: 010101010000
+  - pattern: 000001010101
   lot2: []
   lot3: []
 --- !u!114 &606090646
@@ -1670,7 +1677,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   day: 6
   levelsInDay: 4
-  patternLotPerLevel: 01000000010000000100000001000000
+  patternLotPerLevel: 01000000010000000100000000000000
   dayHasMonologueFirst: 0
   audioDistractionWhilePlaying: 0
   audioDistractionWhileListening: 0
@@ -2618,7 +2625,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6524386187160940504, guid: 2a48f8ed48bd006428c8fc2d8df74b87, type: 3}
       propertyPath: speed
-      value: 5
+      value: 5.5
       objectReference: {fileID: 0}
     - target: {fileID: 7123426074460773103, guid: 2a48f8ed48bd006428c8fc2d8df74b87, type: 3}
       propertyPath: m_LocalPosition.x
