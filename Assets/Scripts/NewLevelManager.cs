@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class NewLevelManager : MonoBehaviour
 {
     [Header("General Level Details")]
+    public int pigeon_Visitor_Level = 0;
     [SerializeField] private int day = 0;
     [SerializeField] private int levelsInDay = 1;
     [SerializeField] private int[] patternLotPerLevel; // see NewPatternManager for what patterns are in each lot
@@ -23,6 +24,7 @@ public class NewLevelManager : MonoBehaviour
     [SerializeField] private GameObject timingCircle;
     [SerializeField] private GameObject bangScreen;
     [SerializeField] private GameObject toolTip;
+    [SerializeField] private Pigeon_Visitor pigeon_Visitor;
 
     private bool isGameover = false;
 
@@ -73,6 +75,14 @@ public class NewLevelManager : MonoBehaviour
             patternManager.LoadBullets(patternLotPerLevel[i]);
             if (audioDistractionWhileListening)
                 audioDistractionManager.PlayRandomSoundWithDelay(Random.Range(1f, 3f));
+            // Pigeon Visitor Enters
+            if (day >= 7)
+            {
+                if(i == pigeon_Visitor_Level)
+                {
+                    pigeon_Visitor.PigeonEnter();
+                }
+            }
             yield return new WaitUntil(() => patternManager.GetPlaySoundDone());
             yield return new WaitForSeconds(0.25f);
 
