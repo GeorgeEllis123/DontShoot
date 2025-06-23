@@ -2,22 +2,21 @@ using UnityEngine;
 
 public class Pigeon_Visitor : MonoBehaviour
 {
+    Animator animator;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        animator = GetComponent<Animator>();
     }
 
     public void PigeonEnter()
     {
-        Animator animator = GetComponent<Animator>();
         animator.SetTrigger("Enter");
+    }
 
+    public void PigeonExit()
+    {
+        animator.SetTrigger("Exit");
     }
 }

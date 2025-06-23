@@ -82,6 +82,11 @@ public class NewLevelManager : MonoBehaviour
                 {
                     pigeon_Visitor.PigeonEnter();
                 }
+
+                if(i == pigeon_Visitor_Level + 2)
+                {
+                    pigeon_Visitor.PigeonExit();
+                }
             }
             yield return new WaitUntil(() => patternManager.GetPlaySoundDone());
             yield return new WaitForSeconds(0.25f);
