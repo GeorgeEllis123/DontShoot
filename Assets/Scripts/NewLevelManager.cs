@@ -5,9 +5,8 @@ using UnityEngine.SceneManagement;
 public class NewLevelManager : MonoBehaviour
 {
     [Header("General Level Details")]
-    public int pigeon_Visitor_Level = 0;
-    [SerializeField] private int day = 0;
-    [SerializeField] private int levelsInDay = 1;
+    public int day = 0;
+    public int levelsInDay = 1;
     [SerializeField] private int[] patternLotPerLevel; // see NewPatternManager for what patterns are in each lot
     [SerializeField] private bool dayHasMonologueFirst = false;
     [SerializeField] private bool audioDistractionWhilePlaying = false;
@@ -24,7 +23,8 @@ public class NewLevelManager : MonoBehaviour
     [SerializeField] private GameObject timingCircle;
     [SerializeField] private GameObject bangScreen;
     [SerializeField] private GameObject toolTip;
-    [SerializeField] private Pigeon_Visitor pigeon_Visitor;
+    [SerializeField] private Pigeon_Visitor pigeon_Visitor_Left;
+    [SerializeField] private Pigeon_Visitor pigeon_Visitor_Right;
 
     private bool isGameover = false;
 
@@ -75,17 +75,17 @@ public class NewLevelManager : MonoBehaviour
             patternManager.LoadBullets(patternLotPerLevel[i]);
             if (audioDistractionWhileListening)
                 audioDistractionManager.PlayRandomSoundWithDelay(Random.Range(1f, 3f));
-            // Pigeon Visitor Enters
+            // Left Pigeon Visitor Enters, Right Pigeon Visitor Exits while loading
             if (day >= 7)
             {
-                if(i == pigeon_Visitor_Level)
+                if(i == pigeon_Visitor_Left.enterLevel)
                 {
-                    pigeon_Visitor.PigeonEnter();
+                    pigeon_Visitor_Left.PigeonEnter();
                 }
 
-                if(i == pigeon_Visitor_Level + 2)
+                if(i == pigeon_Visitor_Right.exitLevel)
                 {
-                    pigeon_Visitor.PigeonExit();
+                    pigeon_Visitor_Right.PigeonExit();
                 }
             }
             yield return new WaitUntil(() => patternManager.GetPlaySoundDone());
@@ -104,6 +104,20 @@ public class NewLevelManager : MonoBehaviour
             playerGun.SetActive(true);
             if (audioDistractionWhilePlaying)
                 audioDistractionManager.PlayRandomSoundWithDelay(Random.Range(1f, 3f));
+
+            // Right Pigeon Visitor Enters, Left Pigeon Visitor Exits while playing
+            if(day >= 7)
+            {
+                if(i == pigeon_Visitor_Right.enterLevel)
+                {
+                    pigeon_Visitor_Right.PigeonEnter();
+                }
+
+                if(i == pigeon_Visitor_Left.exitLevel)
+                {
+                    pigeon_Visitor_Left.PigeonExit();
+                }
+            }
 
             // Wait till Player Done Playing
             yield return new WaitUntil(() => patternManager.GetPlayPatternDone());

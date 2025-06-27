@@ -1694,6 +1694,8 @@ MonoBehaviour:
   timingCircle: {fileID: 1435989731877817280}
   bangScreen: {fileID: 1703050150}
   toolTip: {fileID: 1992491913}
+  pigeon_Visitor_Left: {fileID: 0}
+  pigeon_Visitor_Right: {fileID: 0}
 --- !u!4 &1052734995
 Transform:
   m_ObjectHideFlags: 0
@@ -2617,6 +2619,14 @@ PrefabInstance:
     - target: {fileID: 3040511077224875448, guid: 2a48f8ed48bd006428c8fc2d8df74b87, type: 3}
       propertyPath: m_Name
       value: PlayerGun
+      objectReference: {fileID: 0}
+    - target: {fileID: 3040511077224875448, guid: 2a48f8ed48bd006428c8fc2d8df74b87, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5811239827371363159, guid: 2a48f8ed48bd006428c8fc2d8df74b87, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5816637683609981981, guid: 2a48f8ed48bd006428c8fc2d8df74b87, type: 3}
       propertyPath: pm

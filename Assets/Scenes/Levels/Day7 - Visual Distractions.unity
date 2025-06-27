@@ -248,6 +248,78 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1972299440}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &356523853
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 929384408514469974, guid: 72ca503fb9fbe00448752945372321c9, type: 3}
+      propertyPath: m_Name
+      value: Visitor_Pigeon_Right
+      objectReference: {fileID: 0}
+    - target: {fileID: 2209332297529187570, guid: 72ca503fb9fbe00448752945372321c9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2209332297529187570, guid: 72ca503fb9fbe00448752945372321c9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2209332297529187570, guid: 72ca503fb9fbe00448752945372321c9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2209332297529187570, guid: 72ca503fb9fbe00448752945372321c9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2209332297529187570, guid: 72ca503fb9fbe00448752945372321c9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2209332297529187570, guid: 72ca503fb9fbe00448752945372321c9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2209332297529187570, guid: 72ca503fb9fbe00448752945372321c9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2209332297529187570, guid: 72ca503fb9fbe00448752945372321c9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2209332297529187570, guid: 72ca503fb9fbe00448752945372321c9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2209332297529187570, guid: 72ca503fb9fbe00448752945372321c9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6488588629001339223, guid: 72ca503fb9fbe00448752945372321c9, type: 3}
+      propertyPath: left
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 72ca503fb9fbe00448752945372321c9, type: 3}
+--- !u!114 &356523854 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6488588629001339223, guid: 72ca503fb9fbe00448752945372321c9, type: 3}
+  m_PrefabInstance: {fileID: 356523853}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 011f705b8c6345e4d9be06e96e70019c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &393919556
 GameObject:
   m_ObjectHideFlags: 0
@@ -992,7 +1064,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fc15c4e26983734ca88eeba3c977afd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetweenLoads: 0.7
+  timeBetweenLoads: 0.5
   barrelRotator: {fileID: 8587676728509166592}
 --- !u!4 &606090647
 Transform:
@@ -1671,10 +1743,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d826d7e2a4227d24383f33ec926b81c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pigeon_Visitor_Level: 0
   day: 7
-  levelsInDay: 3
-  patternLotPerLevel: 010000000100000001000000
+  levelsInDay: 6
+  patternLotPerLevel: 010000000100000001000000010000000100000001000000
   dayHasMonologueFirst: 0
   audioDistractionWhilePlaying: 0
   audioDistractionWhileListening: 0
@@ -1688,7 +1759,8 @@ MonoBehaviour:
   timingCircle: {fileID: 1435989731877817280}
   bangScreen: {fileID: 1703050150}
   toolTip: {fileID: 1992491913}
-  pigeon_Visitor: {fileID: 1265944877}
+  pigeon_Visitor_Left: {fileID: 1265944877}
+  pigeon_Visitor_Right: {fileID: 356523854}
 --- !u!4 &1052734995
 Transform:
   m_ObjectHideFlags: 0
@@ -1875,7 +1947,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 929384408514469974, guid: 72ca503fb9fbe00448752945372321c9, type: 3}
       propertyPath: m_Name
-      value: Visitor_Pigeon
+      value: Visitor_Pigeon_Left
       objectReference: {fileID: 0}
     - target: {fileID: 2209332297529187570, guid: 72ca503fb9fbe00448752945372321c9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2685,6 +2757,14 @@ PrefabInstance:
       propertyPath: pm
       value: 
       objectReference: {fileID: 606090646}
+    - target: {fileID: 5816637683609981981, guid: 2a48f8ed48bd006428c8fc2d8df74b87, type: 3}
+      propertyPath: timingCircleScale
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6524386187160940504, guid: 2a48f8ed48bd006428c8fc2d8df74b87, type: 3}
+      propertyPath: speed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7123426074460773103, guid: 2a48f8ed48bd006428c8fc2d8df74b87, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2931,6 +3011,7 @@ SceneRoots:
   - {fileID: 921071860}
   - {fileID: 8189647953507739882}
   - {fileID: 1629946640}
+  - {fileID: 356523853}
   - {fileID: 5075818700482536587}
   - {fileID: 680417254}
   - {fileID: 3833201572972958028}

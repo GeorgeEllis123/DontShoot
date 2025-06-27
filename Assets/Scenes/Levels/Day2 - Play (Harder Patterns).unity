@@ -1001,7 +1001,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fc15c4e26983734ca88eeba3c977afd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetweenLoads: 0.6
+  timeBetweenLoads: 0.7
   barrelRotator: {fileID: 8587676728509166592}
 --- !u!4 &606090647
 Transform:
@@ -1702,6 +1702,8 @@ MonoBehaviour:
   timingCircle: {fileID: 1435989731877817280}
   bangScreen: {fileID: 1703050150}
   toolTip: {fileID: 1992491913}
+  pigeon_Visitor_Left: {fileID: 0}
+  pigeon_Visitor_Right: {fileID: 0}
 --- !u!4 &1052734995
 Transform:
   m_ObjectHideFlags: 0
