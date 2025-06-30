@@ -1,16 +1,18 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class PickUp : MonoBehaviour
 {
     [SerializeField] private GameObject gunLogic;
+    [SerializeField] private float putDownAnimDuration = 0.5f;
 
-    private Animator anim; 
+    private Animator anim;
 
     private void OnEnable()
     {
-        anim = gameObject.GetComponent<Animator>(); 
-        anim.SetTrigger("PickUp"); 
+        anim = gameObject.GetComponent<Animator>();
+        anim.SetTrigger("PickUp");
         // move up
         Invoke("GunLogicEnable", 1f);
     }
@@ -18,7 +20,7 @@ public class PickUp : MonoBehaviour
     private void GunLogicEnable()
     {
         gunLogic.SetActive(true);
-        
+
     }
 
     private void OnDisable()
@@ -26,5 +28,19 @@ public class PickUp : MonoBehaviour
         // anim.SetTrigger("PutDown"); 
         // return to below screen
         gunLogic.SetActive(false);
+    }
+
+    public void HandlePutDown()
+    {
+        StartCoroutine(PutDownDisable()); 
+    }
+
+    private IEnumerator PutDownDisable()
+    {
+        anim.SetTrigger("PutDown");
+        gunLogic.SetActive(false);
+
+        yield return new WaitForSeconds(putDownAnimDuration);
+        gameObject.SetActive(false); 
     }
 }

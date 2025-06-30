@@ -124,9 +124,7 @@ public class NewLevelManager : MonoBehaviour
 
             // Put down gun
             timingCircle.SetActive(false);
-            // TODO: Add a put down animation here!!!
-            yield return new WaitForSeconds(0.5f);
-            playerGun.SetActive(false);
+            playerGun.GetComponent<PickUp>().HandlePutDown();
             timingCircle.SetActive(true);
             yield return new WaitForSeconds(0.5f);
 

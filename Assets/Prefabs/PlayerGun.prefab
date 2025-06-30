@@ -376,6 +376,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunLogic: {fileID: 5811239827371363159}
+  putDownAnimDuration: 1
 --- !u!95 &4702158049671801648
 Animator:
   serializedVersion: 7
@@ -5364,6 +5365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4255a8767ba6f3f4a8d24fd1314815c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  numInputs: 0
   timingRequired: 1
   timingCircleScale: 5
   pm: {fileID: 0}
