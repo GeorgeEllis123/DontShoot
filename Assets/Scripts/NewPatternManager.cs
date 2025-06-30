@@ -8,6 +8,7 @@ public class NewPatternManager : MonoBehaviour
     private NewLevelManager levelManager;
     private bool[] currentPattern;
     private NewPatternGenerator pg;
+    [SerializeField] private NewInputManager inputManager;
 
 
     // barrel animation
@@ -34,6 +35,8 @@ public class NewPatternManager : MonoBehaviour
     public void LoadBullets(int lot)
     {
         currentPattern = pg.GetPattern(lot);
+        // reset current number of inputs each time a pattern is loaded
+        inputManager.numInputs = 0;
         StartCoroutine(PlayPattern());
     }
 

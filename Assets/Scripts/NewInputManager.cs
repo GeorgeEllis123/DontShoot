@@ -3,6 +3,7 @@ using UnityEngine;
 public class NewInputManager : MonoBehaviour
 {
     [Header("Level Stats")]
+    public int numInputs = 0;
     [SerializeField] private bool timingRequired;
     [SerializeField] private float timingCircleScale = 5f;
 
@@ -41,34 +42,43 @@ public class NewInputManager : MonoBehaviour
             pm.GetShot(true);
         }
 
+        
         if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.D))
         {
-            if (circleShrinking.transform.localScale.x < sweetSpot.transform.localScale.x || !timingRequired)
+            if (numInputs < 6)
             {
-                bool correct = pm.VerifyClick(true);
-                if (correct)
-                    bs.SpawnBullet();
-                spinSFX.Play();
-                circleShrinking.ResetCircle();
-            }
-            else
-            {
-                pm.GetShot(true);
+                numInputs++;
+                if (circleShrinking.transform.localScale.x < sweetSpot.transform.localScale.x || !timingRequired)
+                {
+                    bool correct = pm.VerifyClick(true);
+                    if (correct)
+                        bs.SpawnBullet();
+                    spinSFX.Play();
+                    circleShrinking.ResetCircle();
+                }
+                else
+                {
+                    pm.GetShot(true);
+                }
             }
         }
         if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.A))
         {
-            if(circleShrinking.transform.localScale.x < sweetSpot.transform.localScale.x || !timingRequired)
+            if (numInputs < 6)
             {
-                bool correct = pm.VerifyClick(false);
-                if (correct)
-                    smoke.Play();
-                clickSFX.Play();
-                circleShrinking.ResetCircle();
-            }
-            else
-            {
-                pm.GetShot(true);
+                numInputs++;
+                if (circleShrinking.transform.localScale.x < sweetSpot.transform.localScale.x || !timingRequired)
+                {
+                    bool correct = pm.VerifyClick(false);
+                    if (correct)
+                        smoke.Play();
+                    clickSFX.Play();
+                    circleShrinking.ResetCircle();
+                }
+                else
+                {
+                    pm.GetShot(true);
+                }
             }
         }
     }

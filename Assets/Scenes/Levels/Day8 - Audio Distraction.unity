@@ -993,6 +993,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBetweenLoads: 0.5
+  inputManager: {fileID: 822358331668825059}
   barrelRotator: {fileID: 8587676728509166592}
 --- !u!4 &606090647
 Transform:
@@ -2955,6 +2956,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a48f8ed48bd006428c8fc2d8df74b87, type: 3}
+--- !u!114 &822358331668825059 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5816637683609981981, guid: 2a48f8ed48bd006428c8fc2d8df74b87, type: 3}
+  m_PrefabInstance: {fileID: 822358331668825058}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4255a8767ba6f3f4a8d24fd1314815c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1435989731877817280 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 225576361628140417, guid: 2a48f8ed48bd006428c8fc2d8df74b87, type: 3}
