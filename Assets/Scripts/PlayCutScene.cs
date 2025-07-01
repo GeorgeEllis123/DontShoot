@@ -8,10 +8,12 @@ public class PlayCutScene : MonoBehaviour
     [SerializeField] private GameObject black;
     [SerializeField] private AudioSource walkingSFX;
     [SerializeField] private AudioSource bagSFX;
+    private string highScoreKey = "HighScoreKey";
 
     public void Play()
     {
         buttons.SetActive(false);
+
         StartCoroutine(Kidnap());
     }
 
@@ -23,6 +25,8 @@ public class PlayCutScene : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         black.SetActive(true);
         yield return new WaitForSeconds(1f);
-        SceneManager.LoadScene(1);
+        // attempt to access high score level, defaults to 1
+        int startingLevel = PlayerPrefs.GetInt(highScoreKey, 1);
+        SceneManager.LoadScene(startingLevel);
     }
 }

@@ -32,7 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/Day8 - Audio Distraction.unity
     guid: 444577c9dd817bd45adb7d20d0c7647d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Levels/Day9 - Calm Before The Storm.unity
     guid: b597787022dd58142ac8596372aedced
   - enabled: 1

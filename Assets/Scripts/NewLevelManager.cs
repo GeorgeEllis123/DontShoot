@@ -26,10 +26,16 @@ public class NewLevelManager : MonoBehaviour
     [SerializeField] private Pigeon_Visitor pigeon_Visitor_Left;
     [SerializeField] private Pigeon_Visitor pigeon_Visitor_Right;
 
+    [Header("Player Data")]
+    private int highScore;
+    private string highScoreKey = "HighScoreKey";
+
     private bool isGameover = false;
 
     void Start()
     {
+        highScore = PlayerPrefs.GetInt(highScoreKey, 0);
+
         StartCoroutine("Play");
     }
 
@@ -174,6 +180,15 @@ public class NewLevelManager : MonoBehaviour
 
     private IEnumerator NextLevel()
     {
+        // update high score each time a new level is reached
+        highScore = SceneManager.GetActiveScene().buildIndex + 1;
+        // if high score is somehow set outside scene count range, set it to the final level
+        if(highScore >= SceneManager.sceneCountInBuildSettings)
+        {
+            highScore = SceneManager.sceneCountInBuildSettings - 1;
+        }
+        PlayerPrefs.SetInt(highScoreKey, highScore);
+        PlayerPrefs.Save();
         
         if (SceneManager.GetActiveScene().buildIndex >= SceneManager.sceneCountInBuildSettings - 1)
         {
