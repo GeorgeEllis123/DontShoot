@@ -1817,8 +1817,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   day: 3
-  levelsInDay: 6
-  patternLotPerLevel: 010000000100000001000000010000000100000001000000
+  levelsInDay: 3
+  patternLotPerLevel: 010000000100000001000000
   dayHasMonologueFirst: 0
   audioDistractionWhilePlaying: 0
   audioDistractionWhileListening: 0
