@@ -130,7 +130,7 @@ public class NewLevelManager : MonoBehaviour
 
             // Put down gun
             timingCircle.SetActive(false);
-            playerGun.GetComponent<PickUp>().HandlePutDown();
+            yield return StartCoroutine(playerGun.GetComponent<PickUp>().HandlePutdown());
             timingCircle.SetActive(true);
             yield return new WaitForSeconds(0.5f);
 

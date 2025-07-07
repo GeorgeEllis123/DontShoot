@@ -5,7 +5,7 @@ using UnityEngine;
 public class PickUp : MonoBehaviour
 {
     [SerializeField] private GameObject gunLogic;
-    [SerializeField] private float putDownAnimDuration = 0.5f;
+    [SerializeField] private float putDownAnimDuration = 1.2f;
 
     private Animator anim;
 
@@ -30,12 +30,7 @@ public class PickUp : MonoBehaviour
         gunLogic.SetActive(false);
     }
 
-    public void HandlePutDown()
-    {
-        StartCoroutine(PutDownDisable()); 
-    }
-
-    private IEnumerator PutDownDisable()
+    public IEnumerator HandlePutdown()
     {
         anim.SetTrigger("PutDown");
         gunLogic.SetActive(false);
