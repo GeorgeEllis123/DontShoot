@@ -127,6 +127,7 @@ public class NewLevelManager : MonoBehaviour
 
             // Wait till Player Done Playing
             yield return new WaitUntil(() => patternManager.GetPlayPatternDone());
+            yield return new WaitForSeconds(0.45f);
 
             // Put down gun
             timingCircle.SetActive(false);
