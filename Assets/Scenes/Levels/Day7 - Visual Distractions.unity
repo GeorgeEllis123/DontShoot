@@ -300,6 +300,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4589915206360614156, guid: 72ca503fb9fbe00448752945372321c9, type: 3}
+      propertyPath: Pan2D
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4589915206360614156, guid: 72ca503fb9fbe00448752945372321c9, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6488588629001339223, guid: 72ca503fb9fbe00448752945372321c9, type: 3}
       propertyPath: left
       value: 0
@@ -2127,6 +2135,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2209332297529187570, guid: 72ca503fb9fbe00448752945372321c9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4589915206360614156, guid: 72ca503fb9fbe00448752945372321c9, type: 3}
+      propertyPath: Pan2D
+      value: -0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4589915206360614156, guid: 72ca503fb9fbe00448752945372321c9, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
