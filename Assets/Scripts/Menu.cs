@@ -14,10 +14,10 @@ public class Menu : MonoBehaviour
     [SerializeField] private TextMeshProUGUI highScore;
     private string highScoreKey = "HighScoreKey";
 
+
     void Start()
     {
         StartCoroutine(Disclaimer());
-        
     }
 
     // Update is called once per frame
@@ -54,7 +54,7 @@ public class Menu : MonoBehaviour
 
     IEnumerator Disclaimer()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSecondsRealtime(3f);
         disclaimer.SetActive(false);
         gameObject.SetActive(true);
         int startingLevel = PlayerPrefs.GetInt(highScoreKey, 0);
