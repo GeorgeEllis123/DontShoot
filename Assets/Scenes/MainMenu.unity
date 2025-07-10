@@ -2199,6 +2199,7 @@ MonoBehaviour:
   disclaimer: {fileID: 1725414994}
   creditsScreen: {fileID: 369895233}
   highScore: {fileID: 949702287}
+  startButtonTxt: {fileID: 270775445}
 --- !u!4 &1091825627
 Transform:
   m_ObjectHideFlags: 0

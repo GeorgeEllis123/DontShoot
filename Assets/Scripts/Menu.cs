@@ -12,12 +12,17 @@ public class Menu : MonoBehaviour
     [SerializeField] private GameObject disclaimer;
     [SerializeField] private GameObject creditsScreen;
     [SerializeField] private TextMeshProUGUI highScore;
+    [SerializeField] private TextMeshProUGUI startButtonTxt;
     private string highScoreKey = "HighScoreKey";
 
 
     void Start()
     {
         StartCoroutine(Disclaimer());
+
+        int startingLevel = PlayerPrefs.GetInt(highScoreKey, 0);
+        if (startingLevel > 0)
+            startButtonTxt.text = "Resume";
     }
 
     // Update is called once per frame
@@ -30,6 +35,9 @@ public class Menu : MonoBehaviour
     void StartWhenPressed()
     {
         Debug.Log("Starting");
+        int startingLevel = PlayerPrefs.GetInt(highScoreKey, 0);
+        if (startingLevel > 0)
+            SceneManager.LoadScene(startingLevel);
         SceneManager.LoadScene(1);
         gameObject.SetActive(false);
     }
