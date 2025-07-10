@@ -1145,6 +1145,7 @@ MonoBehaviour:
   lastLine: Congratulations! You're alive! What? You didn't expect to be let off
     that easy, did you? No... you will be playing this game for the rest of your
     sorry life.
+  maxCharsPerSegment: 100
 --- !u!4 &769621927
 Transform:
   m_ObjectHideFlags: 0

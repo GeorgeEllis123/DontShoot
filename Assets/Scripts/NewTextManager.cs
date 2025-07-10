@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using TMPro;
+using System.Collections.Generic;
 
 public class NewTextManager : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class NewTextManager : MonoBehaviour
     [SerializeField] private string[] monologueLines;
     [SerializeField] private string[] levelLines;
     [SerializeField] private string lastLine;
+    [SerializeField] private int maxCharsPerSegment = 100;
 
     private Coroutine typewriterCoroutine;
     private bool isTyping;
@@ -18,6 +20,8 @@ public class NewTextManager : MonoBehaviour
     private bool inMonologue;
     private int currentLine;
     private bool done;
+    private bool waitingForSegmentInput = false;
+    private bool continueToNextSegment = false;
 
     private void Update()
     {
@@ -34,6 +38,10 @@ public class NewTextManager : MonoBehaviour
         if (isTyping)
         {
             isSkipping = true;
+        }
+        else if (waitingForSegmentInput)
+        {
+            continueToNextSegment = true;
         }
         else
         {
@@ -75,7 +83,16 @@ public class NewTextManager : MonoBehaviour
         if (typewriterCoroutine != null)
             StopCoroutine(typewriterCoroutine);
 
-        typewriterCoroutine = StartCoroutine(TypeLine(line));
+        string[] segments = LineSplit(line, maxCharsPerSegment);
+
+        if(segments.Length > 1)
+        {
+            typewriterCoroutine = StartCoroutine(PlaySegments(segments));
+        }
+        else
+        {
+            typewriterCoroutine = StartCoroutine(TypeLine(line));
+        }
     }
 
     private IEnumerator TypeLine(string line)
@@ -115,6 +132,25 @@ public class NewTextManager : MonoBehaviour
         //}
     }
 
+    private IEnumerator PlaySegments(string[] segments)
+    {
+        for(int i = 0; i < segments.Length; i++)
+        {
+            yield return StartCoroutine(TypeLine(segments[i]));
+
+            if(i < segments.Length - 1)
+            {
+                waitingForSegmentInput = true;
+                continueToNextSegment = false;
+
+                yield return new WaitUntil(() => continueToNextSegment);
+
+                waitingForSegmentInput = false;
+                textBox.text = "";
+            }
+        }
+    }
+
     private void PlayNextMonologueLine()
     {
         currentLine++;
@@ -139,5 +175,57 @@ public class NewTextManager : MonoBehaviour
     public void ResetBools()
     {
         done = false;
+    }
+
+    public string[] LineSplit(string line, int maxChars = 60)
+    {
+        if(line.Length < maxChars)
+        {
+            return new string[] { line };
+        }
+
+        List<string> segments = new List<string>();
+        string remaining = line;
+
+        while(remaining.Length > maxChars)
+        {
+            int splitIndex = -1;
+
+            for(int i = maxChars; i >= maxChars / 2; i--)
+            {
+                if(i < remaining.Length && ".,;:!?".Contains(remaining[i]))
+                {
+                    splitIndex = i + 1;
+                    break;
+                }
+            }
+
+            if(splitIndex == -1)
+            {
+                for(int i = maxChars; i >= maxChars / 2; i--)
+                {
+                    if(i < remaining.Length && remaining[i] == ' ')
+                    {
+                        splitIndex = i;
+                        break;
+                    }
+                }
+            }
+
+            if(splitIndex == -1)
+            {
+                splitIndex = maxChars;
+            }
+
+            segments.Add(remaining.Substring(0, splitIndex).Trim());
+            remaining = remaining.Substring(splitIndex).Trim();
+        }
+
+        if(remaining.Length > 0)
+        {
+            segments.Add(remaining);
+        }
+
+        return segments.ToArray();
     }
 }
