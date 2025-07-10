@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -7,10 +8,14 @@ public class PauseMenu : MonoBehaviour
     public GameObject text;
     public GameObject background;
     public GameObject[] buttons;
+    public TextMeshProUGUI highScoreText;
+
+    private string highScoreKey = "HighScoreKey";
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        highScoreText.gameObject.SetActive(false);
         text.SetActive(false); 
         background.SetActive(false);
         foreach (GameObject b in buttons)
@@ -30,8 +35,14 @@ public class PauseMenu : MonoBehaviour
 
     public void TogglePause()
     {
+        
+
         if (Time.timeScale > 0f)
         {
+            int highScore = PlayerPrefs.GetInt(highScoreKey, 0);
+            highScoreText.text = "High Score: \nDay " + highScore;
+            highScoreText.gameObject.SetActive(true);
+
             text.SetActive(true);
             background.SetActive(true);
             foreach (GameObject b in buttons)
@@ -41,6 +52,7 @@ public class PauseMenu : MonoBehaviour
             Time.timeScale = 0f;
         } else
         {
+            highScoreText.gameObject.SetActive(false);
             text.SetActive(false);
             background.SetActive(false);
             foreach (GameObject b in buttons)

@@ -16,7 +16,7 @@ public class BangBehavior : MonoBehaviour
     private void OnEnable()
     {
         audioSource.Play();
-        highScoreText.text = "You survived for\n" + highScore + " days";
+        highScoreText.text = "High Score:\n" + highScore + " days";
         highScoreText.gameObject.SetActive(true);
     }
 }
