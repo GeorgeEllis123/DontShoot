@@ -1114,19 +1114,34 @@ MonoBehaviour:
   - pattern: 010101000000
   - pattern: 000100010001
   - pattern: 010001000100
-  - pattern: 010000000001
-  - pattern: 010101010100
-  lot2:
-  - pattern: 010100010100
-  - pattern: 010100000101
   - pattern: 000001010000
+  - pattern: 000000000101
+  - pattern: 010100000000
+  - pattern: 000101000000
   - pattern: 000001000001
-  lot3:
-  - pattern: 010001000000
+  - pattern: 010000010000
+  lot2:
+  - pattern: 010000010101
   - pattern: 000100010000
-  - pattern: 000000010001
+  - pattern: 010101010000
+  - pattern: 000001000100
+  - pattern: 010001000100
+  - pattern: 000101010000
+  - pattern: 010100000001
+  - pattern: 000000010100
+  - pattern: 010000000001
   - pattern: 000100000001
-  - pattern: 010000000100
+  lot3:
+  - pattern: 010001010001
+  - pattern: 000101010001
+  - pattern: 010100010001
+  - pattern: 010001000101
+  - pattern: 000101010100
+  - pattern: 010101000101
+  - pattern: 010001010100
+  - pattern: 000100010101
+  - pattern: 010101010001
+  - pattern: 000100010100
 --- !u!114 &606090646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1291,6 +1306,7 @@ MonoBehaviour:
     crossed on busy city streets. '
   - You watched as I starved... but now it is my turn to watch as you die!
   lastLine: "Or\u2026 it would be my turn if you hadn\u2019t gotten so lucky so far."
+  maxCharsPerSegment: 100
 --- !u!4 &769621927
 Transform:
   m_ObjectHideFlags: 0
@@ -1828,7 +1844,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   day: 2
   levelsInDay: 6
-  patternLotPerLevel: 010000000100000001000000020000000200000003000000
+  patternLotPerLevel: 010000000100000001000000020000000200000002000000
   dayHasMonologueFirst: 1
   audioDistractionWhilePlaying: 0
   audioDistractionWhileListening: 0

@@ -972,17 +972,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lot1:
-  - pattern: 010100010100
-  - pattern: 010001010001
-  - pattern: 010100000101
-  - pattern: 010000010101
+  - pattern: 000000010101
+  - pattern: 010101000000
+  - pattern: 000100010001
+  - pattern: 010001000100
   - pattern: 000001010000
-  - pattern: 010101010100
+  - pattern: 000000000101
+  - pattern: 010100000000
   - pattern: 000101000000
-  - pattern: 000000010100
+  - pattern: 000001000001
+  - pattern: 010000010000
+  lot2:
+  - pattern: 010000010101
+  - pattern: 000100010000
+  - pattern: 010101010000
+  - pattern: 000001000100
+  - pattern: 010001000100
+  - pattern: 000101010000
   - pattern: 010100000001
-  lot2: []
-  lot3: []
+  - pattern: 000000010100
+  - pattern: 010000000001
+  - pattern: 000100000001
+  lot3:
+  - pattern: 010001010001
+  - pattern: 000101010001
+  - pattern: 010100010001
+  - pattern: 010001000101
+  - pattern: 000101010100
+  - pattern: 010101000101
+  - pattern: 010001010100
+  - pattern: 000100010101
+  - pattern: 010101010001
+  - pattern: 000100010100
 --- !u!114 &606090646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1139,6 +1160,7 @@ MonoBehaviour:
   - And then treat us like even less...
   - And now you ask for mercy?
   lastLine: "Don\u2019t make me laugh\u2026"
+  maxCharsPerSegment: 100
 --- !u!4 &769621927
 Transform:
   m_ObjectHideFlags: 0
@@ -1675,8 +1697,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   day: 5
-  levelsInDay: 4
-  patternLotPerLevel: 01000000010000000100000001000000
+  levelsInDay: 6
+  patternLotPerLevel: 010000000200000002000000020000000300000003000000
   dayHasMonologueFirst: 1
   audioDistractionWhilePlaying: 0
   audioDistractionWhileListening: 0

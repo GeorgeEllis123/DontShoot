@@ -972,20 +972,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lot1:
-  - pattern: 010001010001
-  - pattern: 010100000001
-  - pattern: 000001000101
-  - pattern: 010000000101
-  - pattern: 000100000100
-  - pattern: 010001000101
-  - pattern: 010101000001
+  - pattern: 000000010101
+  - pattern: 010101000000
+  - pattern: 000100010001
+  - pattern: 010001000100
+  - pattern: 000001010000
+  - pattern: 000000000101
+  - pattern: 010100000000
+  - pattern: 000101000000
+  - pattern: 000001000001
+  - pattern: 010000010000
+  lot2:
   - pattern: 010000010101
-  - pattern: 000100010100
-  - pattern: 010100010000
   - pattern: 000100010000
+  - pattern: 010101010000
   - pattern: 000001000100
-  lot2: []
-  lot3: []
+  - pattern: 010001000100
+  - pattern: 000101010000
+  - pattern: 010100000001
+  - pattern: 000000010100
+  - pattern: 010000000001
+  - pattern: 000100000001
+  lot3:
+  - pattern: 010001010001
+  - pattern: 000101010001
+  - pattern: 010100010001
+  - pattern: 010001000101
+  - pattern: 000101010100
+  - pattern: 010101000101
+  - pattern: 010001010100
+  - pattern: 000100010101
+  - pattern: 010101010001
+  - pattern: 000100010100
 --- !u!114 &606090646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1281,6 +1299,7 @@ MonoBehaviour:
   - "You humans think you know what to expect from us pigeons, but you're wrong!
     You\u2019ve always been wrong."
   lastLine: 'Have mercy? Hah! No, I don''t think I will. '
+  maxCharsPerSegment: 100
 --- !u!4 &769621927
 Transform:
   m_ObjectHideFlags: 0
@@ -1817,8 +1836,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   day: 3
-  levelsInDay: 3
-  patternLotPerLevel: 010000000100000001000000
+  levelsInDay: 6
+  patternLotPerLevel: 010000000100000002000000020000000200000003000000
   dayHasMonologueFirst: 0
   audioDistractionWhilePlaying: 0
   audioDistractionWhileListening: 0
