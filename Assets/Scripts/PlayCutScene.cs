@@ -6,6 +6,7 @@ public class PlayCutScene : MonoBehaviour
 {
     [SerializeField] private GameObject buttons;
     [SerializeField] private GameObject black;
+    [SerializeField] private GameObject highScoreText;
     [SerializeField] private AudioSource walkingSFX;
     [SerializeField] private AudioSource bagSFX;
     private string highScoreKey = "HighScoreKey";
@@ -13,6 +14,7 @@ public class PlayCutScene : MonoBehaviour
     public void Play()
     {
         buttons.SetActive(false);
+        highScoreText.SetActive(false);
 
         StartCoroutine(Kidnap());
     }
