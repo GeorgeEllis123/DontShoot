@@ -32,11 +32,19 @@ public class NewLevelManager : MonoBehaviour
     private string highScoreKey = "HighScoreKey";
 
     private bool isGameover = false;
+    private int currentDay; 
 
     void Start()
     {
         highScore = PlayerPrefs.GetInt(highScoreKey, 0);
+        currentDay = highScore;
+        // Unlock ach at beginning of day 1 
+        if (day == 1)
+            AchievementManager.UnlockAchievement("ACH_COODNAPPED");
 
+        if (day == 9)
+            AchievementManager.UnlockAchievement("ACH_NO_MORE_COOS");
+            
         StartCoroutine("Play");
     }
 
@@ -46,7 +54,7 @@ public class NewLevelManager : MonoBehaviour
         bag.TakeOff();
         yield return new WaitForSeconds(1f);
 
-        
+
         //// Level Stuff ////
         for (int i = 0; i < levelsInDay; i++)
         {
@@ -85,12 +93,12 @@ public class NewLevelManager : MonoBehaviour
             // Left Pigeon Visitor Enters, Right Pigeon Visitor Exits while loading
             if (day >= 7)
             {
-                if(i == pigeon_Visitor_Left.enterLevel)
+                if (i == pigeon_Visitor_Left.enterLevel)
                 {
                     pigeon_Visitor_Left.PigeonEnter();
                 }
 
-                if(i == pigeon_Visitor_Right.exitLevel)
+                if (i == pigeon_Visitor_Right.exitLevel)
                 {
                     pigeon_Visitor_Right.PigeonExit();
                 }
@@ -113,14 +121,14 @@ public class NewLevelManager : MonoBehaviour
                 audioDistractionManager.PlayRandomSoundWithDelay(Random.Range(1f, 3f));
 
             // Right Pigeon Visitor Enters, Left Pigeon Visitor Exits while playing
-            if(day >= 7)
+            if (day >= 7)
             {
-                if(i == pigeon_Visitor_Right.enterLevel)
+                if (i == pigeon_Visitor_Right.enterLevel)
                 {
                     pigeon_Visitor_Right.PigeonEnter();
                 }
 
-                if(i == pigeon_Visitor_Left.exitLevel)
+                if (i == pigeon_Visitor_Left.exitLevel)
                 {
                     pigeon_Visitor_Left.PigeonExit();
                 }
@@ -182,6 +190,7 @@ public class NewLevelManager : MonoBehaviour
 
     private IEnumerator NextLevel()
     {
+        currentDay++; 
         // update high score each time a new level is reached
         highScore = SceneManager.GetActiveScene().buildIndex + 1;
         // if high score is somehow set outside scene count range, set it to the final level
@@ -191,6 +200,9 @@ public class NewLevelManager : MonoBehaviour
         }
         PlayerPrefs.SetInt(highScoreKey, highScore);
         PlayerPrefs.Save();
+
+        int lvlIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        AchievementManager.CheckForAchievement(currentDay, lvlIndex);
         
         if (SceneManager.GetActiveScene().buildIndex >= SceneManager.sceneCountInBuildSettings - 1)
         {
