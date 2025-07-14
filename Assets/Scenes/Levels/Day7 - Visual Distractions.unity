@@ -1796,6 +1796,7 @@ MonoBehaviour:
   toolTip: {fileID: 1992491913}
   pigeon_Visitor_Left: {fileID: 1265944877}
   pigeon_Visitor_Right: {fileID: 356523854}
+  playerPlayPatternDoneWaitTime: 0.41
 --- !u!4 &1052734995
 Transform:
   m_ObjectHideFlags: 0

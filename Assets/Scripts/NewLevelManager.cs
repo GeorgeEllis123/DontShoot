@@ -27,6 +27,7 @@ public class NewLevelManager : MonoBehaviour
     [SerializeField] private Pigeon_Visitor pigeon_Visitor_Right;
 
     [Header("Player Data")]
+    [SerializeField] private float playerPlayPatternDoneWaitTime = 0.45f; 
     private int highScore;
     private string highScoreKey = "HighScoreKey";
 
@@ -127,7 +128,7 @@ public class NewLevelManager : MonoBehaviour
 
             // Wait till Player Done Playing
             yield return new WaitUntil(() => patternManager.GetPlayPatternDone());
-            yield return new WaitForSeconds(0.45f);
+            yield return new WaitForSeconds(playerPlayPatternDoneWaitTime);
 
             // Put down gun
             timingCircle.SetActive(false);
