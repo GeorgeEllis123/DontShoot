@@ -18,7 +18,7 @@ public class AchievementManager
                 Debug.Log($"Achievement unlocked: {achID}");
             }
         }
-        SteamAPI.RunCallbacks(); 
+        SteamAPI.RunCallbacks();
     }
 
     // Call in Lvl Manager 
@@ -30,13 +30,13 @@ public class AchievementManager
                 UnlockAchievement("ACH_SURVIVED");
             if (score >= 2 && lvlIndex >= 2)
                 UnlockAchievement("ACH_CANT_SHOOT_THE_MESSENGER");
-            if (score >= 4 && lvlIndex >= 4 )
+            if (score >= 4 && lvlIndex >= 4)
                 UnlockAchievement("ACH_CRUEL_CULVER");
             if (score >= 7 && lvlIndex >= 7)
                 UnlockAchievement("ACH_SQUAB_SQUABBLES");
             if (score >= 9 && lvlIndex > 9)
                 UnlockAchievement("ACH_ SALUTE_TO_SPIKE");
         }
-        SteamAPI.RunCallbacks(); 
+        SteamAPI.RunCallbacks();
     }
 }

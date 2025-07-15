@@ -44,7 +44,7 @@ public class NewLevelManager : MonoBehaviour
 
         if (day == 9)
             AchievementManager.UnlockAchievement("ACH_NO_MORE_COOS");
-            
+
         StartCoroutine("Play");
     }
 
@@ -203,7 +203,7 @@ public class NewLevelManager : MonoBehaviour
 
         int lvlIndex = SceneManager.GetActiveScene().buildIndex + 1;
         AchievementManager.CheckForAchievement(currentDay, lvlIndex);
-        
+
         if (SceneManager.GetActiveScene().buildIndex >= SceneManager.sceneCountInBuildSettings - 1)
         {
             bangScreen.SetActive(true);

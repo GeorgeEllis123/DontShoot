@@ -13,10 +13,10 @@ public class Pigeon_Visitor : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         lvlMngr = FindAnyObjectByType<NewLevelManager>();
-        enterLevel = Random.Range(0, lvlMngr.levelsInDay + 2);
+        enterLevel = Random.Range(0, lvlMngr.levelsInDay / 2);
         // range goes higher than max levels;
         // therefore unlikely for a pigeon to leave after entering
-        exitLevel = Random.Range(enterLevel + 1, 15);
+        exitLevel = Random.Range(enterLevel + 1, lvlMngr.levelsInDay * 3);
     }
 
     public void PigeonEnter()
