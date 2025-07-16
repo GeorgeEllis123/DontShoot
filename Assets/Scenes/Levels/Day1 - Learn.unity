@@ -1168,6 +1168,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb619f4d15688844bb98e5a4a4098432, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelLines:
+  - Coo-d... Now, this one will be full of real bullets.
+  - "And now, we can play some actual Russian Roulette! I am going to load this with
+    one real bullet and five blanks. Too bad there\u2019s no way to tell which bullets
+    are real, right?"
+  adlibList:
+  - Hmm...
+  - Lucky...
+  - Damn...
+  - I thought I had you that time...
+  - It won't hurt... much.
+  - Just die...
+  - This is taking longer than expected...
+  - Why I oughta...
+  - ugh.
+  - I hate you
+  - ...
   textBox: {fileID: 1852021196}
   skipReminder: {fileID: 499427131}
   pigeonSFX: {fileID: 769621928}
@@ -1181,11 +1198,6 @@ MonoBehaviour:
   - I think you know what happens if you shoot a bullet, but if you spin past a blank
     I will shoot you myself, coo-py?
   - To make sure you understand the rules, this one will be full of blanks.
-  levelLines:
-  - Coo-d... Now, this one will be full of real bullets.
-  - "And now, we can play some actual Russian Roulette! I am going to load this with
-    one real bullet and five blanks. Too bad there\u2019s no way to tell which bullets
-    are real, right?"
   lastLine: Congratulations! You're alive! What? You didn't expect to be let off
     that easy, did you? No... you will be playing this game for the rest of your
     sorry life.

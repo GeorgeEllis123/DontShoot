@@ -1148,6 +1148,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb619f4d15688844bb98e5a4a4098432, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelLines:
+  - "You know\u2026 for you humans, we crossed mountains, oceans, gunfire..."
+  - Just for you to laugh at us as we beg for breadcrumbs.
+  - For humans, it was just a service, but for us?
+  - It was our lives.
+  - You didn't know that? No one remembers us carrier pigeons anymore...
+  adlibList:
+  - Hmm...
+  - Lucky...
+  - Damn...
+  - I thought I had you that time...
+  - It won't hurt... much.
+  - Just die...
+  - This is taking longer than expected...
+  - Why I oughta...
+  - ugh.
+  - I hate you
+  - ...
   textBox: {fileID: 1852021196}
   skipReminder: {fileID: 499427131}
   pigeonSFX: {fileID: 769621928}
@@ -1158,12 +1176,6 @@ MonoBehaviour:
   - Because time is running short.
   - After all, why should I have mercy when you humans abandoned us loyal pigeons
     all those years ago?
-  levelLines:
-  - "You know\u2026 for you humans, we crossed mountains, oceans, gunfire..."
-  - Just for you to laugh at us as we beg for breadcrumbs.
-  - For humans, it was just a service, but for us?
-  - It was our lives.
-  - You didn't know that? No one remembers us carrier pigeons anymore...
   lastLine: But I remember. We all do.
   maxCharsPerSegment: 100
 --- !u!4 &769621927

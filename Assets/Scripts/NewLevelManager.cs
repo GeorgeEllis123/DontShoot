@@ -11,6 +11,7 @@ public class NewLevelManager : MonoBehaviour
     [SerializeField] private bool dayHasMonologueFirst = false;
     [SerializeField] private bool audioDistractionWhilePlaying = false;
     [SerializeField] private bool audioDistractionWhileListening = false;
+    private int lastAdlib = -1;
 
     [Header("References")]
     [SerializeField] private GameObject playerGun;
@@ -39,11 +40,11 @@ public class NewLevelManager : MonoBehaviour
         highScore = PlayerPrefs.GetInt(highScoreKey, 0);
         currentDay = highScore;
         // Unlock ach at beginning of day 1 
-        if (day == 1)
-            AchievementManager.UnlockAchievement("ACH_COODNAPPED");
+        //if (day == 1)
+        //    AchievementManager.UnlockAchievement("ACH_COODNAPPED");
 
-        if (day == 9)
-            AchievementManager.UnlockAchievement("ACH_NO_MORE_COOS");
+        //if (day == 9)
+        //    AchievementManager.UnlockAchievement("ACH_NO_MORE_COOS");
 
         StartCoroutine("Play");
     }
@@ -69,7 +70,18 @@ public class NewLevelManager : MonoBehaviour
                 if (dayHasMonologueFirst)
                 {
                     // -1 to account for the monologue
-                    textManager.PlayMessage(i - 1);
+                    if(i >= textManager.levelLines.Length - 1)
+                    {
+                        textManager.PlayAdlib(GetRandomAdlib());
+                    }
+                    else
+                    {
+                        textManager.PlayMessage(i - 1);
+                    }
+                }
+                else if (i >= textManager.levelLines.Length)
+                {
+                    textManager.PlayAdlib(GetRandomAdlib());
                 }
                 else
                 {
@@ -188,6 +200,17 @@ public class NewLevelManager : MonoBehaviour
         }
     }
 
+    private int GetRandomAdlib()
+    {
+        int randomAdlib = Random.Range(0, textManager.adlibList.Length);
+        while (randomAdlib == lastAdlib)
+        {
+            randomAdlib = Random.Range(0, textManager.adlibList.Length);
+        }
+        lastAdlib = randomAdlib;
+        return randomAdlib;
+    }
+
     private IEnumerator NextLevel()
     {
         currentDay++; 
@@ -202,7 +225,7 @@ public class NewLevelManager : MonoBehaviour
         PlayerPrefs.Save();
 
         int lvlIndex = SceneManager.GetActiveScene().buildIndex + 1;
-        AchievementManager.CheckForAchievement(currentDay, lvlIndex);
+        //AchievementManager.CheckForAchievement(currentDay, lvlIndex);
 
         if (SceneManager.GetActiveScene().buildIndex >= SceneManager.sceneCountInBuildSettings - 1)
         {

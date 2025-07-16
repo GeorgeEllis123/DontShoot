@@ -1286,16 +1286,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb619f4d15688844bb98e5a4a4098432, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textBox: {fileID: 1852021196}
-  skipReminder: {fileID: 499427131}
-  pigeonSFX: {fileID: 769621928}
-  characterDelay: 0.04
-  monologueLines: []
   levelLines:
   - "Anyway, you must be very lucky, surviving this long\u2026"
   - "It\u2019s almost like you have a way of knowing which bullets are real\u2026"
   - "But that\u2019s obviously impossible!"
   - "You can\u2019t see how I load them."
+  adlibList:
+  - Hmm...
+  - Lucky...
+  - Damn...
+  - I thought I had you that time...
+  - It won't hurt... much.
+  - Just die...
+  - This is taking longer than expected...
+  - Why I oughta...
+  - ugh.
+  - I hate you
+  - ...
+  textBox: {fileID: 1852021196}
+  skipReminder: {fileID: 499427131}
+  pigeonSFX: {fileID: 769621928}
+  characterDelay: 0.04
+  monologueLines: []
   lastLine: I will figure you out.
   maxCharsPerSegment: 100
 --- !u!4 &769621927

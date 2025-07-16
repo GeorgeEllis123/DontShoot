@@ -5,12 +5,13 @@ using System.Collections.Generic;
 
 public class NewTextManager : MonoBehaviour
 {
+    public string[] levelLines;
+    public string[] adlibList;
     [SerializeField] private TextMeshProUGUI textBox;
     [SerializeField] private TextMeshProUGUI skipReminder;
     [SerializeField] private AudioSource pigeonSFX;
     [SerializeField] private float characterDelay = 0.04f;
     [SerializeField] private string[] monologueLines;
-    [SerializeField] private string[] levelLines;
     [SerializeField] private string lastLine;
     [SerializeField] private int maxCharsPerSegment = 100;
 
@@ -70,6 +71,12 @@ public class NewTextManager : MonoBehaviour
     {
         inMonologue = false;
         PlayLine(levelLines[index]);
+    }
+
+    public void PlayAdlib(int adlibIdx)
+    {
+        inMonologue = false;
+        PlayLine(adlibList[adlibIdx]);
     }
 
     public void PlayLastLine()

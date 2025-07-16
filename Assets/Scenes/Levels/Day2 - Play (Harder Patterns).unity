@@ -1286,6 +1286,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb619f4d15688844bb98e5a4a4098432, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelLines:
+  - "Oh, and just so you know, do not even try to shoot me\u2014we both know I am
+    faster on the draw anyway."
+  - "How do I know that? Your hands aren\u2019t even tied and all I have are wings\u2026
+    and yet... you\u2019ve so obediently sat there and listened to what I\u2019ve
+    said. You\u2019re terrified!"
+  - Maybe you used to be more powerful than me, but that moment has passed.
+  - 'Who am I? Even though you don''t recognize me, I can assure you our paths have
+    crossed on busy city streets. '
+  - You watched as I starved... but now it is my turn to watch as you die!
+  adlibList:
+  - Hmm...
+  - Lucky...
+  - Damn...
+  - I thought I had you that time...
+  - It won't hurt... much.
+  - Just die...
+  - This is taking longer than expected...
+  - Why I oughta...
+  - ugh.
+  - I hate you
+  - ...
   textBox: {fileID: 1852021196}
   skipReminder: {fileID: 499427131}
   pigeonSFX: {fileID: 769621928}
@@ -1295,16 +1317,6 @@ MonoBehaviour:
   - Who knows how many of these will be bullets or blanks?
   - "Well, I obviously know, but you don\u2019t! Otherwise, what would be the fun
     in that?"
-  levelLines:
-  - "Oh, and just so you know, do not even try to shoot me\u2014we both know I am
-    faster on the draw anyway."
-  - "How do I know that? Your hands aren\u2019t even tied and all I have are wings\u2026
-    and yet you\u2019ve so obediently sat there and listened to what I\u2019ve said.
-    You\u2019re terrified!"
-  - Maybe you used to be more powerful than me, but that moment has passed.
-  - 'Who am I? Even though you don''t recognize me, I can assure you our paths have
-    crossed on busy city streets. '
-  - You watched as I starved... but now it is my turn to watch as you die!
   lastLine: "Or\u2026 it would be my turn if you hadn\u2019t gotten so lucky so far."
   maxCharsPerSegment: 100
 --- !u!4 &769621927
