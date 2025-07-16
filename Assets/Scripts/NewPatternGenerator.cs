@@ -12,6 +12,7 @@ public class NewPatternGenerator : MonoBehaviour
     [SerializeField] private List<PatternLot> lot1;
     [SerializeField] private List<PatternLot> lot2;
     [SerializeField] private List<PatternLot> lot3;
+    private int lastPatternIndex = -1;
 
     public bool[] GetPattern(int lot) // picks from the given lot, for random pass anything != 1-3
     {
@@ -33,6 +34,11 @@ public class NewPatternGenerator : MonoBehaviour
         {
             int patternSize = chosenLot.Count;
             int randomIndex = Random.Range(0, patternSize);
+            while(randomIndex == lastPatternIndex)
+            {
+                randomIndex = Random.Range(0, patternSize);
+            }
+            lastPatternIndex = randomIndex;
 
             return chosenLot[randomIndex].pattern;
         } else {
