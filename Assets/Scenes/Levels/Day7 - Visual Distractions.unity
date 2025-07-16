@@ -1276,15 +1276,11 @@ MonoBehaviour:
   skipReminder: {fileID: 499427131}
   pigeonSFX: {fileID: 769621928}
   characterDelay: 0.04
-  monologueLines:
-  - 
+  monologueLines: []
   levelLines:
-  - First line today...
-  - Second line today....
-  - Another line here!!!!
-  - Another line here!!!!
-  - Another line here!!!!
-  - Another line here!!!!
+  - ...
+  - They've been coo-ing nonstop about you.
+  - Maybe you've got sharp eyes.
   lastLine: 
   maxCharsPerSegment: 100
 --- !u!4 &769621927
