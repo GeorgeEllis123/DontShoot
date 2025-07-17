@@ -39,12 +39,12 @@ public class NewLevelManager : MonoBehaviour
     {
         highScore = PlayerPrefs.GetInt(highScoreKey, 0);
         currentDay = highScore;
-        // Unlock ach at beginning of day 1 
-        //if (day == 1)
-        //    AchievementManager.UnlockAchievement("ACH_COODNAPPED");
+        // Unlock ach at beginning of day 1 & 9
+        if (day == 1)
+           AchievementManager.UnlockAchievement("ACH_COODNAPPED");
 
-        //if (day == 9)
-        //    AchievementManager.UnlockAchievement("ACH_NO_MORE_COOS");
+        if (day == 9)
+            AchievementManager.UnlockAchievement("ACH_NO_MORE_COOS");
 
         StartCoroutine("Play");
     }
