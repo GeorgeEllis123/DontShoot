@@ -28,13 +28,13 @@
 //        {
 //            if (score >= 1 && lvlIndex >= 1)
 //                UnlockAchievement("ACH_SURVIVED");
-//            if (score >= 2 && lvlIndex >= 2)
+//            if (score >= 3 && lvlIndex >= 2)
 //                UnlockAchievement("ACH_CANT_SHOOT_THE_MESSENGER");
-//            if (score >= 4 && lvlIndex >= 4)
+//            if (score >= 5 && lvlIndex >= 4)
 //                UnlockAchievement("ACH_CRUEL_CULVER");
-//            if (score >= 7 && lvlIndex >= 7)
+//            if (score >= 8 && lvlIndex >= 7)
 //                UnlockAchievement("ACH_SQUAB_SQUABBLES");
-//            if (score >= 9 && lvlIndex > 9)
+//            if (score >= 10 && lvlIndex > 9)
 //                UnlockAchievement("ACH_ SALUTE_TO_SPIKE");
 //        }
 //        SteamAPI.RunCallbacks();
