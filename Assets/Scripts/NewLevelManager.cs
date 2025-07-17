@@ -225,7 +225,7 @@ public class NewLevelManager : MonoBehaviour
         PlayerPrefs.Save();
 
         int lvlIndex = SceneManager.GetActiveScene().buildIndex + 1;
-        //AchievementManager.CheckForAchievement(currentDay, lvlIndex);
+        AchievementManager.CheckForAchievement(currentDay, lvlIndex);
 
         if (SceneManager.GetActiveScene().buildIndex >= SceneManager.sceneCountInBuildSettings - 1)
         {
