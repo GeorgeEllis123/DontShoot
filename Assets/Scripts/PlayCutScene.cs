@@ -19,6 +19,13 @@ public class PlayCutScene : MonoBehaviour
         StartCoroutine(Kidnap());
     }
 
+    public void Restart()
+    {
+        PlayerPrefs.SetInt(highScoreKey, 1);
+        PlayerPrefs.Save();
+        Play();
+    }
+
     IEnumerator Kidnap()
     {
         yield return new WaitForSeconds(3f);

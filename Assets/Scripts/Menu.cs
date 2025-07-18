@@ -11,6 +11,7 @@ public class Menu : MonoBehaviour
     //[SerializeField] private Button quitButton;
     [SerializeField] private GameObject disclaimer;
     [SerializeField] private GameObject creditsScreen;
+    [SerializeField] private GameObject restartButton;
     [SerializeField] private TextMeshProUGUI highScore;
     [SerializeField] private TextMeshProUGUI startButtonTxt;
     private string highScoreKey = "HighScoreKey";
@@ -22,7 +23,10 @@ public class Menu : MonoBehaviour
 
         int startingLevel = PlayerPrefs.GetInt(highScoreKey, 0);
         if (startingLevel > 0)
+        {
             startButtonTxt.text = "Resume";
+            restartButton.SetActive(true);
+        }
     }
 
     // Update is called once per frame
