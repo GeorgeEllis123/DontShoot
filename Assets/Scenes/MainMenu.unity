@@ -449,7 +449,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Trailer:
+  m_text: 'Trailer and Music:
 
     William Kibel'
   m_isRightToLeft: 0
@@ -1200,7 +1200,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &369895234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2826,7 +2826,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Assistant Programmer:
 
-    Michael Chen'
+    Zhu Fang'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 48bcf374c31dc3b4189bdca48827efe0, type: 2}
   m_sharedMaterial: {fileID: -856177807660807944, guid: 48bcf374c31dc3b4189bdca48827efe0, type: 2}
@@ -3618,7 +3618,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1725414995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4057,7 +4057,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Sound Designer:
 
-    Yonatan Catran'
+    Yonatan Catran
+
+    Zhu Fang'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 48bcf374c31dc3b4189bdca48827efe0, type: 2}
   m_sharedMaterial: {fileID: -856177807660807944, guid: 48bcf374c31dc3b4189bdca48827efe0, type: 2}
