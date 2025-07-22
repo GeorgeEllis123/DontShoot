@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 1d75ed16614514745b77bd43b39b4f7c
+guid: 7473036740c98b74787cddd41ef57d86
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3713563422917928458
-    second: DeskIcon_0
+      213: 2268421443724247045
+    second: boxart_NEU_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: DeskIcon_0
+      name: boxart_NEU_0
       rect:
         serializedVersion: 2
-        x: 1
+        x: 0
         y: 0
-        width: 183
-        height: 184
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6f9d71efdb5c67cc0800000000000000
-      internalID: -3713563422917928458
+      spriteID: 5000012d84d0b7f10800000000000000
+      internalID: 2268421443724247045
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      DeskIcon_0: -3713563422917928458
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
