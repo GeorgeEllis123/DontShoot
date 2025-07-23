@@ -132,11 +132,6 @@ public class NewTextManager : MonoBehaviour
 
         isTyping = false;
         isSkipping = false;
-
-        //if (inMonologue)
-        //{
-           // yield return new WaitForSeconds(1f);
-        //}
     }
 
     private IEnumerator PlaySegments(string[] segments)

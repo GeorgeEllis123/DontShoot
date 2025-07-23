@@ -971,6 +971,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50ba77cd6d1205d48941ccff8ee0425b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isThisDayOne: 1
   lot1:
   - pattern: 000000000000
   lot2:
@@ -1695,6 +1696,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   day: 1
   levelsInDay: 3
+  useAdlibsToday: 0
   patternLotPerLevel: 010000000200000003000000
   dayHasMonologueFirst: 1
   audioDistractionWhilePlaying: 0

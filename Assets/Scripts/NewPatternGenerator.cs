@@ -8,6 +8,7 @@ public class NewPatternGenerator : MonoBehaviour
     {
         public bool[] pattern = new bool[6];
     }
+    public bool isThisDayOne = false;
     // Up to 3 different pools of patterns to pick from
     [SerializeField] private List<PatternLot> lot1;
     [SerializeField] private List<PatternLot> lot2;
@@ -34,11 +35,14 @@ public class NewPatternGenerator : MonoBehaviour
         {
             int patternSize = chosenLot.Count;
             int randomIndex = Random.Range(0, patternSize);
-            while(randomIndex == lastPatternIndex)
+            if (!isThisDayOne)
             {
-                randomIndex = Random.Range(0, patternSize);
+                while (randomIndex == lastPatternIndex)
+                {
+                    randomIndex = Random.Range(0, patternSize);
+                }
+                lastPatternIndex = randomIndex;
             }
-            lastPatternIndex = randomIndex;
 
             return chosenLot[randomIndex].pattern;
         } else {

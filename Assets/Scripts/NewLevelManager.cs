@@ -7,6 +7,7 @@ public class NewLevelManager : MonoBehaviour
     [Header("General Level Details")]
     public int day = 0;
     public int levelsInDay = 1;
+    public bool useAdlibsToday = true;
     [SerializeField] private int[] patternLotPerLevel; // see NewPatternManager for what patterns are in each lot
     [SerializeField] private bool dayHasMonologueFirst = false;
     [SerializeField] private bool audioDistractionWhilePlaying = false;
@@ -40,11 +41,11 @@ public class NewLevelManager : MonoBehaviour
         highScore = PlayerPrefs.GetInt(highScoreKey, 0);
         currentDay = highScore;
         //Unlock ach at beginning of day 1 & 9
-        if (day == 1)
-            AchievementManager.UnlockAchievement("ACH_COODNAPPED");
+        //if (day == 1)
+        //    AchievementManager.UnlockAchievement("ACH_COODNAPPED");
 
-        if (day == 9)
-            AchievementManager.UnlockAchievement("ACH_NO_MORE_COOS");
+        //if (day == 9)
+        //    AchievementManager.UnlockAchievement("ACH_NO_MORE_COOS");
 
         StartCoroutine("Play");
     }
@@ -55,12 +56,12 @@ public class NewLevelManager : MonoBehaviour
         bag.TakeOff();
         yield return new WaitForSeconds(1f);
 
-
         //// Level Stuff ////
         for (int i = 0; i < levelsInDay; i++)
         {
             // Play Dialogue
             textManager.gameObject.SetActive(true);
+
             if (dayHasMonologueFirst && i == 0)
             {
                 textManager.StartMonologue();
@@ -70,7 +71,7 @@ public class NewLevelManager : MonoBehaviour
                 if (dayHasMonologueFirst)
                 {
                     // -1 to account for the monologue
-                    if(i >= textManager.levelLines.Length - 1)
+                    if (useAdlibsToday && (i - 1) >= textManager.levelLines.Length)
                     {
                         textManager.PlayAdlib(GetRandomAdlib());
                     }
@@ -79,23 +80,28 @@ public class NewLevelManager : MonoBehaviour
                         textManager.PlayMessage(i - 1);
                     }
                 }
-                else if (i >= textManager.levelLines.Length)
-                {
-                    textManager.PlayAdlib(GetRandomAdlib());
-                }
                 else
                 {
-                    textManager.PlayMessage(i);
+                    if (useAdlibsToday && i >= textManager.levelLines.Length)
+                    {
+                        textManager.PlayAdlib(GetRandomAdlib());
+                    }
+                    else
+                    {
+                        textManager.PlayMessage(i);
+                    }
                 }
             }
 
             // Wait till Dialogue is done
             yield return new WaitUntil(() => textManager.GetDone());
+
             yield return new WaitForSeconds(0.5f);
 
             // Hide Gun
             animatedGun.SetActive(false);
             animatedWing.SetActive(false);
+            
             yield return new WaitForSeconds(0.2f);
 
             // Play Sound
@@ -165,8 +171,6 @@ public class NewLevelManager : MonoBehaviour
             // Resets all the variables
             patternManager.ResetBools();
             textManager.ResetBools();
-
-
         }
 
         // Play last line
@@ -203,8 +207,14 @@ public class NewLevelManager : MonoBehaviour
     private int GetRandomAdlib()
     {
         int randomAdlib = Random.Range(0, textManager.adlibList.Length);
+        int attempts = 0;
         while (randomAdlib == lastAdlib)
         {
+            attempts++;
+            if(attempts > 100)
+            {
+                break;
+            }
             randomAdlib = Random.Range(0, textManager.adlibList.Length);
         }
         lastAdlib = randomAdlib;
@@ -225,7 +235,7 @@ public class NewLevelManager : MonoBehaviour
         PlayerPrefs.Save();
 
         int lvlIndex = SceneManager.GetActiveScene().buildIndex + 1;
-        AchievementManager.CheckForAchievement(currentDay, lvlIndex);
+        //AchievementManager.CheckForAchievement(currentDay, lvlIndex);
 
         if (SceneManager.GetActiveScene().buildIndex >= SceneManager.sceneCountInBuildSettings - 1)
         {
